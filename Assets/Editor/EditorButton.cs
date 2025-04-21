@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(NameGenerator))]
-public class SaveEditorButton : Editor
+public class NameGeneratorButton : Editor
 {
     public override void OnInspectorGUI()
     {
@@ -11,6 +11,19 @@ public class SaveEditorButton : Editor
         if (GUILayout.Button("Test Generate Name"))
         {
             nameGen.nameGenerate(nameGen.testGen);
+        }
+    }
+}
+[CustomEditor(typeof(SolSystemSetup))]
+public class SolSystemSetupButton : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        SolSystemSetup SolSetup = (SolSystemSetup)target;
+        base.OnInspectorGUI();
+        if (GUILayout.Button("Setup Sol System"))
+        {
+            SolSetup.setup();
         }
     }
 }

@@ -1,0 +1,9 @@
+Mercury, 0.387098
+Venus, 0.7233265
+Earth, 1
+Mars, 1.523805
+Planet X, 1.8619025, Ximaki
+Jupiter, 5.2038
+Saturn, 1433.525
+Uranus, 19.1913
+Neptune, 30.07
