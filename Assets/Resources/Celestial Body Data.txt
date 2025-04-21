@@ -1,0 +1,125 @@
+Planets:
+    Mercury: 0.307499-0.466697 AU from Sun
+    Venus: 0.718440-0.728213 AU from Sun
+    Earth: 0.983292404576-1.000001018063 AU from Sun (will literally just make it 1)
+    Mars: 1.3814-1.66621 AU from Sun
+    Ximaki: XYZ AU from Sun (fictional Planet X, its name references both the letter X, as well as 10th emperor of Japan)
+
+Gas Giants:
+    Jupiter: 4.9506-5.4570 AU from Sun
+    Saturn: 1,352.55-1,514.50 AU from Sun
+    Uranus: 18.2861-20.0965 AU from Sun
+    Neptune: 29.81-30.33 AU from Sun
+
+Moons (might just be counted as plain weight, idk, add the orbiting around body as well):
+    Moon: 0.00256954861 AU from Earth
+
+    Phobos: 4.01075e-5 AU from Mars
+    Deimos: 0.00015682041 AU from Mars
+
+    Neith: 0.00109985523 AU from Venus (164536 km; it's a normally nenexistent moon added here as a joke)
+
+    Metis: 0.000855627152 AU from Jupiter
+    Adrastea: 0.000862311739 AU from Jupiter
+    Thebe: 0.00148397834 AU from Jupiter
+    Leda: 0.0748405 AU from Jupiter
+    Ananke: 0.1406602 AU from Jupiter
+    Carme: 0.1509370 AU from Jupiter
+    Lysithea: 0.0782144 AU from Jupiter
+    Sinope: 0.1629144 AU from Jupiter
+    Pasiphae: 1551422 AU from Jupiter
+    Elara: 0.0782306 AU from Jupiter
+    Himalia: 0.0761287 AU from Jupiter
+    Amalthea: 0.00121091296 AU from Jupiter
+    Callisto: 0.01249349333 AU from Jupiter
+    Ganymede: 0.00716320356 AU from Jupiter
+    Europa: 0.0044846895 AU from Jupiter
+    Io: 0.00281889039 AU from Jupiter
+
+    Mimas: 0.00124025161 AU from Saturn
+    Enceladus: 0.00159058414 AU from Saturn
+    Tethys: 0.00196940637 AU from Saturn
+    Dione: 0.00252273644 AU from Saturn
+    Rhea: 0.0035230448 AU from Saturn
+    Titan: 0.008167696467 AU from Saturn
+    Hyperion: 0.00989993368936 AU from Saturn
+    Iapetus: 0.02380261152 AU from Saturn
+    Phoebe: 0.086632249105 AU from Saturn
+    Janus: 0.00101248099 AU from Saturn
+    Epimetheus: 0.00101214676 AU from Saturn
+    Helene: 0.0025241001 AU from Saturn
+    Telesto: 0.0019719532 AU from Saturn
+    Calypso: 0.0019719532 AU from Saturn
+    Atlas: 0.000920267109 AU from Saturn
+    Prometheus: 0.000931731176 AU from Saturn
+    Pandora: 0.000947339687 AU from Saturn
+    Pan: 0.000892953886 AU from Saturn
+    Ymir: 0.15345873502 AU from Saturn
+    Paaliaq: 0.10025075845 AU from Saturn
+    Tarvos: 0.12175975443 AU from Saturn
+    Ijiraq: 0.075836640902 AU from Saturn
+    Suttungr: 0.13007538081 AU from Saturn
+    Kiviuq: 0.075582626591 AU from Saturn
+
+    Triton: 0.002371417443 AU from Neptune
+    Nereid: 0.03679196752 AU from Neptune
+    Naiad: 0.000322360270065 AU from Neptune
+    Thalassa: 0.00033472695678 AU from Neptune
+    Despina: 0.000351114288955 AU from Neptune
+    Galatea: 0.00041412735161 AU from Neptune
+    Larissa: 0.000491639751661 AU from Neptune
+    Proteus: 0.000786421621 AU from Neptune
+    Hippocamp: 0.000703773386 AU from Neptune
+
+    Ariel: 0.00127608768 AU from Uranus
+    Umbriel: 0.00177810017 AU from Uranus
+    Titania: 0.00291387837 AU from Uranus
+    Oberon: 0.00390059028 AU from Uranus
+    Miranda: 0.000864918728 AU from Uranus
+    Cordelia: 0.000332569720192 AU from Uranus
+    Ophelia: 0.00035938606444 AU from Uranus
+    Bianca: 0.00039549727361 AU from Uranus
+    Cressida: 0.000412885087943 AU from Uranus
+    Desdemona: 0.0004188452930968 AU from Uranus
+    Juliet: 0.0004302081419933 AU from Uranus
+
+    Charon: 0.000130989591685 AU from Pluto
+    Styx: 0.00028513775 AU from Pluto
+    Nix: 0.00032549929 AU from Pluto
+    Kerberos: 0.0003862555 AU from Pluto
+    Hydra: 0.0004327468 AU from Pluto
+
+    Caduceus: XYZ AU from Mercury (joke moon)
+
+    Dysnomia: 0.00024915462 AU from Eris
+
+    Hiʻiaka: 0.00033342721 AU from Haumea
+    Namaka: 0.00017150645 AU from Haumea
+
+    S/2015 (136472) 1 "MK2": 0.00014037633 AU from Makemake
+
+Dwarves:
+    (78799) 2002 XW93: 27.9–46.8 AU from Sun
+    2014 UZ224 "DeeDee": 38-89.7 AU from Sun
+    (145451) 2005 RM43: 35-144 AU from Sun
+    20000 Varuna: 40-45 AU from Sun
+    229762 Gǃkúnǁʼhòmdímà: 37-108 AU from Sun
+    (55637) 2002 UX25: 36-48 AU from Sun
+    (145452) 2005 RN43: 40-42 AU from Sun
+    (90568) 2004 GV9: 38-45 AU from Sun
+    (208996) 2003 AZ84: 32-46 AU from Sun
+    28978 Ixion: 30-49 AU from Sun
+    (532037) 2013 FY27: 35-81 AU from Sun
+    174567 Varda: 39-52 AU from Sun
+    (55565) 2002 AW197: 40-53 AU from Sun
+    (307261) 2002 MS4: 35-47 AU from Sun
+    120347 Salacia: 37-46 AU from Sun
+    Sedna: 76-937 AU from Sun
+    Orcus: 30-48 AU from Sun
+    Ceres: 2.5-2.98 AU from Sun
+    Quaoar: 41-45.5 AU from Sun
+    Gonggong: 33-101 AU from Sun
+    Makemake: 38-52 AU from Sun
+    Haumea: 34-51 AU from Sun
+    Eris: 38-97 AU from Sun
+    Pluto: 29-49 AU from Sun
