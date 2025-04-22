@@ -27,3 +27,24 @@ public class SolSystemSetupButton : Editor
         }
     }
 }
+[CustomEditor(typeof(OrbitManager))]
+public class OrbitManagerButton : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        OrbitManager orbitManager = (OrbitManager)target;
+        base.OnInspectorGUI();
+        if (GUILayout.Button("Recalculate Celestial Body Positions"))
+        {
+            orbitManager.recalcPositions();
+        }
+        if (GUILayout.Button("Randomize Celestial Body Positions"))
+        {
+            orbitManager.randomPositions();
+        }
+        if (GUILayout.Button("Reset Celestial Body Positions"))
+        {
+            orbitManager.resetPositions();
+        }
+    }
+}

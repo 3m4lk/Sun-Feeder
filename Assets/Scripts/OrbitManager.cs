@@ -21,11 +21,14 @@ public class cBody
     [Space]
     public float orbitProgress;
 }
+[ExecuteInEditMode]
 public class OrbitManager : MonoBehaviour
 {
     public MainManager iManager;
 
     public cBody[] bodies;
+
+    public bool recalcLive;
     private void FixedUpdate()
     {
         for (int i = 0; i < bodies.Length; i++)
@@ -38,10 +41,52 @@ public class OrbitManager : MonoBehaviour
             bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * iManager.gameManager.AstronomicalUnit;
         }
     }
+    [ExecuteInEditMode]
+    private void Update()
+    {
+        if (recalcLive)
+        {
+            recalcPositions();
+        }
+    }
     public void WipeBodies(int inputLength)
     {
         bodies = default;
         bodies = new cBody[inputLength];
         print(inputLength);
+    }
+    public void recalcPositions()
+    {
+        for (int i = 0; i < bodies.Length; i++)
+        {
+            float sinOut = Mathf.Sin((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
+            float cosOut = Mathf.Cos((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
+
+            bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * iManager.gameManager.AstronomicalUnit;
+        }
+    }
+    public void randomPositions()
+    {
+        for (int i = 0; i < bodies.Length; i++)
+        {
+            bodies[i].orbitProgress = Random.Range(0f, 100f);
+
+            float sinOut = Mathf.Sin((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
+            float cosOut = Mathf.Cos((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
+
+            bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * iManager.gameManager.AstronomicalUnit;
+        }
+    }
+    public void resetPositions()
+    {
+        for (int i = 0; i < bodies.Length; i++)
+        {
+            bodies[i].orbitProgress = 0;
+
+            float sinOut = Mathf.Sin((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
+            float cosOut = Mathf.Cos((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
+
+            bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * iManager.gameManager.AstronomicalUnit;
+        }
     }
 }

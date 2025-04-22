@@ -10,6 +10,12 @@ public class satSetups
     public bool useNewOrbitBody;
     [Tooltip("True Name of a body these bodies will need to orbit around")]
     public string newOrbitBodyName;
+
+    [Tooltip("Preset scale of all celestial bodies to be generated (in Earth sizes, altered for cosmetic purposes)")]
+    public float presetScale = 1f;
+
+    public bool randomizeScale;
+    public float randomThreshold;
 }
 [ExecuteInEditMode]
 public class SolSystemSetup : MonoBehaviour
@@ -29,6 +35,8 @@ public class SolSystemSetup : MonoBehaviour
     public float testDist;
 
     public bool doSineTest;
+
+    public bool noRandom;
 
     [Space]
     public float defCBScale;
@@ -87,18 +95,22 @@ public class SolSystemSetup : MonoBehaviour
             {
                 string[] currData = dataArray[ia].Split(", ");
 
-                print("creating " + currData[0] + "...");
-                print(currData[4]);
+                //print("creating " + currData[0] + "...");
+                //print(currData[4]);
 
                 GameObject currentCB = Instantiate(Resources.Load<GameObject>("CelestialBody"));
                 currentCB.transform.localScale = Vector3.one * defCBScale;
 
                 // Name
                 currentCB.name = currData[0];
-                print("name");
+                //print("name");
 
                 // Distance
-                float randomPeriod = Random.Range(0f, 100f);
+                float randomPeriod = default;
+                if (!noRandom)
+                {
+                    randomPeriod = Random.Range(0f, 100f);
+                }
                 // yes this is all necessary, trust :prayingEmoji:
 
                 float sinOut = Mathf.Sin((float)Mathf.Repeat(randomPeriod / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
@@ -109,33 +121,41 @@ public class SolSystemSetup : MonoBehaviour
                 // Plugging it to the Orbit Manager
                 iManager.orbManager.bodies[totalIndex] = new cBody();
 
-                print("bodyName");
+                //print("bodyName");
                 iManager.orbManager.bodies[totalIndex].name = currData[0];
-                print("trueName");
+                //print("trueName");
                 iManager.orbManager.bodies[totalIndex].trueName = currData[1];
-                print("orbitDistance");
+                //print("orbitDistance");
                 iManager.orbManager.bodies[totalIndex].orbitDistance = float.Parse(currData[2]);
-                print("mass");
+                //print("mass");
                 iManager.orbManager.bodies[totalIndex].mass = float.Parse(currData[3]);
-                print("orbitSpeed");
+                //print("orbitSpeed");
                 iManager.orbManager.bodies[totalIndex].orbitSpeed = float.Parse(currData[4]);
 
-                print("orbitProgress");
+                //print("orbitProgress");
                 iManager.orbManager.bodies[totalIndex].orbitProgress = randomPeriod; // to align it with randomized celestial body placement
 
-                print("orbitBody");
+                //print("orbitBody");
                 iManager.orbManager.bodies[totalIndex].orbitBody = refBody;
 
-                print("bodyTransform");
+                //print("bodyTransform");
                 iManager.orbManager.bodies[totalIndex].bodyTransform = currentCB.transform;
 
                 // Transforms, setting up & placing celestial bodies accordingly
-                print("position");
+                //print("position");
                 currentCB.transform.position = refBody.position + newPos;
-                print("parent");
+                //print("scale (preset)");
+                currentCB.transform.localScale = Vector3.one * celestialBodiesSetup[i].presetScale;
+
+                //print("randomizedScale");
+                if (celestialBodiesSetup[i].randomizeScale)
+                {
+                    currentCB.transform.localScale += Vector3.one * Random.Range(-celestialBodiesSetup[i].randomThreshold, celestialBodiesSetup[i].randomThreshold);
+                }
+                //print("parent");
                 currentCB.transform.parent = Sol;
 
-                print("currently: " + totalIndex);
+                //print("currently: " + totalIndex);
                 totalIndex++;
             }
         }
