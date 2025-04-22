@@ -1,9 +1,9 @@
-Mercury, Sol I, 0.387098, 0.055
-Venus, Sol II, 0.7233265, 0.815
-Earth, Sol III, 1, 1
-Mars, Sol IV, 1.523805, 0.107
-Ximaki, Planet X, 1.8619025, 0.49425
-Jupiter, Sol V, 5.2038, 317.8
-Saturn, Sol VI, 1433.525, 95.16
-Uranus, Sol VII, 19.1913, 14.54
-Neptune, Sol VIII, 30.07, 17.15
+Mercury, Sol I, 0.387098, 0.055, 0.241010959
+Venus, Sol II, 0.7233265, 0.815, 0.615619178
+Earth, Sol III, 1, 1, 1
+Mars, Sol IV, 1.523805, 0.107, 1.88085
+Ximaki, Planet X, 1.8619025, 0.49425, 0.934370035
+Jupiter, Sol V, 5.2038, 317.8, 11.862
+Saturn, Sol VI, 1433.525, 95.16, 29.4475
+Uranus, Sol VII, 19.1913, 14.54, 84.0205
+Neptune, Sol VIII, 30.07, 17.15, 164.8

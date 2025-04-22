@@ -27,7 +27,7 @@ Moons (might just be counted as plain weight, idk, add the orbiting around body 
     Carme: 0.1509370 AU from Jupiter
     Lysithea: 0.0782144 AU from Jupiter
     Sinope: 0.1629144 AU from Jupiter
-    Pasiphae: 1551422 AU from Jupiter
+    Pasiphae: 0.1551422 AU from Jupiter
     Elara: 0.0782306 AU from Jupiter
     Himalia: 0.0761287 AU from Jupiter
     Amalthea: 0.00121091296 AU from Jupiter
@@ -99,20 +99,12 @@ Moons (might just be counted as plain weight, idk, add the orbiting around body 
     S/2015 (136472) 1 "MK2": 0.00014037633 AU from Makemake
 
 Dwarves:
-    (78799) 2002 XW93: 27.9–46.8 AU from Sun
     2014 UZ224 "DeeDee": 38-89.7 AU from Sun
-    (145451) 2005 RM43: 35-144 AU from Sun
     20000 Varuna: 40-45 AU from Sun
     229762 Gǃkúnǁʼhòmdímà: 37-108 AU from Sun
     (55637) 2002 UX25: 36-48 AU from Sun
-    (145452) 2005 RN43: 40-42 AU from Sun
-    (90568) 2004 GV9: 38-45 AU from Sun
-    (208996) 2003 AZ84: 32-46 AU from Sun
     28978 Ixion: 30-49 AU from Sun
-    (532037) 2013 FY27: 35-81 AU from Sun
     174567 Varda: 39-52 AU from Sun
-    (55565) 2002 AW197: 40-53 AU from Sun
-    (307261) 2002 MS4: 35-47 AU from Sun
     120347 Salacia: 37-46 AU from Sun
     Sedna: 76-937 AU from Sun
     Orcus: 30-48 AU from Sun

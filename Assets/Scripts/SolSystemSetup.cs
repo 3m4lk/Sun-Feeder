@@ -3,7 +3,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class SolSystemSetup : MonoBehaviour
 {
-    private OrbitManager orbManager => OrbitManager.instance;
+    public MainManager iManager;
 
     public string dataFile;
     public Transform refBody;
@@ -18,8 +18,6 @@ public class SolSystemSetup : MonoBehaviour
 
     [Space]
     public float defCBScale;
-    [Tooltip("distance from Sun to Earth; here, a multiplier")]
-    public float AstronomicalUnit;
     private void Update()
     {
         if (doSineTest)
@@ -43,11 +41,13 @@ public class SolSystemSetup : MonoBehaviour
         // 1 - true name (can make it "" to appear blank)
         // 2 - distance
         // 3 - mass
+        // 4 - orbit time
 
         string[] dataArray = Resources.Load<TextAsset>("cbData/" + dataFile).text.Replace(((char)13).ToString(), "").Split("\n");
-        //print(dataArray.Length);
 
-        orbManager.WipeBodies(dataArray.Length);// i genuinely have no clue why does this not work, will need to fix this ASAP
+        //print(iManager);
+
+        iManager.orbManager.WipeBodies(dataArray.Length);// i genuinely have no clue why does this not work, will need to fix this ASAP
 
         for (int i = 0; i < dataArray.Length; i++)
         {
@@ -61,24 +61,27 @@ public class SolSystemSetup : MonoBehaviour
 
             // Distance
             float randomPeriod = Random.Range(0f, 100f);
-            float randomAngle = ((randomPeriod / 100f) * 360f) * (Mathf.PI * 2f) / 360f; // yes this is all necessary, trust :prayingEmoji:
+            // yes this is all necessary, trust :prayingEmoji:
 
-            float sinOut = Mathf.Sin(Mathf.Repeat(randomAngle, Mathf.PI * 2f));
-            float cosOut = Mathf.Cos(Mathf.Repeat(randomAngle, Mathf.PI * 2f));
+            float sinOut = Mathf.Sin((float)Mathf.Repeat(randomPeriod / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
+            float cosOut = Mathf.Cos((float)Mathf.Repeat(randomPeriod / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
 
-            Vector3 newPos = new Vector3(sinOut, cosOut, 0) * float.Parse(currData[2]) * AstronomicalUnit;
+            Vector3 newPos = new Vector3(sinOut, cosOut, 0) * float.Parse(currData[2]) * iManager.gameManager.AstronomicalUnit;
 
             // Plugging it to the Orbit Manager
-            orbManager.bodies[i] = new cBody();
+            iManager.orbManager.bodies[i] = new cBody();
 
-            orbManager.bodies[i].name = currData[0];
-            orbManager.bodies[i].trueName = currData[1];
-            orbManager.bodies[i].orbitDistance = float.Parse(currData[2]);
-            orbManager.bodies[i].mass = float.Parse(currData[3]);
+            iManager.orbManager.bodies[i].name = currData[0];
+            iManager.orbManager.bodies[i].trueName = currData[1];
+            iManager.orbManager.bodies[i].orbitDistance = float.Parse(currData[2]);
+            iManager.orbManager.bodies[i].mass = float.Parse(currData[3]);
+            iManager.orbManager.bodies[i].orbitSpeed = float.Parse(currData[4]);
 
-            orbManager.bodies[i].orbitProgress = randomPeriod; // to align it with randomized celestial body placement
+            iManager.orbManager.bodies[i].orbitProgress = randomPeriod; // to align it with randomized celestial body placement
 
-            orbManager.bodies[i].orbitBody = refBody;
+            iManager.orbManager.bodies[i].orbitBody = refBody;
+
+            iManager.orbManager.bodies[i].bodyTransform = currentCB.transform;
 
             // Transforms, setting up & placing celestial bodies accordingly
             currentCB.transform.position = refBody.position + newPos;

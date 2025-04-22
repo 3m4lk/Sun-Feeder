@@ -1,0 +1,1 @@
+Satellite, Body I, distance, mass, orbitSpeed
