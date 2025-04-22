@@ -1,12 +1,26 @@
 using UnityEngine;
 
+[System.Serializable]
+public class satSetups
+{
+    public string dataFile;
+    public Transform orbitBody;
+
+    [Tooltip("is the orbit body going to be generated freshly too?")]
+    public bool useNewOrbitBody;
+    [Tooltip("True Name of a body these bodies will need to orbit around")]
+    public string newOrbitBodyName;
+}
 [ExecuteInEditMode]
 public class SolSystemSetup : MonoBehaviour
 {
     public MainManager iManager;
 
-    public string dataFile;
-    public Transform refBody;
+    public satSetups[] celestialBodiesSetup;
+
+    public Transform Sol;
+
+    //public string dataFile;
 
     public float test;
     public float output;
@@ -30,12 +44,19 @@ public class SolSystemSetup : MonoBehaviour
 
             output = sinOut;
 
-            refTest.position = refBody.position + new Vector3(sinOut, cosOut, 0) * testDist;
+            refTest.position = Sol.position + new Vector3(sinOut, cosOut, 0) * testDist;
         }
     }
     public void setup()
     {
         wipe();
+
+        int celBodiesLength = 0;
+
+        for (int i = 0; i < celestialBodiesSetup.Length; i++)
+        {
+            celBodiesLength += Resources.Load<TextAsset>("cbData/" + celestialBodiesSetup[i].dataFile).text.ToString().Split("\n").Length;
+        }
 
         // 0 - display name
         // 1 - true name (can make it "" to appear blank)
@@ -43,63 +64,92 @@ public class SolSystemSetup : MonoBehaviour
         // 3 - mass
         // 4 - orbit time
 
-        string[] dataArray = Resources.Load<TextAsset>("cbData/" + dataFile).text.Replace(((char)13).ToString(), "").Split("\n");
+        iManager.orbManager.WipeBodies(celBodiesLength);// i genuinely have no clue why does this not work, will need to fix this ASAP // nvm fixed it :3c
 
-        //print(iManager);
+        int totalIndex = 0;
 
-        iManager.orbManager.WipeBodies(dataArray.Length);// i genuinely have no clue why does this not work, will need to fix this ASAP
-
-        for (int i = 0; i < dataArray.Length; i++)
+        for (int i = 0; i < celestialBodiesSetup.Length; i++)
         {
-            string[] currData = dataArray[i].Split(", ");
+            Transform refBody = default;
 
-            GameObject currentCB = Instantiate(Resources.Load<GameObject>("CelestialBody"));
-            currentCB.transform.localScale = Vector3.one * defCBScale;
+            if (celestialBodiesSetup[i].useNewOrbitBody)
+            {
+                refBody = GameObject.Find(celestialBodiesSetup[i].newOrbitBodyName).transform;
+            } // find a new body; inefficient, but this is literally just gonna be internal code not included with the final build :3c (can't say the same about the SC... oops!)
+            else
+            {
+                refBody = celestialBodiesSetup[i].orbitBody;
+            } // use selected transform
 
-            // Name
-            currentCB.name = currData[0];
+            string[] dataArray = Resources.Load<TextAsset>("cbData/" + celestialBodiesSetup[i].dataFile).text.Replace(((char)13).ToString(), "").Split("\n");
 
-            // Distance
-            float randomPeriod = Random.Range(0f, 100f);
-            // yes this is all necessary, trust :prayingEmoji:
+            for (int ia = 0; ia < dataArray.Length; ia++)
+            {
+                string[] currData = dataArray[ia].Split(", ");
 
-            float sinOut = Mathf.Sin((float)Mathf.Repeat(randomPeriod / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
-            float cosOut = Mathf.Cos((float)Mathf.Repeat(randomPeriod / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
+                print("creating " + currData[0] + "...");
+                print(currData[4]);
 
-            Vector3 newPos = new Vector3(sinOut, cosOut, 0) * float.Parse(currData[2]) * iManager.gameManager.AstronomicalUnit;
+                GameObject currentCB = Instantiate(Resources.Load<GameObject>("CelestialBody"));
+                currentCB.transform.localScale = Vector3.one * defCBScale;
 
-            // Plugging it to the Orbit Manager
-            iManager.orbManager.bodies[i] = new cBody();
+                // Name
+                currentCB.name = currData[0];
+                print("name");
 
-            iManager.orbManager.bodies[i].name = currData[0];
-            iManager.orbManager.bodies[i].trueName = currData[1];
-            iManager.orbManager.bodies[i].orbitDistance = float.Parse(currData[2]);
-            iManager.orbManager.bodies[i].mass = float.Parse(currData[3]);
-            iManager.orbManager.bodies[i].orbitSpeed = float.Parse(currData[4]);
+                // Distance
+                float randomPeriod = Random.Range(0f, 100f);
+                // yes this is all necessary, trust :prayingEmoji:
 
-            iManager.orbManager.bodies[i].orbitProgress = randomPeriod; // to align it with randomized celestial body placement
+                float sinOut = Mathf.Sin((float)Mathf.Repeat(randomPeriod / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
+                float cosOut = Mathf.Cos((float)Mathf.Repeat(randomPeriod / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
 
-            iManager.orbManager.bodies[i].orbitBody = refBody;
+                Vector3 newPos = new Vector3(sinOut, cosOut, 0) * float.Parse(currData[2]) * iManager.gameManager.AstronomicalUnit;
 
-            iManager.orbManager.bodies[i].bodyTransform = currentCB.transform;
+                // Plugging it to the Orbit Manager
+                iManager.orbManager.bodies[totalIndex] = new cBody();
 
-            // Transforms, setting up & placing celestial bodies accordingly
-            currentCB.transform.position = refBody.position + newPos;
-            currentCB.transform.parent = refBody;
+                print("bodyName");
+                iManager.orbManager.bodies[totalIndex].name = currData[0];
+                print("trueName");
+                iManager.orbManager.bodies[totalIndex].trueName = currData[1];
+                print("orbitDistance");
+                iManager.orbManager.bodies[totalIndex].orbitDistance = float.Parse(currData[2]);
+                print("mass");
+                iManager.orbManager.bodies[totalIndex].mass = float.Parse(currData[3]);
+                print("orbitSpeed");
+                iManager.orbManager.bodies[totalIndex].orbitSpeed = float.Parse(currData[4]);
 
-            currentCB.name = currData[0];
+                print("orbitProgress");
+                iManager.orbManager.bodies[totalIndex].orbitProgress = randomPeriod; // to align it with randomized celestial body placement
+
+                print("orbitBody");
+                iManager.orbManager.bodies[totalIndex].orbitBody = refBody;
+
+                print("bodyTransform");
+                iManager.orbManager.bodies[totalIndex].bodyTransform = currentCB.transform;
+
+                // Transforms, setting up & placing celestial bodies accordingly
+                print("position");
+                currentCB.transform.position = refBody.position + newPos;
+                print("parent");
+                currentCB.transform.parent = Sol;
+
+                print("currently: " + totalIndex);
+                totalIndex++;
+            }
         }
-        print("Finished with " + dataArray.Length + " bodies added!");
+        print("Finished with " + celBodiesLength + " bodies added!");
     }
     void wipe()
     {
-        for (int i = refBody.childCount - 1; i > 0; i--)
+        for (int i = Sol.childCount - 1; i > 0; i--)
         {
-            DestroyImmediate(refBody.GetChild(i).gameObject);
+            DestroyImmediate(Sol.GetChild(i).gameObject);
         }
-        if (refBody.childCount != 0)
+        if (Sol.childCount != 0)
         {
-            DestroyImmediate(refBody.GetChild(0).gameObject);
+            DestroyImmediate(Sol.GetChild(0).gameObject);
         }
     }
 }
