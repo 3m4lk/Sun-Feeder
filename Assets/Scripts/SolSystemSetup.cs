@@ -3,6 +3,8 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class SolSystemSetup : MonoBehaviour
 {
+    private OrbitManager orbManager => OrbitManager.instance;
+
     public string dataFile;
     public Transform refBody;
 
@@ -16,7 +18,8 @@ public class SolSystemSetup : MonoBehaviour
 
     [Space]
     public float defCBScale;
-    public float distMult;
+    [Tooltip("distance from Sun to Earth; here, a multiplier")]
+    public float AstronomicalUnit;
     private void Update()
     {
         if (doSineTest)
@@ -36,9 +39,15 @@ public class SolSystemSetup : MonoBehaviour
     {
         wipe();
 
-        // name, distance, true name (optional)
+        // 0 - display name
+        // 1 - true name (can make it "" to appear blank)
+        // 2 - distance
+        // 3 - mass
 
         string[] dataArray = Resources.Load<TextAsset>("cbData/" + dataFile).text.Replace(((char)13).ToString(), "").Split("\n");
+        //print(dataArray.Length);
+
+        orbManager.WipeBodies(dataArray.Length);// i genuinely have no clue why does this not work, will need to fix this ASAP
 
         for (int i = 0; i < dataArray.Length; i++)
         {
@@ -51,21 +60,31 @@ public class SolSystemSetup : MonoBehaviour
             currentCB.name = currData[0];
 
             // Distance
-            float randomAngle = Random.Range(0f, 360f) * (Mathf.PI * 2f) / 360f;
+            float randomPeriod = Random.Range(0f, 100f);
+            float randomAngle = ((randomPeriod / 100f) * 360f) * (Mathf.PI * 2f) / 360f; // yes this is all necessary, trust :prayingEmoji:
 
             float sinOut = Mathf.Sin(Mathf.Repeat(randomAngle, Mathf.PI * 2f));
             float cosOut = Mathf.Cos(Mathf.Repeat(randomAngle, Mathf.PI * 2f));
 
-            Vector3 newPos = new Vector3(sinOut, cosOut, 0) * float.Parse(currData[1]) * distMult;
+            Vector3 newPos = new Vector3(sinOut, cosOut, 0) * float.Parse(currData[2]) * AstronomicalUnit;
 
+            // Plugging it to the Orbit Manager
+            orbManager.bodies[i] = new cBody();
+
+            orbManager.bodies[i].name = currData[0];
+            orbManager.bodies[i].trueName = currData[1];
+            orbManager.bodies[i].orbitDistance = float.Parse(currData[2]);
+            orbManager.bodies[i].mass = float.Parse(currData[3]);
+
+            orbManager.bodies[i].orbitProgress = randomPeriod; // to align it with randomized celestial body placement
+
+            orbManager.bodies[i].orbitBody = refBody;
+
+            // Transforms, setting up & placing celestial bodies accordingly
             currentCB.transform.position = refBody.position + newPos;
             currentCB.transform.parent = refBody;
 
-            // True Name (if appliccable)
-            if (currData.Length > 2)
-            {
-                currentCB.name += " \"" + currData[2] + "\"";
-            }
+            currentCB.name = currData[0];
         }
         print("Finished with " + dataArray.Length + " bodies added!");
     }
