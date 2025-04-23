@@ -33,10 +33,10 @@ public class OrbitManager : MonoBehaviour
     {
         for (int i = 0; i < bodies.Length; i++)
         {
-            bodies[i].orbitProgress = Mathf.Repeat(bodies[i].orbitProgress + (1f / bodies[i].orbitSpeed) * Time.fixedDeltaTime * iManager.gameManager.gameSpeed, 100f);
+            bodies[i].orbitProgress = Mathf.Repeat(bodies[i].orbitProgress + (1f / bodies[i].orbitSpeed) * Time.fixedDeltaTime * iManager.gameManager.gameSpeed * 100f, 100f);
 
             float sinOut = Mathf.Sin((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
-            float cosOut = Mathf.Cos((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
+            float cosOut = Mathf.Cos((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f)); // not gonna simplify these by purging 100s and changing Mathf.Repeat to 1f - for precision and visual clarity reasons
 
             bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * iManager.gameManager.AstronomicalUnit;
         }
