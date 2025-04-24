@@ -48,3 +48,28 @@ public class OrbitManagerButton : Editor
         }
     }
 }
+[CustomEditor(typeof(quickVisSetupTool))]
+public class quickVisSetupToolButton : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        quickVisSetupTool qVT = (quickVisSetupTool)target;
+        base.OnInspectorGUI();
+        if (GUILayout.Button("Setup Celestial Body Visuals"))
+        {
+            qVT.setupVisuals();
+        }
+        if (GUILayout.Button("Find Farthest Body"))
+        {
+            qVT.findFarthest();
+        }
+        if (GUILayout.Button("Find Closest Body"))
+        {
+            qVT.findClosest();
+        }
+        if (GUILayout.Button("Find All Bodies Over Distance"))
+        {
+            qVT.amountOfAllUnderDistance();
+        }
+    }
+}

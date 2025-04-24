@@ -12,6 +12,6 @@ public class MainManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        print("instanced!");
+        //print("instanced!");
     }
 }

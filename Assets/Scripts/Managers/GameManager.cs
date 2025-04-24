@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public float AstronomicalUnit;
     private void Awake()
     {
-        Application.targetFrameRate = 45;
+        Application.targetFrameRate = 30;
     }
     private void Update()
     {
