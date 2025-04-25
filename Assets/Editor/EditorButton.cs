@@ -73,3 +73,16 @@ public class quickVisSetupToolButton : Editor
         }
     }
 }
+[CustomEditor(typeof(CameraManager))]
+public class cameraManagerButton : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        CameraManager cManager = (CameraManager)target;
+        base.OnInspectorGUI();
+        if (GUILayout.Button("Change Anchor"))
+        {
+            cManager.changeAnchor(cManager.newAnchor);
+        }
+    }
+}

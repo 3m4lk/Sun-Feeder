@@ -48,7 +48,7 @@ public class NewsManager : MonoBehaviour
 
         RectTransform newPanel = Instantiate(newsPanel).GetComponent<RectTransform>();
 
-        newPanel.GetComponent<TMP_Text>().text = news + " // ";
+        newPanel.GetComponent<TMP_Text>().text = " " + news + " // ";
 
         newPanel.parent = contentTransform;
     }

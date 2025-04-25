@@ -4,12 +4,14 @@ public class CameraManager : MonoBehaviour
 {
     public Camera ownCam;
 
+    public Transform camRotTarget;
     public Transform camAnchor;
     public Transform camTransform;
 
-    public Transform travellableBodies;
+    public Transform[] travellableBodies;
 
     public bool isRotating;
+    public float rotationSmoothSpeed;
 
     public float scrollSensitivity;
 
@@ -18,7 +20,25 @@ public class CameraManager : MonoBehaviour
     public float actualCamZoomProgress;
     public float camZoomSpeed;
 
+    public Transform currentAnchor;
+    public Vector3 previousPos;
+    public float moveProgress;
+    public float moveTime;
+
+    public Vector3 temp;
+    public float temp2;
+    public float temp3;
+
+    public float mouseSensitivity;
+
     public AnimationCurve cameraRotationCurve; // it's literally just the x rotation on certain points in the progress
+    public AnimationCurve cameraMoveCurve;
+    public AnimationCurve cameraFOVCurve;
+    public AnimationCurve moveStopperCurve;
+
+    public float maxCameraFOV;
+
+    public float fovTest;
 
     // offset 0: right in front of the body (1.5f * radius * ((scaleX + scaleY + scaleZ) / 3f)) // or some other mult different than 1.5f
     // offset 1: kinda far above the body
@@ -26,22 +46,18 @@ public class CameraManager : MonoBehaviour
 
     // camera anchor goes th the clicked body over like 0.6f seconds with animationCurve smoothing
 
-    // zooming should also change FOV
+    // zooming should also change FOV]
+
+    private float baseBodyDistance;
+
+    [Space]
+    public Transform newAnchor;
+    private void Awake()
+    {
+        changeAnchor(GameObject.Find("Sol").transform);
+    }
     private void Update()
     {
-        // left click - interact with stuff (no camera move, redundant, moving between bodies will only be possible for regular planets and certain dwarves)
-        // right click - rotate (on Y only, smoothed)
-        // scroll - zoom
-
-        //print(Input.mouseScrollDelta.y);
-        if (Input.mouseScrollDelta.y != 0)
-        {
-            print("scrollage");
-            camZoomProgress = Mathf.Clamp(camZoomProgress + (float)Input.mouseScrollDelta.y * scrollSensitivity, 0f, 1f);
-        }
-        actualCamZoomProgress = Mathf.Lerp(actualCamZoomProgress, camZoomProgress, camZoomSpeed * Time.deltaTime);
-        // Camera Zooming
-
         for (int i = 0; i < 3; i++)
         {
             if (Input.GetMouseButtonDown(i))
@@ -51,6 +67,7 @@ public class CameraManager : MonoBehaviour
                     case 0:
                         break; // interaction
                     case 1:
+                        isRotating = true;
                         break; // rotate
                     case 2:
                         break; // slow down time one level?
@@ -63,11 +80,58 @@ public class CameraManager : MonoBehaviour
                     case 0:
                         break; // interaction
                     case 1:
+                        isRotating = false;
                         break; // rotate
                     case 2:
                         break; // slow down time one level?
                 }
             } // click release
         }
+
+        moveProgress = Mathf.Min(moveProgress + Time.deltaTime, moveTime);
+        camAnchor.position = Vector3.Lerp(previousPos, currentAnchor.position, cameraMoveCurve.Evaluate(moveProgress / moveTime));
+
+
+        temp3 = cameraMoveCurve.Evaluate(moveProgress / moveTime);
+        temp2 = moveProgress / moveTime;
+        temp = Vector3.Lerp(previousPos, currentAnchor.position, cameraMoveCurve.Evaluate(moveProgress / moveTime));
+
+        // left click - interact with stuff (no camera move, redundant, moving between bodies will only be possible for regular planets and certain dwarves)
+        // right click - rotate (on Y only, smoothed)
+        // scroll - zoom
+
+        // Camera Zooming
+        if (Input.mouseScrollDelta.y != 0)
+        {
+            print("scrollage");
+            camZoomProgress = Mathf.Clamp(camZoomProgress - (float)Input.mouseScrollDelta.y * scrollSensitivity, 0f, 1f);
+        }
+        actualCamZoomProgress = Mathf.Lerp(actualCamZoomProgress, camZoomProgress, camZoomSpeed * Time.deltaTime);
+        float zoomProgForMove = Mathf.Max(actualCamZoomProgress - moveStopperCurve.Evaluate(actualCamZoomProgress), 0f);
+
+        camTransform.localPosition = Vector3.Lerp(Vector3.up * baseBodyDistance * 2.5f, Vector3.forward * baseBodyDistance * 3.5f, zoomProgForMove);
+        camTransform.localRotation = Quaternion.Euler(cameraRotationCurve.Evaluate(actualCamZoomProgress) * 90f + 90f, 0, 0);
+        ownCam.fieldOfView = cameraFOVCurve.Evaluate(actualCamZoomProgress) * maxCameraFOV;
+        fovTest = cameraFOVCurve.Evaluate(actualCamZoomProgress) * maxCameraFOV;
+
+        // Camera Rotation
+        if (isRotating)
+        {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            camRotTarget.Rotate(camAnchor.forward * mouseX);
+        }
+        camAnchor.rotation = Quaternion.Lerp(camAnchor.rotation, camRotTarget.rotation, rotationSmoothSpeed * Time.deltaTime);
+    }
+    public void changeAnchor(Transform anchor)
+    {
+        previousPos = camAnchor.position;
+        currentAnchor = anchor;
+        moveProgress = 0;
+
+        baseBodyDistance = (anchor.lossyScale.x + anchor.lossyScale.y + anchor.lossyScale.z) / 3f * anchor.GetComponent<CircleCollider2D>().radius;
+
+        /*GameObject temptst = new GameObject("");
+        temptst.transform.position = anchor.position + anchor.forward * baseBodyDistance;//*/
+        // reset body UI (or something idk)
     }
 }

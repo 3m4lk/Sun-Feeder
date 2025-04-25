@@ -18,7 +18,7 @@ TagManager:
   - BodyAbsorber
   - BodyRocky
   - dragSurface
-  - 
+  - GravShipMinigame
   - 
   - 
   - 
@@ -54,3 +54,4 @@ TagManager:
   - lightGroup1
   - lightGroup2
   - lightGroup3
+  - GravShipMinigame
