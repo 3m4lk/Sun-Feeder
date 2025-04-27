@@ -7,6 +7,8 @@ public class MainManager : MonoBehaviour
 
     public OrbitManager orbManager;
     public GameManager gameManager;
+    public CameraManager camManager;
+    public MinigameManager minigameManager;
 
     [ExecuteInEditMode]
     private void Awake()

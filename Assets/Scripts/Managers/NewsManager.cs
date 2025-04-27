@@ -18,7 +18,7 @@ public class NewsManager : MonoBehaviour
     {
         if (Application.isPlaying)
         {
-            print("READY");
+            //print("READY");
             for (int i = 0; i < newsAmount; i++)
             {
                 newNews();

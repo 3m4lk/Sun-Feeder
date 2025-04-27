@@ -1,9 +1,9 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
     public Camera ownCam;
+    public Camera minigameCamera;
 
     public Transform camRotTarget;
     public Transform camAnchor;

@@ -29,6 +29,9 @@ public class OrbitManager : MonoBehaviour
     public cBody[] bodies;
 
     public bool recalcLive;
+
+    [Range(0f, 1f)]
+    public float asteroidBeltRemaining;
     private void FixedUpdate()
     {
         for (int i = 0; i < bodies.Length; i++)
@@ -44,7 +47,7 @@ public class OrbitManager : MonoBehaviour
     [ExecuteInEditMode]
     private void Update()
     {
-        if (recalcLive)
+        if (Application.isEditor && recalcLive)
         {
             recalcPositions();
         }

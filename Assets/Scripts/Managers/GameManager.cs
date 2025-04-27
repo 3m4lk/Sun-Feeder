@@ -14,6 +14,16 @@ public class GameManager : MonoBehaviour
 
     [Tooltip("distance from Sun to Earth; here, a multiplier")]
     public float AstronomicalUnit;
+
+    [Tooltip("in years")]
+    public float totalPlaytime;
+    public float playtimePercentage;
+
+    public Transform canvasTransform;
+
+    [Space]
+    [SerializeField]
+    private int money;
     private void Awake()
     {
         Application.targetFrameRate = 30;
@@ -44,5 +54,14 @@ public class GameManager : MonoBehaviour
                 gameSpeed = 16f;
                 break;
         }
+
+        totalPlaytime += gameSpeed * Time.deltaTime;
+        playtimePercentage = totalPlaytime / 5040f;
+    }
+    public void addCash(int amount)
+    {
+        money += amount;
+        // add some cosmetic scaling or something
+        // also update cash text display
     }
 }
