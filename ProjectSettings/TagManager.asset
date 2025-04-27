@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - MinigameHitter
+  - MinigameAttractor
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - BodyRocky
   - dragSurface
   - GravShipMinigame
-  - 
-  - 
+  - GSMAsteroid
+  - GSMBase
   - 
   - 
   - 

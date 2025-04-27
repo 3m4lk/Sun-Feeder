@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
@@ -22,6 +23,8 @@ public class CameraManager : MonoBehaviour
 
     public Transform currentAnchor;
     public Vector3 previousPos;
+    //public Vector3 currentPos; // read only
+    //public Vector3 targetPos; // read only
     public float moveProgress;
     public float moveTime;
 
@@ -35,6 +38,7 @@ public class CameraManager : MonoBehaviour
     public AnimationCurve cameraMoveCurve;
     public AnimationCurve cameraFOVCurve;
     public AnimationCurve moveStopperCurve;
+    public AnimationCurve bodyDistanceCurve;
 
     public float maxCameraFOV;
 
@@ -48,13 +52,17 @@ public class CameraManager : MonoBehaviour
 
     // zooming should also change FOV]
 
+    private float oldBaseBodyDistance;
     private float baseBodyDistance;
+    private float outputBaseBodyDistance;
 
     [Space]
     public Transform newAnchor;
     private void Awake()
     {
-        changeAnchor(GameObject.Find("Sol").transform);
+        string initialAnchor = "Sol";
+        baseBodyDistance = (GameObject.Find(initialAnchor).transform.lossyScale.x + GameObject.Find(initialAnchor).transform.lossyScale.y + GameObject.Find(initialAnchor).transform.lossyScale.z) / 3f * GameObject.Find(initialAnchor).transform.GetComponent<CircleCollider2D>().radius;
+        changeAnchor(GameObject.Find(initialAnchor).transform);
     }
     private void Update()
     {
@@ -91,6 +99,9 @@ public class CameraManager : MonoBehaviour
         moveProgress = Mathf.Min(moveProgress + Time.deltaTime, moveTime);
         camAnchor.position = Vector3.Lerp(previousPos, currentAnchor.position, cameraMoveCurve.Evaluate(moveProgress / moveTime));
 
+        //currentPos = camAnchor.position;
+
+        outputBaseBodyDistance = Mathf.Lerp(oldBaseBodyDistance, baseBodyDistance, bodyDistanceCurve.Evaluate(moveProgress / moveTime));
 
         temp3 = cameraMoveCurve.Evaluate(moveProgress / moveTime);
         temp2 = moveProgress / moveTime;
@@ -109,7 +120,7 @@ public class CameraManager : MonoBehaviour
         actualCamZoomProgress = Mathf.Lerp(actualCamZoomProgress, camZoomProgress, camZoomSpeed * Time.deltaTime);
         float zoomProgForMove = Mathf.Max(actualCamZoomProgress - moveStopperCurve.Evaluate(actualCamZoomProgress), 0f);
 
-        camTransform.localPosition = Vector3.Lerp(Vector3.up * baseBodyDistance * 2.5f, Vector3.forward * baseBodyDistance * 3.5f, zoomProgForMove);
+        camTransform.localPosition = Vector3.Lerp(Vector3.up * outputBaseBodyDistance * 2.5f, Vector3.forward * outputBaseBodyDistance * 3.5f, zoomProgForMove);
         camTransform.localRotation = Quaternion.Euler(cameraRotationCurve.Evaluate(actualCamZoomProgress) * 90f + 90f, 0, 0);
         ownCam.fieldOfView = cameraFOVCurve.Evaluate(actualCamZoomProgress) * maxCameraFOV;
         fovTest = cameraFOVCurve.Evaluate(actualCamZoomProgress) * maxCameraFOV;
@@ -124,14 +135,20 @@ public class CameraManager : MonoBehaviour
     }
     public void changeAnchor(Transform anchor)
     {
-        previousPos = camAnchor.position;
-        currentAnchor = anchor;
-        moveProgress = 0;
+        if (anchor != currentAnchor)
+        {
+            previousPos = camAnchor.position;
+            //targetPos = anchor.position;
+            currentAnchor = anchor;
+            moveProgress = 0;
 
-        baseBodyDistance = (anchor.lossyScale.x + anchor.lossyScale.y + anchor.lossyScale.z) / 3f * anchor.GetComponent<CircleCollider2D>().radius;
+            oldBaseBodyDistance = baseBodyDistance;
+            baseBodyDistance = (anchor.lossyScale.x + anchor.lossyScale.y + anchor.lossyScale.z) / 3f * anchor.GetComponent<CircleCollider2D>().radius;
+            outputBaseBodyDistance = oldBaseBodyDistance;
 
-        /*GameObject temptst = new GameObject("");
-        temptst.transform.position = anchor.position + anchor.forward * baseBodyDistance;//*/
-        // reset body UI (or something idk)
+            /*GameObject temptst = new GameObject("");
+            temptst.transform.position = anchor.position + anchor.forward * baseBodyDistance;//*/
+            // reset body UI (or something idk)
+        }
     }
 }
