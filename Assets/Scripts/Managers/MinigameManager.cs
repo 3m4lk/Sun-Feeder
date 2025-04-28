@@ -85,6 +85,15 @@ public class MinigameManager : MonoBehaviour
     private float windowProgress;
     public bool windowState; // true - opening; false - closing
 
+    public Transform windowTransform;
+    [Tooltip("0 - Down;\n1 - Up")]
+    public Transform[] windowPositions;
+
+    public float firstTimeCutsceneTime;
+    private float firstTimeCutsceneProgress;
+
+    public RectTransform maskTransform;
+
     // Asteroid types:
     // - Regular = 100
     // - Silver = 1,000 (Palladium)
@@ -239,6 +248,25 @@ public class MinigameManager : MonoBehaviour
             //shipSpinBody.Rotate(Mathf.Max(shipRb.linearVelocity.magnitude * shipSpinSpeed * shipSpeed, shipSpinMinimumSpeed) * Time.deltaTime * Vector3.up);
         }
         shipSpinBody.Rotate(Mathf.Max(shipRb.linearVelocity.magnitude * shipSpinSpeed * shipSpeed, shipSpinMinimumSpeed) * Time.deltaTime * Vector3.up);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            windowState = !windowState;
+        }
+
+        if (windowState)
+        {
+            windowProgress = Mathf.Min(windowProgress + Time.deltaTime, windowToggleTime);
+        } // window goes up
+        else
+        {
+            windowProgress = Mathf.Max(windowProgress - Time.deltaTime, 0);
+        } // window goes down
+
+        windowTransform.gameObject.SetActive(windowProgress != 0);
+        // stop minigame asteroids from spawning at that moment too
+
+        windowTransform.position = Vector3.Lerp(windowPositions[0].position, windowPositions[1].position, windowCurve.Evaluate(windowProgress / windowToggleTime));
     }
     public void hit(float stunMult = 1f)
     {

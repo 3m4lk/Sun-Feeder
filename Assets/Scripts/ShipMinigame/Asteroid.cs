@@ -76,7 +76,7 @@ public class Asteroid : MonoBehaviour
             //ship.mManager.gameManager.canvasTransform
 
             RectTransform cashText = Instantiate(Resources.Load<GameObject>("cashText")).GetComponent<RectTransform>();
-            cashText.parent = ship.mManager.gameManager.canvasTransform;
+            cashText.SetParent(ship.mManager.minigameManager.maskTransform, false);
             cashText.localPosition = uiThing.getScreenPoint(ship.mManager.camManager.minigameCamera, transform.position); // = ship.mManager.camManager.minigameCamera.ScreenToWorldPoint(transform.position);
             cashText.GetComponent<MiningTextFloatUp>().amount = cashReward;
             cashText.gameObject.SetActive(true);

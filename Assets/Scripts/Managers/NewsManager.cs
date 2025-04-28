@@ -50,7 +50,7 @@ public class NewsManager : MonoBehaviour
 
         newPanel.GetComponent<TMP_Text>().text = " " + news + " // ";
 
-        newPanel.parent = contentTransform;
+        newPanel.SetParent(contentTransform, false);
     }
     public void editSetup()
     {

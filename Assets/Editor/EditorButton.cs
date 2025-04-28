@@ -80,6 +80,13 @@ public class cameraManagerButton : Editor
     {
         CameraManager cManager = (CameraManager)target;
         base.OnInspectorGUI();
+        if (cManager.testerage)
+        {
+            if (GUILayout.Button("Boo!"))
+            {
+                Debug.Log("yada yada, ze~");
+            }
+        }
         if (GUILayout.Button("Change Anchor"))
         {
             cManager.changeAnchor(cManager.newAnchor);

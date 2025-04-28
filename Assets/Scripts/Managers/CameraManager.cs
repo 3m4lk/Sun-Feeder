@@ -42,6 +42,8 @@ public class CameraManager : MonoBehaviour
 
     public float maxCameraFOV;
 
+    public bool testerage;
+
     public float fovTest;
 
     // offset 0: right in front of the body (1.5f * radius * ((scaleX + scaleY + scaleZ) / 3f)) // or some other mult different than 1.5f

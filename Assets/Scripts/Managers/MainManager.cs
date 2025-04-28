@@ -9,6 +9,7 @@ public class MainManager : MonoBehaviour
     public GameManager gameManager;
     public CameraManager camManager;
     public MinigameManager minigameManager;
+    public ResearchManager researchManager;
 
     [ExecuteInEditMode]
     private void Awake()
