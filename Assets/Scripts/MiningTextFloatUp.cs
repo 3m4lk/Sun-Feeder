@@ -60,7 +60,7 @@ public class MiningTextFloatUp : MonoBehaviour
             }
             else
             {
-                ownText.text = textFinal;
+                ownText.text = textFinal.Replace("173", "<color=#d6c3a0>1</color><color=#670000>7</color><color=#00fc01>3</color>").Replace("31337", "<color=#00FF00>31337</color>").Replace("1337", "<color=#00FF00>1337</color>");
             }
         }
         currentHeight += riseSpeed * Time.fixedDeltaTime;

@@ -1,4 +1,3 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -43,7 +42,7 @@ public class MinigameManager : MonoBehaviour
 
     // farther areas give more asteroids with new ones of higher quality sprinkled here and there
 
-    // There are talks about a new better mining spot somewhere in the Asteroid Belt, which went unnoticed by prospectors for years. Discoverers mention larger amounts of asteroids, as well as higher densities of <uncommon> and <rare>... But they won't hand out that information for free.
+    // There are talks about a new mining spot somewhere in the Asteroid Belt, which went unnoticed by prospectors for years. Discoverers mention larger amount of asteroids, as well as higher densities of <uncommon> and <rare>... But they won't hand out that information for free.
 
     public float shipSpinMinimumSpeed;
 

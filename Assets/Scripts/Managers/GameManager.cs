@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     [Space]
     [SerializeField]
-    private int money;
+    public int money;
     private void Awake()
     {
         Application.targetFrameRate = 30;
@@ -61,6 +61,14 @@ public class GameManager : MonoBehaviour
     public void addCash(int amount)
     {
         money += amount;
+        if (amount < 0)
+        {
+            print("negative");
+        }
+        else
+        {
+            print("positive");
+        }
         // add some cosmetic scaling or something
         // also update cash text display
     }

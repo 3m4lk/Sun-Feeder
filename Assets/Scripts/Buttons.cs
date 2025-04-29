@@ -5,7 +5,16 @@ public class Buttons : MonoBehaviour
     public MainManager mManager;
 
     [Space]
+    [Tooltip("0 - Research;\n1 - ")]
+    public int buttonMode;
+
+    [Space]
     public int researchIndex;
+
+    [Space]
+    public AnimationCurve introScaleCurve;
+    public float introTime; // this is going to be variable, and multiplied by the game speed (base low-tier research time should be like 8 years or so)
+    public float introProgress;
 
     [Space]
     public AnimationCurve hoverScaleCurve;
@@ -46,11 +55,11 @@ public class Buttons : MonoBehaviour
     private float idleScaleDirection;
     private float idleRotationDirection;
 
-    public bool falseTest;
-
     public bool locked;
     private void Awake()
     {
+        introProgress = 0;
+
         researchProgress = researchTime;
 
         positiveProgress = clickTime;
@@ -86,12 +95,12 @@ public class Buttons : MonoBehaviour
 
     public void researchEnter()
     {
-        if (locked) return;
+        //if (locked) return;
         mManager.researchManager.changeText(researchIndex);
     }
     public void researchExit()
     {
-        if (locked) return;
+        //if (locked) return;
         mManager.researchManager.changeText();
     }
     public void onExit()
@@ -103,32 +112,37 @@ public class Buttons : MonoBehaviour
     public void onDown()
     {
         if (locked) return;
-        //isHovering = false;
         isDown = true;
     }
     public void onClick()
     {
         if (locked) return;
-        //isHovering = false;
         isDown = false;
 
-        if (falseTest)
-        {
-            negativeProgress = 0;
-        }
-        else
+        if (mManager.researchManager.buyResearch(researchIndex))
         {
             positiveProgress = 0;
             researchProgress = 0;
             locked = true;
             isHovering = false;
+            transform.GetChild(2).gameObject.SetActive(true);
+            //mManager.researchManager.changeText();
+            researchEnter();
+        }
+        else
+        {
+            negativeProgress = 0;
         }
     }
     private void Update()
     {
+        // Intro
+        introProgress = Mathf.Min(introProgress + Time.deltaTime, introTime);
+        transform.localScale = Vector3.one * introScaleCurve.Evaluate(introProgress / introTime);
+
         // Research rotation speed multiplier
 
-        researchProgress = Mathf.Min(researchProgress + Time.deltaTime * mManager.gameManager.gameSpeed, researchTime);
+        researchProgress = mManager.researchManager.research[researchIndex].researchProgress;
 
         float researchRotSpeedMult = researchRotationCurve.Evaluate(researchProgress / researchTime);
 
@@ -136,7 +150,7 @@ public class Buttons : MonoBehaviour
         idleRotationProgress = Mathf.Repeat(idleRotationProgress + Time.deltaTime * idleRotationDirection * researchRotSpeedMult, idleAnimationTime); // added research mult
         idleScaleProgress = Mathf.Repeat(idleScaleProgress + Time.deltaTime * idleScaleSpeedMult * idleScaleDirection * researchRotSpeedMult, idleAnimationTime);
 
-        transform.localScale = Vector2.one * (idleScaleCurve.Evaluate(idleScaleProgress / idleAnimationTime));
+        transform.localScale *= idleScaleCurve.Evaluate(idleScaleProgress / idleAnimationTime);
         transform.localRotation = Quaternion.Euler(0, 0, idleRotationCurve.Evaluate(idleRotationProgress / idleAnimationTime));
 
         // Hovering over

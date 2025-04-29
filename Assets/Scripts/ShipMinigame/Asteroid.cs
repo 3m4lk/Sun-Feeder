@@ -28,7 +28,7 @@ public class Asteroid : MonoBehaviour
     {
         Destroy(gameObject, lifetime);
 
-        uiThing = GameObject.Find("WorldspaceToScreenThing").GetComponent<uiMoverThingForOneSingularTest>();
+        uiThing = GameObject.Find("worldspaceToScreenThing").GetComponent<uiMoverThingForOneSingularTest>();
         ship = GameObject.Find("GravShipGO").GetComponent<ShipCollision>();
         randomScale = Random.Range(0.6f, 2f);
         transform.localScale *= randomScale;

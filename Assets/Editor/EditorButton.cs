@@ -93,3 +93,30 @@ public class cameraManagerButton : Editor
         }
     }
 }
+[CustomEditor(typeof(ResearchManager))]
+public class researchManagerButton : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        ResearchManager rManager = (ResearchManager)target;
+        base.OnInspectorGUI();
+        if (rManager.devMode)
+        {
+            if (GUILayout.Button("Set All Durations To 1"))
+            {
+                for (int i = 0; i < rManager.research.Length; i++)
+                {
+                    rManager.research[i].duration = 1;
+                }
+            }
+            if (GUILayout.Button("Set All Curves To First One's"))
+            {
+                for (int i = 0; i < rManager.research.Length; i++)
+                {
+                    rManager.research[i].priceProgressionCurve = rManager.research[0].priceProgressionCurve;
+                    rManager.research[i].durationProgressionCurve = rManager.research[0].durationProgressionCurve;
+                }
+            }
+        }
+    }
+}
