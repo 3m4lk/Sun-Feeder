@@ -46,6 +46,13 @@ public class OrbitManagerButton : Editor
         {
             orbitManager.resetPositions();
         }
+        if (GUILayout.Button("Set All Celestial Bodies To Alive"))
+        {
+            for (int i = 0; i < orbitManager.bodies.Length; i++)
+            {
+                orbitManager.bodies[i].isAlive = true;
+            }
+        }
     }
 }
 [CustomEditor(typeof(quickVisSetupTool))]

@@ -34,8 +34,7 @@ public class CommanderManager : MonoBehaviour
                 commanderLifetime = Mathf.Max(commanderLifetime - Time.fixedDeltaTime * mManager.gameManager.gameSpeed, 0);
                 if (commanderLifetime == 0)
                 {
-                    commanderMournProgress = commanderMournTime;
-                    assignNewCommander = true;
+                    killCommander();
                 }
             }
             commanderText.text = "Commander: " + commanderName + "\nYear ";
@@ -46,6 +45,11 @@ public class CommanderManager : MonoBehaviour
             commanderText.text = "<color=#800000>Commander: " + commanderName + " (*)</color>\nYear ";
         }
     }
+    public void killCommander()
+    {
+        commanderMournProgress = commanderMournTime;
+        assignNewCommander = true;
+    }
     public void assignCommander()
     {
         assignNewCommander = false;
@@ -55,6 +59,7 @@ public class CommanderManager : MonoBehaviour
     public void hurlEarthScenario()
     {
         print("<color=red>Are you insane!?</color>");
+        killCommander();
         // kill current Commander
     }
 }

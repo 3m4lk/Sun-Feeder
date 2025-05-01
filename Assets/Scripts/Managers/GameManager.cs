@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -24,8 +25,11 @@ public class GameManager : MonoBehaviour
     [Space]
     [SerializeField]
     public int money;
+    public TMP_Text cashText;
     private void Awake()
     {
+        //print(QualitySettings.vSyncCount);
+        QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 30;
     }
     private void Update()
@@ -69,6 +73,7 @@ public class GameManager : MonoBehaviour
         {
             print("positive");
         }
+        cashText.text = money + "mk"; // do some nice formatting
         // add some cosmetic scaling or something
         // also update cash text display
     }

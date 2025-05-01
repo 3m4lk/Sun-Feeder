@@ -145,6 +145,10 @@ public class Buttons : MonoBehaviour
         researchProgress = mManager.researchManager.research[researchIndex].researchProgress;
 
         float researchRotSpeedMult = researchRotationCurve.Evaluate(researchProgress / researchTime);
+        if (researchTime == 0)
+        {
+            researchRotSpeedMult = 1f;
+        }
 
         // Idle
         idleRotationProgress = Mathf.Repeat(idleRotationProgress + Time.deltaTime * idleRotationDirection * researchRotSpeedMult, idleAnimationTime); // added research mult

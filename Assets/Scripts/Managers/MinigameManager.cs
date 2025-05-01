@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 [System.Serializable]
@@ -62,9 +63,6 @@ public class MinigameManager : MonoBehaviour
     public int currentArea;
     public Vector2 areaMultRange;
 
-    public float asteroidFrenzyTime;
-    public float asteroidFrenzyCooldown;
-
     public Vector2 playtimeMultRange;
 
     public Vector2 remainingABMult;
@@ -82,7 +80,8 @@ public class MinigameManager : MonoBehaviour
     public AnimationCurve windowCurve;
     public float windowToggleTime;
     private float windowProgress;
-    public bool windowState; // true - opening; false - closing
+    //public bool windowState; // true - opening; false - closing
+    public float windowDirection = -1f;
 
     public Transform windowTransform;
     [Tooltip("0 - Down;\n1 - Up")]
@@ -92,6 +91,22 @@ public class MinigameManager : MonoBehaviour
     private float firstTimeCutsceneProgress;
 
     public RectTransform maskTransform;
+
+    [Space]
+    public AnimationCurve asteroidCallerCooldownCurve;
+    public AnimationCurve asteroidCallerScaleCurve;
+    public float aCallerCooldown; // ticks down; how long will Player have to wait until another Asteroid Caller is available
+    public float aCallerDuration;
+    public float aCallerProgress; // ticks down; how long will Asteroid Caller persist
+    public float aCallerSpeedMult = 0.075f;
+
+    private float aCallerDurForFill;
+
+    public Transform aCallerTransform;
+    public Image aCallerIcon;
+    public GameObject aCallerGO;
+
+    private bool acUnlocked;
 
     // Asteroid types:
     // - Regular = 100
@@ -140,6 +155,18 @@ public class MinigameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Asteroid Call
+        if (acUnlocked)
+        {
+            aCallerProgress = Mathf.Max(aCallerProgress - Time.deltaTime, 0f);
+            if (aCallerProgress == 0)
+            {
+                aCallerCooldown = Mathf.Max(aCallerCooldown - Time.deltaTime, 0f);
+            }
+            aCallerTransform.localScale = Vector3.one * asteroidCallerScaleCurve.Evaluate(aCallerCooldown / aCallerDurForFill);
+            aCallerIcon.fillAmount = 1f - (aCallerCooldown / aCallerDurForFill);
+        }
+
         // GravShip
         bool oneTimeForBump = stunTimer != 0;
         stunTimer = Mathf.Max(stunTimer - Time.fixedDeltaTime, 0f);
@@ -147,7 +174,10 @@ public class MinigameManager : MonoBehaviour
 
         if (stunTimer == 0)
         {
-            shipRb.AddForce(movementInput * shipSpeed * Time.fixedDeltaTime);
+            if (windowProgress != 0)
+            {
+                shipRb.AddForce(movementInput * shipSpeed * Time.fixedDeltaTime);
+            }
             if (oneTimeForBump)
             {
                 shipCollision.switchLights(true);
@@ -159,85 +189,14 @@ public class MinigameManager : MonoBehaviour
         shipTargetRotRb.rotation = angle;
 
         // Asteroid Spawning
-        asteroidCool = Mathf.Max(asteroidCool - Time.fixedDeltaTime, 0);
-        if (asteroidCool == 0)
+        if (windowProgress != 0)
         {
-            // apply cooldown
-            asteroidCool = asteroidSpawnCooldown * Random.Range(0.95f, 1.1f); // random mult
-            asteroidCool *= Mathf.Lerp(areaMultRange.x, areaMultRange.y, (float)currentArea / (float)levels.Length); // relocation
-            asteroidCool *= Mathf.Lerp(playtimeMultRange.x, playtimeMultRange.y, mManager.gameManager.playtimePercentage); // playtime mult
-            asteroidCool *= Mathf.Lerp(remainingABMult.x, remainingABMult.y, mManager.orbManager.asteroidBeltRemaining); // remaining asteroid belt percentage
-            if (asteroidFrenzyTime != 0)
+            asteroidCool = Mathf.Max(asteroidCool - Time.fixedDeltaTime, 0);
+            if (asteroidCool == 0)
             {
-                asteroidCool *= 0.075f;
-            } // asteroid frenzy
-
-            // spawn asteroid
-            GameObject currentBody = default;
-            if (Random.Range(0f, 100f) < levels[currentArea].leftoversChance)
-            {
-                currentBody = Instantiate(levels[currentArea].leftovers[Random.Range(0, levels[currentArea].leftovers.Length)]);
-            } // leftovers
-            else
-            {
-                int rarityChance = Random.Range(0, 101);
-                if (rarityChance <= 10)
-                {
-                    currentBody = Instantiate(levels[currentArea].rare);
-                } // rare
-                else if (rarityChance <= 40)
-                {
-                    currentBody = Instantiate(levels[currentArea].uncommon);
-                } // uncommon
-                else
-                {
-                    currentBody = Instantiate(levels[currentArea].common);
-                } // common
-            } // asteroids
-
-            // position
-            Vector3 desPos = default;
-            Vector3 desDire = default;
-            bool canProceed = false;
-            for (int pity = 0; pity < 4; pity++)
-            {
-                float randPerc = positionDistribution.Evaluate(Random.Range(0f, 1f)); // nice inverted bell curve
-                Vector3 tDesPos = default;
-                Vector3 tDesDire = default;
-                for (int i = 0; i < spawnPositions.Length - 1; i++)
-                {
-                    if (randPerc <= (float)(i + 1) / (float)(spawnPositions.Length - 1))
-                    {
-                        tDesPos = Vector3.Lerp(spawnPositions[i].position, spawnPositions[i + 1].position, randPerc);
-                        tDesDire = Vector3.Lerp(spawnPositions[i].up, spawnPositions[i + 1].up, randPerc);
-                        break;
-                    } // assign position and direction
-                }
-
-                float randStrength = 0.1f;
-                tDesDire = (tDesDire + (new Vector3(Random.Range(-randStrength, randStrength), Random.Range(-randStrength, randStrength), Random.Range(-randStrength, randStrength)))).normalized;
-
-                // raycast check
-                if (!Physics2D.Raycast(tDesPos, tDesDire, 200f, spawnCheckMask))
-                {
-                    canProceed = true;
-                    desPos = tDesPos;
-                    desDire = tDesDire;
-                    break;
-                }
-            }
-            if (canProceed)
-            {
-                currentBody.transform.position = desPos;
-                currentBody.GetComponent<Asteroid>().spawnDirection = desDire;
-                //print(desDire);
-                currentBody.SetActive(true);
-            } // can proceed
-            else
-            {
-                Destroy(currentBody);
-            } // can't proceed, despawn asteroid and leave
-        } // spawn asteroid, apply next cooldown
+                spawnAsteroid();
+            } // spawn asteroid, apply next cooldown
+        }
     }
     private void Update()
     {
@@ -250,22 +209,92 @@ public class MinigameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            windowState = !windowState;
+            toggleWindow();
         }
-
-        if (windowState)
-        {
-            windowProgress = Mathf.Min(windowProgress + Time.deltaTime, windowToggleTime);
-        } // window goes up
-        else
-        {
-            windowProgress = Mathf.Max(windowProgress - Time.deltaTime, 0);
-        } // window goes down
+        windowProgress = Mathf.Clamp(windowProgress + Time.deltaTime * windowDirection, 0f, windowToggleTime);
 
         windowTransform.gameObject.SetActive(windowProgress != 0);
         // stop minigame asteroids from spawning at that moment too
 
         windowTransform.position = Vector3.Lerp(windowPositions[0].position, windowPositions[1].position, windowCurve.Evaluate(windowProgress / windowToggleTime));
+    }
+    void spawnAsteroid()
+    {
+        // apply cooldown
+        asteroidCool = asteroidSpawnCooldown * Random.Range(0.95f, 1.1f); // random mult
+        asteroidCool *= Mathf.Lerp(areaMultRange.x, areaMultRange.y, (float)currentArea / (float)levels.Length); // relocation
+        asteroidCool *= Mathf.Lerp(playtimeMultRange.x, playtimeMultRange.y, mManager.gameManager.playtimePercentage); // playtime mult
+        asteroidCool *= Mathf.Lerp(remainingABMult.x, remainingABMult.y, mManager.orbManager.asteroidBeltRemaining); // remaining asteroid belt percentage
+        if (aCallerProgress != 0)
+        {
+            asteroidCool *= aCallerSpeedMult;
+        } // asteroid frenzy
+
+        // spawn asteroid
+        GameObject currentBody = default;
+        if (Random.Range(0f, 100f) < levels[currentArea].leftoversChance)
+        {
+            currentBody = Instantiate(levels[currentArea].leftovers[Random.Range(0, levels[currentArea].leftovers.Length)]);
+        } // leftovers
+        else
+        {
+            int rarityChance = Random.Range(0, 101);
+            if (rarityChance <= 10)
+            {
+                currentBody = Instantiate(levels[currentArea].rare);
+            } // rare
+            else if (rarityChance <= 40)
+            {
+                currentBody = Instantiate(levels[currentArea].uncommon);
+            } // uncommon
+            else
+            {
+                currentBody = Instantiate(levels[currentArea].common);
+            } // common
+        } // asteroids
+
+        // position
+        Vector3 desPos = default;
+        Vector3 desDire = default;
+        bool canProceed = false;
+        for (int pity = 0; pity < 4; pity++)
+        {
+            float randPerc = positionDistribution.Evaluate(Random.Range(0f, 1f)); // nice inverted bell curve
+            Vector3 tDesPos = default;
+            Vector3 tDesDire = default;
+            for (int i = 0; i < spawnPositions.Length - 1; i++)
+            {
+                if (randPerc <= (float)(i + 1) / (float)(spawnPositions.Length - 1))
+                {
+                    tDesPos = Vector3.Lerp(spawnPositions[i].position, spawnPositions[i + 1].position, randPerc);
+                    tDesDire = Vector3.Lerp(spawnPositions[i].up, spawnPositions[i + 1].up, randPerc);
+                    break;
+                } // assign position and direction
+            }
+
+            float randStrength = 0.1f;
+            tDesDire = (tDesDire + (new Vector3(Random.Range(-randStrength, randStrength), Random.Range(-randStrength, randStrength), Random.Range(-randStrength, randStrength)))).normalized;
+
+            // raycast check
+            if (!Physics2D.Raycast(tDesPos, tDesDire, 200f, spawnCheckMask))
+            {
+                canProceed = true;
+                desPos = tDesPos;
+                desDire = tDesDire;
+                break;
+            }
+        }
+        if (canProceed)
+        {
+            currentBody.transform.position = desPos;
+            currentBody.GetComponent<Asteroid>().spawnDirection = desDire;
+            //print(desDire);
+            currentBody.SetActive(true);
+        } // can proceed
+        else
+        {
+            Destroy(currentBody);
+        } // can't proceed, despawn asteroid and leave
     }
     public void hit(float stunMult = 1f)
     {
@@ -281,21 +310,58 @@ public class MinigameManager : MonoBehaviour
     public void advanceSpeed()
     {
         speedLevel++;
+        print("adding 1 level, now at: " + speedLevel);
         shipSpeed = shipSpeedArray[speedLevel];
 
-        if (speedLevel == 5)
+        /*if (speedLevel == 5)
         {
 
-        } // disable button
+        } // disable button//*/
     }
     public void advanceBeam()
     {
         shipCollision.beamLevel++;
         shipCollision.switchLights(true);
 
-        if (shipCollision.beamLevel == 3)
+        //print("adding 1 level, now at: " + shipCollision.beamLevel);
+
+        /*if (shipCollision.beamLevel == 3)
         {
 
-        } // disable button
+        } // disable button//*/
+    }
+    public void toggleWindow()
+    {
+        windowDirection = -windowDirection;
+        mManager.missionManager.animDirection = -1f;
+        mManager.researchManager.motionDirection = -1f;
+
+        mManager.camManager.toggleCameraControls(windowDirection);
+
+        if (windowDirection == 1)
+        {
+            mManager.gameManager.speedMode = 2;
+        }
+
+        //Input.ResetInputAxes();
+    }
+    public void asteroidCaller()
+    {
+        if (aCallerCooldown == 0)
+        {
+            aCallerCooldown = asteroidCallerCooldownCurve.Evaluate(currentArea / (levels.Length - 1f));
+            aCallerProgress = aCallerDuration;
+
+            aCallerDurForFill = aCallerCooldown;
+
+            asteroidCool = Random.Range(0f, aCallerSpeedMult);
+        }
+    }
+    public void aCallerInitiate()
+    {
+        aCallerGO.SetActive(true);
+        acUnlocked = true;
+        aCallerCooldown = asteroidCallerCooldownCurve.Evaluate(currentArea / (levels.Length - 1f)) * 0.3f;
+        aCallerDurForFill = asteroidCallerCooldownCurve.Evaluate(currentArea / (levels.Length - 1f));
     }
 }

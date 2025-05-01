@@ -11,6 +11,8 @@ public class MainManager : MonoBehaviour
     public MinigameManager minigameManager;
     public ResearchManager researchManager;
     public MissionManager missionManager;
+    public CelBodyStatusManager celManager;
+    public CommanderManager commanderManager;
 
     [ExecuteInEditMode]
     private void Awake()

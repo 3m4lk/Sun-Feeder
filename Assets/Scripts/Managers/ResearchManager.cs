@@ -3,6 +3,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
+public class cso
+{
+    public AnimationCurve motionCurve;
+    public float motionTime;
+    public float motionProgress;
+    public Transform[] motionTargets;
+
+    [Space]
+    public Transform[] movedObjects;
+}
+[System.Serializable]
 public class resLv
 {
     public string name;
@@ -58,6 +69,9 @@ public class ResearchManager : MonoBehaviour
     public Buttons[] researchButtons;
     public GameObject finalResearch;
 
+    public cso[] researchPages;
+    public float motionDirection = -1f;
+
     public bool devMode;
     private void Awake()
     {
@@ -81,7 +95,7 @@ public class ResearchManager : MonoBehaviour
                     for (int a = 0; a < research[i].researchUnlocks.Length; a++)
                     {
                         research[i].researchUnlocks[a].SetActive(true);
-                        print("add an animation or something");
+                        //print("add an animation or something");
                     }
 
                     researchButtons[i].transform.GetChild(2).gameObject.SetActive(false);
@@ -114,10 +128,37 @@ public class ResearchManager : MonoBehaviour
             }
         }
     }
+    private void Update()
+    {
+        for (int i = 0; i < researchPages.Length; i++)
+        {
+            researchPages[i].motionProgress = Mathf.Clamp(researchPages[i].motionProgress + Time.deltaTime * motionDirection, 0f, researchPages[i].motionTime);
+            for (int a = 0; a < researchPages[i].movedObjects.Length; a++)
+            {
+                researchPages[i].movedObjects[a].position = Vector3.Lerp(researchPages[i].motionTargets[0].position, researchPages[i].motionTargets[1].position, researchPages[i].motionCurve.Evaluate(researchPages[i].motionProgress / researchPages[i].motionTime));
+            }
+        }
+        // bubble particles floating upwards control of some sorts
+    }
     void researchCheck(string input, int currentLevel = -1)
     {
         switch (input)
         {
+            case "asteroidCaller":
+                mManager.minigameManager.aCallerInitiate();
+                break;
+            case "betterThrusters":
+                mManager.minigameManager.advanceSpeed();
+                break;
+            case "relocation":
+                mManager.minigameManager.advanceArea();
+                break;
+            case "upgradedGravFields":
+                mManager.minigameManager.advanceBeam();
+                break;
+            case "missionOperative":
+                mManager.missionManager.addMissionSlot(currentLevel - 1);
+                break;
             case "asteroidHurling":
                 mManager.missionManager.unlockOperation(0, 0);
                 break;
@@ -145,6 +186,9 @@ public class ResearchManager : MonoBehaviour
             case "3TONNukeStabCharge":
                 mManager.missionManager.unlockOperation(3, 2);
                 break;
+            case "orbitalDisconnect":
+                mManager.missionManager.unlockOperation(3, 3);
+                break;
             case "celestialEngine":
                 mManager.missionManager.unlockOperation(4, 0);
                 break;
@@ -152,13 +196,19 @@ public class ResearchManager : MonoBehaviour
     }
     public void allResearchCheck()
     {
-        for (int i = 0; i < research.Length - 4; i++)
+        for (int i = 0; i < research.Length - 5; i++)
         {
             if (!research[i].isCompleted)
             {
+                //print("Failed on " + i + " ( " + research[i].name + " )");
                 return;
             }
         }
+        if (!research[research.Length - 1].isCompleted)
+        {
+            //print("Failed on " + (research.Length - 1) + " ( " + research[(research.Length - 1)].name + " )");
+            return;
+        } // literally just Orbital Disconnect
         finalResearch.SetActive(true);
     }
     void onResearchFinish(int index)
@@ -233,5 +283,13 @@ public class ResearchManager : MonoBehaviour
         research[index].isResearching = true;
         research[index].researchProgress = 0;
         researchButtons[index].researchTime = research[index].duration;
+    }
+    public void togglePage()
+    {
+        motionDirection = -motionDirection;
+        mManager.minigameManager.windowDirection = -1f;
+        mManager.missionManager.animDirection = -1f;
+
+        mManager.camManager.toggleCameraControls(motionDirection);
     }
 }

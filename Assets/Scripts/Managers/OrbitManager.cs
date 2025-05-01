@@ -20,11 +20,16 @@ public class cBody
 
     [Space]
     public float orbitProgress;
+
+    [Space]
+    public int clusterIndex;
+
+    public bool isAlive;
 }
 [ExecuteInEditMode]
 public class OrbitManager : MonoBehaviour
 {
-    public MainManager iManager;
+    public MainManager mManager;
 
     public cBody[] bodies;
 
@@ -36,12 +41,12 @@ public class OrbitManager : MonoBehaviour
     {
         for (int i = 0; i < bodies.Length; i++)
         {
-            bodies[i].orbitProgress = Mathf.Repeat(bodies[i].orbitProgress + (1f / bodies[i].orbitSpeed) * Time.fixedDeltaTime * iManager.gameManager.gameSpeed * 100f, 100f);
+            bodies[i].orbitProgress = Mathf.Repeat(bodies[i].orbitProgress + (1f / bodies[i].orbitSpeed) * Time.fixedDeltaTime * mManager.gameManager.gameSpeed * 100f, 100f);
 
             float sinOut = Mathf.Sin((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
             float cosOut = Mathf.Cos((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f)); // not gonna simplify these by purging 100s and changing Mathf.Repeat to 1f - for precision and visual clarity reasons
 
-            bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * iManager.gameManager.AstronomicalUnit;
+            bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * mManager.gameManager.AstronomicalUnit;
         }
     }
     [ExecuteInEditMode]
@@ -65,7 +70,7 @@ public class OrbitManager : MonoBehaviour
             float sinOut = Mathf.Sin((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
             float cosOut = Mathf.Cos((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
 
-            bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * iManager.gameManager.AstronomicalUnit;
+            bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * mManager.gameManager.AstronomicalUnit;
         }
     }
     public void randomPositions()
@@ -77,7 +82,7 @@ public class OrbitManager : MonoBehaviour
             float sinOut = Mathf.Sin((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
             float cosOut = Mathf.Cos((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
 
-            bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * iManager.gameManager.AstronomicalUnit;
+            bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * mManager.gameManager.AstronomicalUnit;
         }
     }
     public void resetPositions()
@@ -89,7 +94,21 @@ public class OrbitManager : MonoBehaviour
             float sinOut = Mathf.Sin((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
             float cosOut = Mathf.Cos((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
 
-            bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * iManager.gameManager.AstronomicalUnit;
+            bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * mManager.gameManager.AstronomicalUnit;
+        }
+    }
+    public void alterOrbitDistance(int index, float difference)
+    {
+        Vector3 bScale = bodies[index].orbitBody.localScale;
+        float killDistance = ((bScale.x + bScale.y + bScale.z) / 3f) * bodies[index].bodyTransform.GetComponent<CircleCollider2D>().radius;
+        bodies[index].orbitDistance = Mathf.Max(bodies[index].orbitDistance + difference, killDistance);
+        if (bodies[index].orbitDistance == killDistance)
+        {
+            bodies[index].isAlive = false;
+            print("DESTROY THE BODY"); // create an explosion prefab in the body's spot under its orbiting body's hierarchy
+
+            if (index == -1) return; // don't do cluster stuff for other minor moons
+            mManager.celManager.clusterAmountUpdate(index, -1);
         }
     }
 }

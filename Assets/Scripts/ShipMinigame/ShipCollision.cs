@@ -23,7 +23,7 @@ public class ShipCollision : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //print("asiuldofhj");
-        if (collision.gameObject.tag == "MinigameHitter")
+        if (collision.gameObject.tag == "MinigameHitter" && mgmanager.aCallerProgress == 0)
         {
             mgmanager.hit(collision.rigidbody.mass / 10f);
             switchLights(false);

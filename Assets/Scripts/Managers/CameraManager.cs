@@ -60,6 +60,8 @@ public class CameraManager : MonoBehaviour
 
     [Space]
     public Transform newAnchor;
+
+    public bool cameraControls;
     private void Awake()
     {
         string initialAnchor = "Sol";
@@ -82,7 +84,7 @@ public class CameraManager : MonoBehaviour
                     case 2:
                         break; // slow down time one level?
                 }//*/
-                isRotating = true;
+                isRotating = cameraControls;
             } // click down
             else if (Input.GetMouseButtonUp(i))
             {
@@ -116,9 +118,9 @@ public class CameraManager : MonoBehaviour
         // scroll - zoom
 
         // Camera Zooming
-        if (Input.mouseScrollDelta.y != 0)
+        if (cameraControls && Input.mouseScrollDelta.y != 0)
         {
-            print("scrollage");
+            //print("scrollage");
             camZoomProgress = Mathf.Clamp(camZoomProgress - (float)Input.mouseScrollDelta.y * scrollSensitivity, 0f, 1f);
         }
         actualCamZoomProgress = Mathf.Lerp(actualCamZoomProgress, camZoomProgress, camZoomSpeed * Time.deltaTime);
@@ -154,5 +156,9 @@ public class CameraManager : MonoBehaviour
             temptst.transform.position = anchor.position + anchor.forward * baseBodyDistance;//*/
             // reset body UI (or something idk)
         }
+    }
+    public void toggleCameraControls(float input)
+    {
+        cameraControls = (input == -1f);
     }
 }
