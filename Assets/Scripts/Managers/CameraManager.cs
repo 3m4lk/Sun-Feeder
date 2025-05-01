@@ -72,7 +72,7 @@ public class CameraManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(i))
             {
-                switch (i)
+                /*switch (i)
                 {
                     case 0:
                         break; // interaction
@@ -81,11 +81,12 @@ public class CameraManager : MonoBehaviour
                         break; // rotate
                     case 2:
                         break; // slow down time one level?
-                }
+                }//*/
+                isRotating = true;
             } // click down
             else if (Input.GetMouseButtonUp(i))
             {
-                switch (i)
+                /*switch (i)
                 {
                     case 0:
                         break; // interaction
@@ -94,7 +95,8 @@ public class CameraManager : MonoBehaviour
                         break; // rotate
                     case 2:
                         break; // slow down time one level?
-                }
+                }//*/
+                isRotating = false;
             } // click release
         }
 

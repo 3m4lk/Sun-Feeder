@@ -68,13 +68,13 @@ public class ResearchManager : MonoBehaviour
             researchButtons[i].researchIndex = i;
         }
     }
-    private void Update()
+    private void FixedUpdate()
     {
         for (int i = 0; i < research.Length; i++)
         {
             if (!research[i].isCompleted && research[i].isResearching)
             {
-                research[i].researchProgress = Mathf.Min(research[i].researchProgress + Time.deltaTime * mManager.gameManager.gameSpeed, research[i].duration); // * researchSpeedMult from politics manager
+                research[i].researchProgress = Mathf.Min(research[i].researchProgress + Time.fixedDeltaTime * mManager.gameManager.gameSpeed, research[i].duration); // * researchSpeedMult from politics manager
                 if (research[i].researchProgress == research[i].duration)
                 {
                     research[i].isResearching = false;

@@ -31,11 +31,15 @@ public class gen
 public class NameGenerator : MonoBehaviour
 {
     public gen[] generators;
-    public int testGen;
+    public int testGen; // English, Japanese, Arabic
 
     public string output;
-    public void nameGenerate(int generator)
+    public string nameGenerate(int generator = -1)
     {
+        if (generator == -1)
+        {
+            generator = Random.Range(0, generators.Length);
+        }
         output = "";
         gen curr = generators[generator];
 
@@ -149,5 +153,7 @@ public class NameGenerator : MonoBehaviour
         {
             output += curr.snOneSyllableSurnames[Random.Range(0, curr.snOneSyllableSurnames.Length)];
         }
+
+        return output;
     }
 }

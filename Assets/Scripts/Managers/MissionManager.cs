@@ -1,92 +1,67 @@
 using UnityEngine;
 
+[System.Serializable]
+public class tb
+{
+    public string name;
+    public GameObject[] buttons;
+    public bool[] isUnlocked;
+}
 public class MissionManager : MonoBehaviour
 {
     public MainManager mManager;
 
     [Space]
     [Tooltip("0 - Planets;\n1-  Kuiper Belt;\n2 - Gas Giants\n3 - Minor Bodies;\n4 - Sol")]
-    public GameObject[] operationTabs;
+    public tb[] tabButtons;
 
     [Space]
-    [Tooltip("Solar Engine")]
-    public GameObject operationSol;
-    [Tooltip("0 - asteroHurl;\n1 - verne;\n2 - 300ton")]
-    public GameObject[] operationsPlanets;
-    [Tooltip("Asterosling")]
-    public GameObject operationKuiperBelt;
-    [Tooltip("0 - gasVent;\n1 - arcCannon")]
-    public GameObject[] operationsGasGiants;
-    [Tooltip("0 - reflSolSail;\n1 - 3ton;\n2 - mining")]
-    public GameObject[] operationsMinorBodies;
+    [Header("Mission tabs, buttons and such")]
+    public int currentTab;
 
-    [Tooltip("0 - Planets;\n1-  Kuiper Belt;\n2 - Gas Giants\n3 - Minor Bodies;\n4 - Sol")]
-    public void unlockOperation(int type, int index) // 0 - Planets;\n1-  Kuiper Belt;\n2 - Gas Giants\n3 - Minor Bodies;\n4 - Sol
+    public Transform[] allTabs;
+    public float tabMoveTime;
+    public float[] tabMoveProgresses;
+    public AnimationCurve tabMoveCurve;
+    [Tooltip("0 - hidden;\n1 - selected")]
+    public Transform[] tabPositions;
+
+    public GameObject initialNoOperationsText;
+    public void unlockOperation(int type, int index)
     {
-        operationTabs[type].SetActive(true);
-
-        switch (type)
-        {
-            case 0:
-                operationsPlanets[index].SetActive(true);
-                break; // Planets
-            case 1:
-                operationKuiperBelt.SetActive(true);
-                break; // Kuiper Belt
-            case 2:
-                operationsGasGiants[index].SetActive(true);
-                break; // Gas Giants
-            case 3:
-                operationsMinorBodies[index].SetActive(true);
-                break; // Minor Bodies
-            case 4:
-                operationSol.SetActive(true);
-                break; // Sol
-        }
+        tabButtons[type].isUnlocked[index] = true;
+        initialNoOperationsText.SetActive(false);
     } // 0 - Planets;\n1-  Kuiper Belt;\n2 - Gas Giants\n3 - Minor Bodies;\n4 - Sol
-    public void openTab(int index, bool isSubmenu)
+    private void Update()
     {
-        /*for (int a = 0; a < operationsPlanets.Length; a++)
+        for (int i = 0; i < allTabs.Length; i++)
         {
-            operationsPlanets[a].GetComponent<MissionButtonAppear>().direction = -1f;
-        }
-        operationKuiperBelt.GetComponent<MissionButtonAppear>().direction = -1f;
-        for (int a = 0; a < operationsGasGiants.Length; a++)
-        {
-            operationsGasGiants[a].GetComponent<MissionButtonAppear>().direction = -1f;
-        }
-        for (int a = 0; a < operationsMinorBodies.Length; a++)
-        {
-            operationsMinorBodies[a].GetComponent<MissionButtonAppear>().direction = -1f;
-        }
-        operationSol.GetComponent<MissionButtonAppear>().direction = -1f;
+            float direction = 1f;
+            if (i != currentTab)
+            {
+                direction = -1f;
+            }
+            tabMoveProgresses[i] = Mathf.Clamp(tabMoveProgresses[i] + Time.deltaTime * direction, 0, tabMoveTime);
 
-        switch (index)
+            allTabs[i].position = Vector3.Lerp(tabPositions[0].position, tabPositions[1].position, tabMoveCurve.Evaluate(tabMoveProgresses[i] / tabMoveTime));
+        }
+    }
+    public void openTab(int index, int missionType = -1)
+    {
+        currentTab = index;
+        if (missionType != -1)
         {
-            case 0:
-                for (int a = 0; a < operationsPlanets.Length; a++)
+            for (int i = 0; i < tabButtons.Length; i++)
+            {
+                for (int a = 0; a < tabButtons[i].buttons.Length; a++)
                 {
-                    operationsPlanets[a].GetComponent<MissionButtonAppear>().direction = 1f;
+                    tabButtons[i].buttons[a].SetActive(false);
                 }
-                break; // Planets
-            case 1:
-                operationKuiperBelt.GetComponent<MissionButtonAppear>().direction = 1f;
-                break; // Kuiper Belt
-            case 2:
-                for (int a = 0; a < operationsGasGiants.Length; a++)
-                {
-                    operationsGasGiants[a].GetComponent<MissionButtonAppear>().direction = 1f;
-                }
-                break; // Gas Giants
-            case 3:
-                for (int a = 0; a < operationsMinorBodies.Length; a++)
-                {
-                    operationsMinorBodies[a].GetComponent<MissionButtonAppear>().direction = 1f;
-                }
-                break; // Minor Bodies
-            case 4:
-                operationSol.GetComponent<MissionButtonAppear>().direction = 1f;
-                break; // Sol
-        }//*/
+            }
+            for (int i = 0; i < tabButtons[missionType].buttons.Length; i++)
+            {
+                tabButtons[missionType].buttons[i].SetActive(tabButtons[missionType].isUnlocked[i]);
+            }
+        }
     }
 }
