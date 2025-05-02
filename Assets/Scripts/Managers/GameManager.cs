@@ -26,6 +26,27 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public int money;
     public TMP_Text cashText;
+
+    public int valTest;
+    public string formatTest;
+    public string format = "0";
+
+    [Space]
+    public AnimationCurve cashSmoothCurve;
+    public float cashSmoothTime;
+    private float cashSmoothProgress;
+    private int lastCashPoint;
+    private int smoothCash;
+
+    [Space]
+    public AnimationCurve cashAddCurve;
+    public Gradient cashAddGradient;
+    private float cashAddProgress;
+    //public float trueProgress;
+
+    [Space]
+    public AnimationCurve cashScaleCurve;
+    private float cashScaleProgress;
     private void Awake()
     {
         //print(QualitySettings.vSyncCount);
@@ -34,6 +55,27 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+        cashSmoothProgress = Mathf.Min(cashSmoothProgress + Time.deltaTime, cashSmoothTime);
+        smoothCash = Mathf.FloorToInt(Mathf.Lerp(lastCashPoint, money, cashSmoothCurve.Evaluate(cashSmoothProgress / cashSmoothTime)));
+        cashScaleProgress = Mathf.Max(cashScaleProgress - Time.deltaTime, 0f);
+
+        if (cashAddProgress > 0)
+        {
+            cashAddProgress = Mathf.Max(cashAddProgress - Time.deltaTime, 0f);
+        } // positive
+        else if (cashAddProgress < 0)
+        {
+            cashAddProgress = Mathf.Min(cashAddProgress + Time.deltaTime, 0f);
+        } // negative
+
+        cashText.text = formatCash(smoothCash);
+        //trueProgress = (cashAddProgress / cashSmoothTime);
+        //cashText.color = cashAddGradient.Evaluate(cashAddCurve.Evaluate(0.5f + (trueProgress * 2f)));
+        cashText.color = cashAddGradient.Evaluate(cashAddCurve.Evaluate(0.5f + ((cashAddProgress / cashSmoothTime) * 2f)));
+        //trueProgress = cashAddCurve.Evaluate(0.5f + (trueProgress * 2f));
+        cashText.rectTransform.localScale = Vector3.one * cashScaleCurve.Evaluate(cashScaleProgress / cashSmoothTime);
+
+        formatTest = valTest.ToString(format);
         switch (speedMode)
         {
             case 0:
@@ -64,17 +106,88 @@ public class GameManager : MonoBehaviour
     }
     public void addCash(int amount)
     {
-        money += amount;
+        if (amount == 0) return;
+
+        cashAddProgress = Mathf.Sign(amount) * cashSmoothTime;
+        cashScaleProgress = cashSmoothTime;
+
+        lastCashPoint = money;
+        cashSmoothProgress = 0;
+
         if (amount < 0)
         {
             print("negative");
+            money += amount; // don't have to worry about overflowing the other way
         }
         else
         {
             print("positive");
+            if (money + amount <= 0)
+            {
+                money = int.MaxValue;
+                print("YOU GOT A SHITTON OF CASH M8!");
+            }
+            else
+            {
+                money += amount;
+            }
         }
-        cashText.text = money + "mk"; // do some nice formatting
         // add some cosmetic scaling or something
         // also update cash text display
+    }
+    public string formatCash(int input)
+    {
+        string[] units = new string[] { "", "k", "M", "B", "T", "Q" };
+
+        int unitIndex = 0;
+
+        // <1000 // any
+        // >1000 // kilo
+        // >1000000 // milly
+        // >1000000000 // billy
+        // >1000000000000 // trilly
+        // >1000000000000000 // quad
+
+        if (input >= 1000000000000000) unitIndex = 5;
+        else if (input >= 1000000000000) unitIndex = 4;
+        else if (input >= 1000000000) unitIndex = 3;
+        else if (input >= 1000000) unitIndex = 2;
+        else if (input >= 1000) unitIndex = 1;
+
+        if (unitIndex == 0)
+        {
+            return input + " mk";
+        }
+        else
+        {
+            if (input == int.MaxValue)
+            {
+                return "EVERY SINGLE" + " mk";
+            }
+            else
+            {
+                float divAmount = 1f;
+                switch (unitIndex)
+                {
+                    case 1:
+                        divAmount = 1000f;
+                        break;
+                    case 2:
+                        divAmount = 1000000f;
+                        break;
+                    case 3:
+                        divAmount = 1000000000f;
+                        break;
+                    case 4:
+                        divAmount = 1000000000000f;
+                        break;
+                    case 5:
+                        divAmount = 1000000000000000f;
+                        break;
+                }
+
+                return (money / (divAmount)).ToString("0.00") + units[unitIndex] + " mk"; // >unintins
+            }
+        }
     }
 }

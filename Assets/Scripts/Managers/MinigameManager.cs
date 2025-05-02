@@ -3,6 +3,12 @@ using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 [System.Serializable]
+public class gonmts
+{
+    public Material[] materials;
+    public GameObject[] gameObjects;
+}
+[System.Serializable]
 public class abLvl
 {
     public GameObject common;
@@ -38,9 +44,16 @@ public class MinigameManager : MonoBehaviour
 
     public ShipCollision shipCollision;
 
+    [Space]
     [Tooltip("higher mining yield upgrade")]
     public float miningRigRewardMult = 1f;
+    public AnimationCurve miningRigMultCurve;
+    public int miningRigLevel;
+    public MeshRenderer miningRigMesh;
+    public gonmts[] miningRigEvolutions;
+    public float[] cogRandomSpeed;
 
+    [Space]
     // farther areas give more asteroids with new ones of higher quality sprinkled here and there
 
     // There are talks about a new mining spot somewhere in the Asteroid Belt, which went unnoticed by prospectors for years. Discoverers mention larger amount of asteroids, as well as higher densities of <uncommon> and <rare>... But they won't hand out that information for free.
@@ -276,7 +289,7 @@ public class MinigameManager : MonoBehaviour
             tDesDire = (tDesDire + (new Vector3(Random.Range(-randStrength, randStrength), Random.Range(-randStrength, randStrength), Random.Range(-randStrength, randStrength)))).normalized;
 
             // raycast check
-            if (!Physics2D.Raycast(tDesPos, tDesDire, 200f, spawnCheckMask))
+            if (aCallerProgress == 0 || !Physics2D.Raycast(tDesPos, tDesDire, 200f, spawnCheckMask))
             {
                 canProceed = true;
                 desPos = tDesPos;
@@ -329,6 +342,22 @@ public class MinigameManager : MonoBehaviour
         {
 
         } // disable button//*/
+    }
+    public void advanceMiningRigMult()
+    {
+        miningRigLevel++;
+        miningRigRewardMult = miningRigMultCurve.Evaluate(miningRigLevel / 9);
+
+        miningRigMesh.materials = miningRigEvolutions[miningRigLevel].materials;
+        for (int i = 0; i < miningRigEvolutions[miningRigLevel].gameObjects.Length; i++)
+        {
+            miningRigEvolutions[miningRigLevel].gameObjects[i].SetActive(true);
+            if (miningRigEvolutions[miningRigLevel].gameObjects[i].GetComponent<Animator>())
+            {
+                miningRigEvolutions[miningRigLevel].gameObjects[i].GetComponent<Animator>().SetBool("isOpposite", (Random.Range(0, 2) == 1));
+                miningRigEvolutions[miningRigLevel].gameObjects[i].GetComponent<Animator>().speed = Random.Range(cogRandomSpeed[0], cogRandomSpeed[1]);
+            }
+        } // enable
     }
     public void toggleWindow()
     {

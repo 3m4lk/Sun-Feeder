@@ -144,6 +144,9 @@ public class ResearchManager : MonoBehaviour
     {
         switch (input)
         {
+            case "miningRigEfficiency":
+                mManager.minigameManager.advanceMiningRigMult();
+                break;
             case "asteroidCaller":
                 mManager.minigameManager.aCallerInitiate();
                 break;
