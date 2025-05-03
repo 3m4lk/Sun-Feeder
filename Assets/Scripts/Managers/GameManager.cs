@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
         cashAddProgress = Mathf.Sign(amount) * cashSmoothTime;
         cashScaleProgress = cashSmoothTime;
 
-        lastCashPoint = money;
+        lastCashPoint = smoothCash;
         cashSmoothProgress = 0;
 
         if (amount < 0)

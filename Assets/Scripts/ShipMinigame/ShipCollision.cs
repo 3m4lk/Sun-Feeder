@@ -31,6 +31,7 @@ public class ShipCollision : MonoBehaviour
     }
     public void switchLights(bool mode)
     {
+        mgmanager.reblinkProgress = 0;
         //print("LIGHTS SWITCHED TO " + mode);
 
         if (mode)

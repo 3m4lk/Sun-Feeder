@@ -24,6 +24,25 @@ public class Asteroid : MonoBehaviour
 
     public float lifetime;
     public Transform destroyParticles;
+
+    [Space]
+    [Header("GravShip Visuals")]
+    private bool isVisualOn;
+    public GameObject ownOutline;
+
+    [Space]
+    public AnimationCurve appearCurve;
+    public float appearTime;
+    private float appearProgress;
+
+    [Space]
+    [Tooltip("0 -> 1 based on how dot product behaves")]
+    public Gradient lineGradDire;
+    [Tooltip("0 -> 1 based on how dot product behaves")]
+    public Gradient lineGradDesi;
+    [Tooltip("0 - ship -> asteroid;\n1 - current direction;\n2 - direction to rig")]
+    public LineRenderer[] ownLines;
+    public float vectorLineLength;
     private void Awake()
     {
         Destroy(gameObject, lifetime);
@@ -43,12 +62,65 @@ public class Asteroid : MonoBehaviour
     {
         transform.Rotate(randRotation * Time.fixedDeltaTime);
         //dot = Vector2.Dot(ownRb.linearVelocity.normalized, (testPlat.position - transform.position).normalized);
+
+        if (isVisualOn)
+        {
+            appearProgress = Mathf.Min(appearProgress + Time.deltaTime, appearTime);
+        }
+        else
+        {
+            appearProgress = Mathf.Max(appearProgress - Time.deltaTime, 0);
+        }
+
+        Vector3 ownVelo = ownRb.linearVelocity.normalized;
+
+        Vector3[] positions0 = new Vector3[2] { ship.transform.position, transform.position }; // ship -> asteroid
+        Vector3[] positions1 = new Vector3[2] { transform.position, transform.position + ownVelo.normalized * vectorLineLength }; // current direction
+        Vector3[] positions2 = new Vector3[2] { transform.position, transform.position + (ship.miningRig.position - transform.position).normalized * vectorLineLength }; // direction to rig
+
+        Vector3[] positionsForDot = new Vector3[2] { ownVelo, ship.miningRig.position - transform.position };
+
+        float lineDot = Vector3.Dot(positionsForDot[0].normalized, positionsForDot[1].normalized);
+
+        if (!isVisualOn)
+        {
+            positions0 = new Vector3[2] { transform.position, transform.position }; // reset cause i said so
+        }
+
+        ownLines[0].SetPositions(positions0);
+        ownLines[1].SetPositions(positions1);
+        ownLines[2].SetPositions(positions2);
+
+        Color32 colorDirection = lineGradDire.Evaluate(lineDot);
+        Color32 colorDesired = lineGradDesi.Evaluate(lineDot);
+
+        ownLines[1].startColor = colorDirection;
+        ownLines[1].endColor = colorDirection;
+
+        ownLines[2].startColor = colorDesired;
+        ownLines[2].endColor = colorDesired;
+
+        float scaleLength = appearCurve.Evaluate(appearProgress / appearTime);
+        ownOutline.transform.localScale = Vector3.one * scaleLength;
+        for (int i = 0; i < ownLines.Length; i++)
+        {
+            ownLines[i].transform.Rotate(-randRotation * Time.fixedDeltaTime);
+            ownLines[i].transform.localScale = Vector3.one * scaleLength;
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         //print(collision.tag);
         if (collision.tag == "MinigameAttractor" || collision.tag == "MinigameHitter")
         {
+            bool isShipColl = false;
+
+            if (collision.name == "beamTrigger")
+            {
+                //print("GRAVSHIPBEAM");
+                isShipColl = true;
+            }
+
             float speedAdd = 1f;
             float mrAttractionSpeed = 1f;
             if (Vector2.Dot(ownRb.linearVelocity.normalized, (ship.miningRig.position - transform.position).normalized) > 0.99f)
@@ -84,6 +156,31 @@ public class Asteroid : MonoBehaviour
             ship.mManager.gameManager.addCash(cashReward);
 
             Destroy(gameObject);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //print(collision.name);
+        if (collision.name == "beamTrigger")
+        {
+            //print("GRAVSHIPBEAM");
+            ownOutline.SetActive(true);
+            isVisualOn = true;
+
+            Color32 beamLvlColor = ship.mgmanager.shipBeamLevelColor.Evaluate(ship.beamLevel / 3f);
+            ownLines[0].material.SetColor("_Color", beamLvlColor);// = beamLvlColor;
+            //ownLines[0].startColor = beamLvlColor;
+            //ownLines[0].endColor = beamLvlColor;
+            ownOutline.GetComponent<MeshRenderer>().material.color = beamLvlColor;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.name == "beamTrigger")
+        {
+            //print("GRAVSHIPBEAM (exit)");
+            ownOutline.SetActive(false);
+            isVisualOn = false;
         }
     }
     private void OnDestroy()

@@ -144,6 +144,9 @@ public class ResearchManager : MonoBehaviour
     {
         switch (input)
         {
+            case "gravShipPDA":
+                mManager.minigameManager.buyGravShipPDA();
+                break;
             case "miningRigEfficiency":
                 mManager.minigameManager.advanceMiningRigMult();
                 break;

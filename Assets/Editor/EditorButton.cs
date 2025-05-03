@@ -127,3 +127,23 @@ public class researchManagerButton : Editor
         }
     }
 }
+[CustomEditor(typeof(MinigameManager))]
+public class MinigameManagerButton : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        MinigameManager mgManager = (MinigameManager)target;
+        base.OnInspectorGUI();
+        if (GUILayout.Button("Get All Transforms' Positions Into The Array"))
+        {
+            mgManager.acDefPointVectors = new Vector3[mgManager.positionsToAutograb.Length];
+            for (int i = 0; i < mgManager.positionsToAutograb.Length; i++)
+            {
+                Vector3 thePos = mgManager.positionsToAutograb[i].localPosition;
+                thePos.y = thePos.z;
+                thePos.z = 0;
+                mgManager.acDefPointVectors[i] = thePos;
+            }
+        }
+    }
+}
