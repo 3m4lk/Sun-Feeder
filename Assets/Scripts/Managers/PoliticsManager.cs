@@ -32,8 +32,6 @@ public class pAc
     [Tooltip("can't be used if it's locked")]
     public bool isLocked;
 
-    public GameObject ownButton; // might be unneeded in the future??
-
     public int buttonColor;
 
     public void lockToggle(bool input)
@@ -106,6 +104,27 @@ public class PoliticsManager : MonoBehaviour
 
     private float lastRot;
     private float targetRot;
+
+    public string currentAlignment = "Vox Aequalis";
+    public string[] alignmentArray;
+
+    public TMP_Text alignmentColText;
+    public TMP_Text alignmentText;
+
+    public Transform polArrow;
+    public Transform[] polArrowTargets;
+
+    [Space]
+    [Tooltip("HARDCODING TIME: https://www.youtube.com/watch?v=X8z23t428kU")]
+    public GameObject[] extrPopuliUnlock;
+    public GameObject[] extrCoitionisUnlock;
+    public GameObject populiWarUnlock;
+    public GameObject populiCoitionisUnlock;
+
+    public bool extrPopuliUnlocked;
+    public bool extrCoitionisUnlocked;
+    public bool populiWarUnlocked;
+    public bool populiCoitionisUnlocked;
     private void Awake()
     {
         for (int i = 0; i < buttons.Length; i++)
@@ -151,6 +170,7 @@ public class PoliticsManager : MonoBehaviour
         {
             scalePlates[i].localRotation = Quaternion.Euler(0, 0, pikeRot);
         }
+        polArrow.position = Vector3.Lerp(polArrowTargets[0].position, polArrowTargets[1].position, (politicalViews + 100f) / 200f);
     }
     public void doAction(string input, bool mode)
     {
@@ -218,13 +238,13 @@ public class PoliticsManager : MonoBehaviour
     {
         currentGrowth = 0;
         currentCap = 0;
-        modifiersText.text = "";
+        modifiersText.text = "Political Growth (per year):\n";
         for (int i = 0; i < actions.Length; i++)
         {
             if (actions[i].isActive)
             {
                 string[] modColors = new string[5] { "#FF5C80", "#FF0038", "#5C80FF", "#0038FF", "#000000" };
-                modifiersText.text += "<color=" + modColors[actions[i].buttonColor] + ">+" + Mathf.Abs(actions[i].growth) + ": " + actions[i].fullName + "</color>\n";
+                modifiersText.text += "<color=" + modColors[actions[i].buttonColor] + ">+" + Mathf.Abs(actions[i].growth).ToString("0.0") + "%: " + actions[i].fullName + "</color>\n";
                 // add text color based on politics
 
                 currentGrowth += actions[i].growth;
@@ -245,27 +265,28 @@ public class PoliticsManager : MonoBehaviour
             }
         }
     }
-    void updatePolitical()
+    void setLock(int index, bool mode)
     {
-        if (currentGrowth > 0)
+        actions[index].isLocked = mode;
+        if (mode)
         {
-            if (Mathf.Abs(politicalViews) < Mathf.Abs(currentCap))
-            {
-                politicalViews = Mathf.Clamp(politicalViews + currentGrowth, -100f, currentCap);
-            }
-        } // coitionis
-        else if (currentGrowth < 0)
-        {
-            if (Mathf.Abs(politicalViews) < Mathf.Abs(currentCap))
-            {
-                politicalViews = Mathf.Clamp(politicalViews + currentGrowth, currentCap, 100f);
-            }
-        } // populis
+
+        }
         else
         {
-            politicalViews = Mathf.Clamp(politicalViews + (0.001f * -Mathf.Sign(politicalViews)), -100f, 100f);
-            // do very slight growth in opposite direction (growth is equal 0)
+
+        }
+    }
+    void updatePolitical()
+    {
+        if (currentGrowth == 0)
+        {
+            politicalViews = Mathf.Clamp(politicalViews + (0.01f * -Mathf.Sign(politicalViews)), Mathf.Min(currentCap, politicalViews), Mathf.Max(currentCap, politicalViews));
         } // aequalis
+        else
+        {
+            politicalViews = Mathf.Clamp(politicalViews + currentGrowth, Mathf.Min(currentCap, politicalViews), Mathf.Max(currentCap, politicalViews));
+        } // politix
 
         //politicalViews = Mathf.Clamp(politicalViews, -100f, 100f); // the ultimate clamp - don't touch it and don't alter politics beyond this very point
 
@@ -282,11 +303,94 @@ public class PoliticsManager : MonoBehaviour
 
         // per action check for locking actions
 
+        for (int i = 0; i < actions.Length; i++)
+        {
+            if (actions[i].unlockRequirements > 0)
+            {
+                actions[i].isLocked = (politicalViews >= actions[i].unlockRequirements);
+            } // above 0
+            else if (actions[i].unlockRequirements < 0)
+            {
+                actions[i].isLocked = (politicalViews <= actions[i].unlockRequirements);
+            } // above 0
+            else
+            {
+                actions[i].isLocked = false;
+            }
+
+            if (actions[i].lockRequirements > 0)
+            {
+                actions[i].isLocked = (politicalViews >= actions[i].lockRequirements);
+            } // above 0
+            else if (actions[i].lockRequirements < 0)
+            {
+                actions[i].isLocked = (politicalViews <= actions[i].lockRequirements);
+            } // above 0
+            else
+            {
+                actions[i].isLocked = true;
+            }
+        }
+
         // update the scales
         lastRot = targetRot;
         targetRot = maxPikeRotation * politicalViews;
         pikeProgress = 0;
 
-        polStatusText.text = ((int)politicalViews).ToString("0");
+        polStatusText.text = default;
+
+        int alignmentID = 0;
+
+        if (Mathf.Abs(politicalViews) == 100f)
+        {
+            polStatusText.text = "<color=#000000>";
+        }
+        else
+        {
+            if (Mathf.Abs(politicalViews) > extremismThreshold)
+            {
+                if (Mathf.Sign(politicalViews) > 0)
+                {
+                    polStatusText.text = "<color=#0038FF>";
+                    alignmentID = 2;
+                } // coitionis
+                else
+                {
+                    polStatusText.text = "<color=#FF0038>";
+                    alignmentID = 1;
+                } // populi
+            } // extremism
+            else if (Mathf.Abs(politicalViews) > neutralismThreshold)
+            {
+                if (Mathf.Sign(politicalViews) > 0)
+                {
+                    polStatusText.text = "<color=#5C80FF>";
+                    alignmentID = 2;
+                } // coitionis
+                else
+                {
+                    polStatusText.text = "<color=#FF5C80>";
+                    alignmentID = 1;
+                } // populi
+            } // normal
+        }
+
+        if (alignmentArray[alignmentID] != currentAlignment)
+        {
+            currentAlignment = alignmentArray[alignmentID];
+
+            string[] colArray = new string[3] { "#FFFFFF", "#FF0038", "#0038FF" };
+            //alignmentColText.text = "<color=" + colArray[alignmentID] + ">" + currentAlignment + "</color>";
+            alignmentColText.text = currentAlignment;
+            alignmentText.text = currentAlignment;
+
+            switch (currentAlignment)
+            {
+                case "":
+                    break;
+            } // for news prolly, idk
+        } // alignment advancing
+
+        polStatusText.text += ((int)Mathf.Abs(politicalViews)).ToString("0") + "</color>";
     } // called every year
 }

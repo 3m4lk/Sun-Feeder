@@ -27,6 +27,14 @@ public class polButton : MonoBehaviour
     public AnimationCurve clickCurve;
     public float clickTime;
     private float clickProgress;
+
+    [Space]
+    public AnimationCurve scrollCurve;
+    public float scrollTime;
+    private float scrollProgress;
+    public GameObject lockBg;
+    public GameObject progressBg;
+    public Transform bothBgs;
     private void Awake()
     {
         clickProgress = clickTime;
@@ -35,9 +43,11 @@ public class polButton : MonoBehaviour
     {
         hoverProgress = Mathf.Clamp(hoverProgress + Time.deltaTime * animDire, 0f, hoverTime);
         clickProgress = Mathf.Min(clickProgress + Time.deltaTime, clickTime);
+        scrollProgress = Mathf.Repeat(scrollProgress + Time.deltaTime, scrollTime);
 
         transform.localScale = Vector3.one * hoverCurve.Evaluate(hoverProgress / hoverTime);
         transform.localScale *= clickCurve.Evaluate(clickProgress / clickTime);
+        bothBgs.localPosition = Vector3.right * scrollCurve.Evaluate(scrollProgress / scrollTime);
     }
     public void onEnter()
     {
