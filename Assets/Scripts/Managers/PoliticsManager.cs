@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 [System.Serializable]
@@ -31,7 +32,9 @@ public class pAc
     [Tooltip("can't be used if it's locked")]
     public bool isLocked;
 
-    public GameObject ownButton;
+    public GameObject ownButton; // might be unneeded in the future??
+
+    public int buttonColor;
 
     public void lockToggle(bool input)
     {
@@ -72,6 +75,31 @@ public class PoliticsManager : MonoBehaviour
     public Transform[] scalePlates;
     public float maxPikeRotation;
 
+    [Space]
+    public AnimationCurve descBgCurve;
+    public float descBgTime;
+    private float descBgProgress;
+    public Transform descBg;
+
+    [Space]
+    public polButton[] buttons;
+
+    [Space]
+    [Tooltip("0 - Populi;\n1 - Populi Extremist;\n2 - Coitionis;\n3 - Coitionis Extremist;\n4 - War")]
+    public Color32[] buttonColors;
+
+    public TMP_Text infoName, infoDesc;
+    private void Awake()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].ownText.text = actions[i].fullName;
+            buttons[i].buttonTag = actions[i].name;
+            buttons[i].ownImage.color = buttonColors[actions[i].buttonColor];
+            buttons[i].ownName = actions[i].fullName;
+            buttons[i].ownDescription = actions[i].description;
+        }
+    }
     private void FixedUpdate()
     {
         if (politicalViews < -neutralismThreshold)
@@ -90,11 +118,26 @@ public class PoliticsManager : MonoBehaviour
             scalePlates[i].localRotation = Quaternion.Euler(0, 0, -maxPikeRotation * politicalViewsTest);
         }
     }
+    private void Update()
+    {
+        descBgProgress = Mathf.Repeat(descBgProgress + Time.deltaTime, descBgTime);
+        descBg.localRotation = Quaternion.Euler(0, 0, descBgCurve.Evaluate(descBgProgress / descBgTime));
+    }
     public void addAction(string input)
     {
         pAc currAction = getAction(input);
         currentGrowth += currAction.growth;
         currentCap += currAction.impact;
+
+        switch (input)
+        {
+            case "pWar":
+                politicalViews = -100f;
+                break; // War (populi)
+            case "cWar":
+                politicalViews = 100f;
+                break; // War (coitionis)
+        }
     }
     public void removeAction(string input)
     {
@@ -123,5 +166,10 @@ public class PoliticsManager : MonoBehaviour
         {
             print("failure! add a couple % described as \"people protesting the attempted changes\" :)");
         }
+    }
+    public void updateInfo(string title = default, string description = default, bool lockState = false)
+    {
+        infoName.text = title;
+        infoDesc.text = description;
     }
 }
