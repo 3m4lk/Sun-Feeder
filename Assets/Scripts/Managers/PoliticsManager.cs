@@ -44,10 +44,11 @@ public class PoliticsManager : MonoBehaviour
 
     [Space]
     [Range(-100f, 100f)]
-    public float views;
+    public float politicalViews;
     public pAc[] actions;
 
     public float extremismThreshold = 70f;
+    public float neutralismThreshold = 10f;
 
     public GameObject[] voxPopuliExtremism;
     public GameObject[] voxCoitionisExtremism;
@@ -63,15 +64,30 @@ public class PoliticsManager : MonoBehaviour
 
     // SGS (Sudden Government Shift)
 
+    [Space]
+    [Range(-100f, 100f)]
+    public float politicalViewsTest;
+    [Tooltip("completely honest, i haven't a slightest idea why i even called it a \"pike\", i just didn't have any better idea and \"pike\" just sorta clicked for whatever reason??")]
+    public Transform scalePike;
+    public Transform[] scalePlates;
+    public float maxPikeRotation;
+
     private void FixedUpdate()
     {
-        if (views < 0)
+        if (politicalViews < -neutralismThreshold)
         {
-            views = Mathf.Max(views + (currentGrowth / 10f) * politicsMult * mManager.gameManager.gameSpeed * Time.fixedDeltaTime, currentCap);
+            politicalViews = Mathf.Max(politicalViews + (currentGrowth / 10f) * politicsMult * mManager.gameManager.gameSpeed * Time.fixedDeltaTime, currentCap);
         } // vox populi
-        else
+        else if (politicalViews > neutralismThreshold)
         {
-            views = Mathf.Min(views + (currentGrowth / 10f) * politicsMult * mManager.gameManager.gameSpeed * Time.fixedDeltaTime, currentCap);
+            politicalViews = Mathf.Min(politicalViews + (currentGrowth / 10f) * politicsMult * mManager.gameManager.gameSpeed * Time.fixedDeltaTime, currentCap);
+        } // vox coitionis
+
+        // for now
+        scalePike.localRotation = Quaternion.Euler(0, 0, maxPikeRotation * politicalViewsTest);
+        for (int i = 0; i < scalePlates.Length; i++)
+        {
+            scalePlates[i].localRotation = Quaternion.Euler(0, 0, -maxPikeRotation * politicalViewsTest);
         }
     }
     public void addAction(string input)
@@ -99,7 +115,7 @@ public class PoliticsManager : MonoBehaviour
     }
     public void SuddenGovernmentShift()
     {
-        if (Random.Range(0, 100) <= Mathf.RoundToInt(SGSChance.Evaluate(Mathf.Abs(views) / 100f)))
+        if (Random.Range(0, 100) <= Mathf.RoundToInt(SGSChance.Evaluate(Mathf.Abs(politicalViews) / 100f)))
         {
             print("success! apply opposite growth that lasts for some years");
         }
