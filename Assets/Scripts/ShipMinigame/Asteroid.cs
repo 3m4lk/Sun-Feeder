@@ -113,12 +113,12 @@ public class Asteroid : MonoBehaviour
         //print(collision.tag);
         if (collision.tag == "MinigameAttractor" || collision.tag == "MinigameHitter")
         {
-            bool isShipColl = false;
+            //bool isShipColl = false;
 
             if (collision.name == "beamTrigger")
             {
                 //print("GRAVSHIPBEAM");
-                isShipColl = true;
+                //isShipColl = true;
             }
 
             float speedAdd = 1f;

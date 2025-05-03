@@ -22,7 +22,7 @@ public class pAc
     public bool special;
 
     [Space]
-    [Tooltip("value given per 10 years")]
+    [Tooltip("value given per 1 year\n(initial calculation: impact / years to finish)\n(I - 30; II - 40; III - 50; IV - 40; V - 30; VI - 10)")]
     public float growth;
     [Tooltip("movement cap")]
     public float impact;
@@ -68,8 +68,6 @@ public class PoliticsManager : MonoBehaviour
     // SGS (Sudden Government Shift)
 
     [Space]
-    [Range(-100f, 100f)]
-    public float politicalViewsTest;
     [Tooltip("completely honest, i haven't a slightest idea why i even called it a \"pike\", i just didn't have any better idea and \"pike\" just sorta clicked for whatever reason??")]
     public Transform scalePike;
     public Transform[] scalePlates;
@@ -89,6 +87,25 @@ public class PoliticsManager : MonoBehaviour
     public Color32[] buttonColors;
 
     public TMP_Text infoName, infoDesc;
+
+    private float warLock;
+    public int warTime;
+
+    public TMP_Text modifiersText;
+    public TMP_Text polStatusText;
+
+    private bool isExtremist;
+    private bool isAtWar;
+
+    private float poliUpdateProgress;
+
+    [Space]
+    public AnimationCurve pikeCurve;
+    public float pikeTime;
+    private float pikeProgress;
+
+    private float lastRot;
+    private float targetRot;
     private void Awake()
     {
         for (int i = 0; i < buttons.Length; i++)
@@ -102,59 +119,84 @@ public class PoliticsManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (politicalViews < -neutralismThreshold)
+        poliUpdateProgress += Time.fixedDeltaTime * mManager.gameManager.gameSpeed;
+
+        for (; poliUpdateProgress >= 1f; poliUpdateProgress--)
+        {
+            updatePolitical();
+        }
+
+        warLock = Mathf.Max(warLock - Time.fixedDeltaTime, 0f);
+
+        /*if (politicalViews < -neutralismThreshold)
         {
             politicalViews = Mathf.Max(politicalViews + (currentGrowth / 10f) * politicsMult * mManager.gameManager.gameSpeed * Time.fixedDeltaTime, currentCap);
         } // vox populi
         else if (politicalViews > neutralismThreshold)
         {
             politicalViews = Mathf.Min(politicalViews + (currentGrowth / 10f) * politicsMult * mManager.gameManager.gameSpeed * Time.fixedDeltaTime, currentCap);
-        } // vox coitionis
-
-        // for now
-        scalePike.localRotation = Quaternion.Euler(0, 0, maxPikeRotation * politicalViewsTest);
-        for (int i = 0; i < scalePlates.Length; i++)
-        {
-            scalePlates[i].localRotation = Quaternion.Euler(0, 0, -maxPikeRotation * politicalViewsTest);
-        }
+        } // vox coitionis//*/
     }
     private void Update()
     {
+        pikeProgress = Mathf.Min(pikeProgress + Time.deltaTime, pikeTime);
         descBgProgress = Mathf.Repeat(descBgProgress + Time.deltaTime, descBgTime);
-        descBg.localRotation = Quaternion.Euler(0, 0, descBgCurve.Evaluate(descBgProgress / descBgTime));
-    }
-    public void addAction(string input)
-    {
-        pAc currAction = getAction(input);
-        currentGrowth += currAction.growth;
-        currentCap += currAction.impact;
 
-        switch (input)
+        descBg.localRotation = Quaternion.Euler(0, 0, descBgCurve.Evaluate(descBgProgress / descBgTime));
+
+        float pikeRot = Mathf.Lerp(lastRot, targetRot, pikeCurve.Evaluate(pikeProgress / pikeTime));
+
+        scalePike.localRotation = Quaternion.Euler(0, 0, -pikeRot);
+        for (int i = 0; i < scalePlates.Length; i++)
         {
-            case "pWar":
-                politicalViews = -100f;
-                break; // War (populi)
-            case "cWar":
-                politicalViews = 100f;
-                break; // War (coitionis)
+            scalePlates[i].localRotation = Quaternion.Euler(0, 0, pikeRot);
         }
     }
-    public void removeAction(string input)
+    public void doAction(string input, bool mode)
     {
-        pAc currAction = getAction(input);
-        currentGrowth -= currAction.growth;
-        currentCap -= currAction.impact;
+        if (!actions[getActionIndex(input)].isLocked)
+        {
+            if (warLock != 0)
+            {
+                switch (input)
+                {
+                    default:
+                        actions[getActionIndex(input)].isActive = mode;
+                        break;
+                    case "pWar":
+                        // unwar is not allow
+                        break;
+                    case "cWar":
+                        // unwar is not allow
+                        break;
+                }
+            }
+            else
+            {
+                actions[getActionIndex(input)].isActive = mode;
+                switch (input)
+                {
+                    case "pWar":
+                        warLock = warTime;
+                        break;
+                    case "cWar":
+                        warLock = warTime;
+                        break;
+                }
+            }
+        }
+        updateActions();
     }
-    public pAc getAction(string input)
+    int getActionIndex(string input)
     {
         for (int i = 0; i < actions.Length; i++)
         {
             if (actions[i].name == input)
             {
-                return actions[i];
+                return i;
             }
         }
-        return null;
+        return -1;
     }
     public void SuddenGovernmentShift()
     {
@@ -172,4 +214,79 @@ public class PoliticsManager : MonoBehaviour
         infoName.text = title;
         infoDesc.text = description;
     }
+    void updateActions()
+    {
+        currentGrowth = 0;
+        currentCap = 0;
+        modifiersText.text = "";
+        for (int i = 0; i < actions.Length; i++)
+        {
+            if (actions[i].isActive)
+            {
+                string[] modColors = new string[5] { "#FF5C80", "#FF0038", "#5C80FF", "#0038FF", "#000000" };
+                modifiersText.text += "<color=" + modColors[actions[i].buttonColor] + ">+" + Mathf.Abs(actions[i].growth) + ": " + actions[i].fullName + "</color>\n";
+                // add text color based on politics
+
+                currentGrowth += actions[i].growth;
+                currentCap += actions[i].impact;
+                switch (actions[i].name)
+                {
+                    case "pWar":
+                        politicalViews = -100f;
+                        currentGrowth = -100f;
+                        currentCap = -100f;
+                        return; // War (populi)
+                    case "cWar":
+                        politicalViews = 100f;
+                        currentGrowth = 100f;
+                        currentCap = 100f;
+                        return; // War (coitionis)
+                }
+            }
+        }
+    }
+    void updatePolitical()
+    {
+        if (currentGrowth > 0)
+        {
+            if (Mathf.Abs(politicalViews) < Mathf.Abs(currentCap))
+            {
+                politicalViews = Mathf.Clamp(politicalViews + currentGrowth, -100f, currentCap);
+            }
+        } // coitionis
+        else if (currentGrowth < 0)
+        {
+            if (Mathf.Abs(politicalViews) < Mathf.Abs(currentCap))
+            {
+                politicalViews = Mathf.Clamp(politicalViews + currentGrowth, currentCap, 100f);
+            }
+        } // populis
+        else
+        {
+            politicalViews = Mathf.Clamp(politicalViews + (0.001f * -Mathf.Sign(politicalViews)), -100f, 100f);
+            // do very slight growth in opposite direction (growth is equal 0)
+        } // aequalis
+
+        //politicalViews = Mathf.Clamp(politicalViews, -100f, 100f); // the ultimate clamp - don't touch it and don't alter politics beyond this very point
+
+        if (!isExtremist && Mathf.Abs(politicalViews) >= extremismThreshold)
+        {
+            isExtremist = true;
+            // spawn extremism news
+        }
+        else if (isExtremist && Mathf.Abs(politicalViews) < extremismThreshold)
+        {
+            isExtremist = false;
+            // spawn no longer extremist news
+        }
+
+        // per action check for locking actions
+
+        // update the scales
+        lastRot = targetRot;
+        targetRot = maxPikeRotation * politicalViews;
+        pikeProgress = 0;
+
+        polStatusText.text = ((int)politicalViews).ToString("0");
+    } // called every year
 }

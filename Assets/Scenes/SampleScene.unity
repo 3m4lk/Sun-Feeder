@@ -3080,7 +3080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Accessible Healthcare
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -3107,7 +3107,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.9
+  m_fontSize: 20
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3866,7 +3866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Public Schools
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -4597,6 +4597,7 @@ RectTransform:
   - {fileID: 1936905170}
   - {fileID: 1878723678}
   - {fileID: 2036181728}
+  - {fileID: 661835297}
   m_Father: {fileID: 1160036782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4617,7 +4618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6901961, g: 0.6901961, b: 0.6901961, a: 0.7529412}
+  m_Color: {r: 0.6901961, g: 0.6901961, b: 0.6901961, a: 0.9019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5147,7 +5148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &124145437
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5163,9 +5164,9 @@ RectTransform:
   - {fileID: 164983368}
   m_Father: {fileID: 366103137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: -118}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &124145438
@@ -5246,6 +5247,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 164983369}
   ownImage: {fileID: 124145440}
   hoverCurve:
@@ -5273,6 +5275,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!114 &124145440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6382,7 +6418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Public Schools
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -8372,7 +8408,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Accessible Healthcare
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -8399,7 +8435,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.9
+  m_fontSize: 20
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -16490,7 +16526,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Public Schools
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -18900,7 +18936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &408510123
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18916,9 +18952,9 @@ RectTransform:
   - {fileID: 59039555}
   m_Father: {fileID: 1118104505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: -84}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &408510124
@@ -18999,6 +19035,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 59039556}
   ownImage: {fileID: 408510126}
   hoverCurve:
@@ -19026,6 +19063,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!114 &408510126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20933,6 +21004,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 1189673005}
   ownImage: {fileID: 466688075}
   hoverCurve:
@@ -20960,6 +21032,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!1 &467831246
 GameObject:
   m_ObjectHideFlags: 0
@@ -22460,7 +22566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &506597873
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22476,9 +22582,9 @@ RectTransform:
   - {fileID: 317308003}
   m_Father: {fileID: 366103137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &506597874
@@ -22559,6 +22665,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 317308004}
   ownImage: {fileID: 506597876}
   hoverCurve:
@@ -22586,6 +22693,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!114 &506597876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22740,7 +22881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &508711080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22756,9 +22897,9 @@ RectTransform:
   - {fileID: 1436540689}
   m_Father: {fileID: 1118104505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: -186}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &508711081
@@ -22839,6 +22980,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 1436540690}
   ownImage: {fileID: 508711083}
   hoverCurve:
@@ -22866,6 +23008,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!114 &508711083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23020,7 +23196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &517651336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23036,9 +23212,9 @@ RectTransform:
   - {fileID: 2143838873}
   m_Father: {fileID: 1118104505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: -118}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517651337
@@ -23119,6 +23295,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 2143838874}
   ownImage: {fileID: 517651339}
   hoverCurve:
@@ -23146,6 +23323,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!114 &517651339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32118,8 +32329,8 @@ MonoBehaviour:
     unlockRequirements: 0
     lockRequirements: 0
     special: 0
-    growth: 0
-    impact: 0
+    growth: -0.4333333
+    impact: -13
     isActive: 0
     isLocked: 0
     ownButton: {fileID: 0}
@@ -32131,8 +32342,8 @@ MonoBehaviour:
     unlockRequirements: 0
     lockRequirements: 0
     special: 0
-    growth: 0
-    impact: 0
+    growth: -0.5
+    impact: -20
     isActive: 0
     isLocked: 0
     ownButton: {fileID: 0}
@@ -32144,8 +32355,8 @@ MonoBehaviour:
     unlockRequirements: 0
     lockRequirements: 0
     special: 0
-    growth: 0
-    impact: 0
+    growth: -0.74
+    impact: -37
     isActive: 0
     isLocked: 0
     ownButton: {fileID: 0}
@@ -32157,8 +32368,8 @@ MonoBehaviour:
     unlockRequirements: 0
     lockRequirements: 0
     special: 0
-    growth: 0
-    impact: 0
+    growth: -0.375
+    impact: -15
     isActive: 0
     isLocked: 0
     ownButton: {fileID: 0}
@@ -32170,8 +32381,8 @@ MonoBehaviour:
     unlockRequirements: 0
     lockRequirements: 0
     special: 0
-    growth: 0
-    impact: 0
+    growth: -0.2333333
+    impact: -7
     isActive: 0
     isLocked: 0
     ownButton: {fileID: 0}
@@ -32183,8 +32394,8 @@ MonoBehaviour:
     unlockRequirements: 0
     lockRequirements: 0
     special: 0
-    growth: 0
-    impact: 0
+    growth: -0.3
+    impact: -3
     isActive: 0
     isLocked: 0
     ownButton: {fileID: 0}
@@ -32196,8 +32407,8 @@ MonoBehaviour:
     unlockRequirements: 0
     lockRequirements: 0
     special: 0
-    growth: 0
-    impact: 0
+    growth: -1000
+    impact: -100
     isActive: 0
     isLocked: 0
     ownButton: {fileID: 0}
@@ -32209,8 +32420,8 @@ MonoBehaviour:
     unlockRequirements: 0
     lockRequirements: 0
     special: 0
-    growth: 0
-    impact: 0
+    growth: 0.4333333
+    impact: 13
     isActive: 0
     isLocked: 0
     ownButton: {fileID: 0}
@@ -32222,8 +32433,8 @@ MonoBehaviour:
     unlockRequirements: 0
     lockRequirements: 0
     special: 0
-    growth: 0
-    impact: 0
+    growth: 0.5
+    impact: 20
     isActive: 0
     isLocked: 0
     ownButton: {fileID: 0}
@@ -32235,8 +32446,8 @@ MonoBehaviour:
     unlockRequirements: 0
     lockRequirements: 0
     special: 0
-    growth: 0
-    impact: 0
+    growth: 0.74
+    impact: 37
     isActive: 0
     isLocked: 0
     ownButton: {fileID: 0}
@@ -32248,8 +32459,8 @@ MonoBehaviour:
     unlockRequirements: 0
     lockRequirements: 0
     special: 0
-    growth: 0
-    impact: 0
+    growth: 0.375
+    impact: 15
     isActive: 0
     isLocked: 0
     ownButton: {fileID: 0}
@@ -32261,8 +32472,8 @@ MonoBehaviour:
     unlockRequirements: 0
     lockRequirements: 0
     special: 0
-    growth: 0
-    impact: 0
+    growth: 0.2333333
+    impact: 7
     isActive: 0
     isLocked: 0
     ownButton: {fileID: 0}
@@ -32274,8 +32485,8 @@ MonoBehaviour:
     unlockRequirements: 0
     lockRequirements: 0
     special: 0
-    growth: 0
-    impact: 0
+    growth: 0.3
+    impact: 3
     isActive: 0
     isLocked: 0
     ownButton: {fileID: 0}
@@ -32284,8 +32495,8 @@ MonoBehaviour:
     fullName: War
     description: 
     movement: 2
-    unlockRequirements: 0
-    lockRequirements: 0
+    unlockRequirements: 1000
+    lockRequirements: 100
     special: 0
     growth: 0
     impact: 0
@@ -32337,7 +32548,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  politicalViewsTest: 0
   scalePike: {fileID: 1627198568}
   scalePlates:
   - {fileID: 202615285}
@@ -32406,6 +32616,172 @@ MonoBehaviour:
     rgba: 4278190080
   infoName: {fileID: 1760396925}
   infoDesc: {fileID: 1017574940}
+  warTime: 50
+  modifiersText: {fileID: 1688316796}
+  polStatusText: {fileID: 1936905171}
+  pikeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  pikeTime: 0.5
+--- !u!1 &661835296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 661835297}
+  - component: {fileID: 661835299}
+  - component: {fileID: 661835298}
+  m_Layer: 5
+  m_Name: bonusesStatus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &661835297
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661835296}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 93118262}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -2, y: -98}
+  m_SizeDelta: {x: 120, y: 48}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &661835298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661835296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Economy: x1
+
+    Efficiency: x1'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
+  m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 16
+  m_fontSizeBase: 16
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &661835299
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661835296}
+  m_CullTransparentMesh: 1
 --- !u!1 &666992914
 GameObject:
   m_ObjectHideFlags: 0
@@ -33181,8 +33557,8 @@ MonoBehaviour:
   - Two bears mauled by a child.
   - Man walks into a RIEY clinic, asks Operator if they have "Ha". Responds with
     "HaRIEY Balls!" after being questioned.
-  - Intern erases two first letters of "Uncrashable IV" on spaceship. Crashes into
-    asteroid immediately after takeoff.
+  - Intern erases two first letters of "Uncrashable IV" on spaceship. Asteroid crashes
+    into it immediately.
   - Girl with key in her back denies accusations of being a robot, despite being
     alive even before RIEY surgeries were invented.
   - Man buys video game legitimately. Encounters faulty anti-piracy AI.
@@ -33202,7 +33578,7 @@ MonoBehaviour:
   - '"I like my homies like I like my grapes!", says rapper 25Grapes4tATime.'
   - '"News is not allow." - popstonia'
   - Hey, you reading this! This is a robbery, wire 300,000mk to my e-walle
-  - Now move your hands and clap your feet, this's the song of the News Machine!
+  - Now move your hands and clap your feet - That's the song of the News Machine!
   - Ramblers are still rambling, allegedly.
   - A Cerean woman. Thousands die.
   - Recent findings show Humans 70,000 years ago breathed in space using "long plastic
@@ -33212,6 +33588,12 @@ MonoBehaviour:
   - Kalafior the beaver escapes local zoo. "Perhaps it wasn't my brightest idea to
     keep him in a cage made of wood", comments Director of Mar-Terra Zoo.
   - Martian hiker discovers enigmatic "Candlejack", says he possesses unusual abili
+  - Engineers begin work on the first blood-fueled machine, purposes are unknown.
+  - Leek stock drops by 150%, farmers report.
+  - Baguette stock drops by 150%, bakers report.
+  - Yellow Flip-Phone stock drops by 150%, engineers report.
+  - Eesti ennekoike!
+  - Polska gora!
   newsPanel: {fileID: 8482357198931286878, guid: 4cab6e0136d575d41bda0ca3682c693d, type: 3}
   contentTransform: {fileID: 2018390841}
   newsAmount: 14
@@ -35191,7 +35573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &748272964
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35207,9 +35589,9 @@ RectTransform:
   - {fileID: 230512993}
   m_Father: {fileID: 1118104505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &748272965
@@ -35290,6 +35672,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 230512994}
   ownImage: {fileID: 748272967}
   hoverCurve:
@@ -35317,6 +35700,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!114 &748272967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35578,7 +35995,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Public Schools
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -41312,6 +41729,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 766381375}
   ownImage: {fileID: 958759693}
   hoverCurve:
@@ -41339,6 +41757,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!114 &958759693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42338,7 +42790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Accessible Healthcare
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -42365,7 +42817,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.9
+  m_fontSize: 20
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -46184,7 +46636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1109912779
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46200,9 +46652,9 @@ RectTransform:
   - {fileID: 2005681033}
   m_Father: {fileID: 366103137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: -186}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1109912780
@@ -46283,6 +46735,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 2005681034}
   ownImage: {fileID: 1109912782}
   hoverCurve:
@@ -46310,6 +46763,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!114 &1109912782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47482,7 +47969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Public Schools
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -51000,7 +51487,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Public Schools
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -66267,7 +66754,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Accessible Healthcare
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -66294,7 +66781,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.9
+  m_fontSize: 20
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -66365,7 +66852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1441354809
 RectTransform:
   m_ObjectHideFlags: 0
@@ -66381,9 +66868,9 @@ RectTransform:
   - {fileID: 88809551}
   m_Father: {fileID: 366103137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: -152}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1441354810
@@ -66464,6 +66951,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 88809552}
   ownImage: {fileID: 1441354812}
   hoverCurve:
@@ -66491,6 +66979,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!114 &1441354812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66548,7 +67070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1442897482
 RectTransform:
   m_ObjectHideFlags: 0
@@ -66564,9 +67086,9 @@ RectTransform:
   - {fileID: 1126703343}
   m_Father: {fileID: 366103137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: -84}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1442897483
@@ -66647,6 +67169,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 1126703344}
   ownImage: {fileID: 1442897485}
   hoverCurve:
@@ -66674,6 +67197,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!114 &1442897485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66761,7 +67318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Padding: {x: 0, y: 0, z: -1, w: -1}
   m_Softness: {x: 0, y: 0}
 --- !u!1 &1447915201
 GameObject:
@@ -68818,6 +69375,81 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!1 &1489140092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1489140093}
+  - component: {fileID: 1489140095}
+  - component: {fileID: 1489140094}
+  m_Layer: 5
+  m_Name: pikeVis
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1489140093
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489140092}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1627198568}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1489140094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489140092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d7111ce9f8b3d324bafcad06601d5ed1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1489140095
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489140092}
+  m_CullTransparentMesh: 1
 --- !u!1 &1489441908
 GameObject:
   m_ObjectHideFlags: 0
@@ -70869,7 +71501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Accessible Healthcare
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -70896,7 +71528,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.9
+  m_fontSize: 20
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -73029,8 +73661,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1627198568}
-  - component: {fileID: 1627198570}
-  - component: {fileID: 1627198569}
   m_Layer: 5
   m_Name: pike
   m_TagString: Untagged
@@ -73052,6 +73682,7 @@ RectTransform:
   m_Children:
   - {fileID: 202615285}
   - {fileID: 529132862}
+  - {fileID: 1489140093}
   m_Father: {fileID: 307272719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -73059,44 +73690,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 70}
   m_SizeDelta: {x: 176, y: 176}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1627198569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627198567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d7111ce9f8b3d324bafcad06601d5ed1, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1627198570
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627198567}
-  m_CullTransparentMesh: 1
 --- !u!1 &1630726466
 GameObject:
   m_ObjectHideFlags: 0
@@ -74321,6 +74914,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 1555959184}
   ownImage: {fileID: 1682129896}
   hoverCurve:
@@ -74348,6 +74942,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!1 &1683155711
 GameObject:
   m_ObjectHideFlags: 0
@@ -74608,8 +75236,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 1090519039
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.2509804}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -77513,7 +78141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Padding: {x: 0, y: 0, z: -1, w: 0}
   m_Softness: {x: 0, y: 0}
 --- !u!1 &1765954063
 GameObject:
@@ -77581,7 +78209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1769974790
 RectTransform:
   m_ObjectHideFlags: 0
@@ -77597,9 +78225,9 @@ RectTransform:
   - {fileID: 998312402}
   m_Father: {fileID: 1118104505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: -152}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1769974791
@@ -77680,6 +78308,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 998312403}
   ownImage: {fileID: 1769974793}
   hoverCurve:
@@ -77707,6 +78336,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!114 &1769974793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79745,7 +80408,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Accessible Healthcare
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -79772,7 +80435,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.9
+  m_fontSize: 20
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -86296,7 +86959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Public Schools
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -92924,6 +93587,7 @@ MonoBehaviour:
   ownName: 
   ownDescription: 
   isLocked: 0
+  mode: 0
   ownText: {fileID: 1817738585}
   ownImage: {fileID: 2059157347}
   hoverCurve:
@@ -92951,6 +93615,40 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   hoverTime: 0.1
+  clickCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  clickTime: 0.6
 --- !u!114 &2059157347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95164,7 +95862,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Accessible Healthcare
+  m_text: Political Action
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -95191,7 +95889,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.9
+  m_fontSize: 20
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

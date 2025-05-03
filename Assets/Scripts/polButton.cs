@@ -27,6 +27,10 @@ public class polButton : MonoBehaviour
     public AnimationCurve clickCurve;
     public float clickTime;
     private float clickProgress;
+    private void Awake()
+    {
+        clickProgress = clickTime;
+    }
     private void Update()
     {
         hoverProgress = Mathf.Clamp(hoverProgress + Time.deltaTime * animDire, 0f, hoverTime);
@@ -52,17 +56,10 @@ public class polButton : MonoBehaviour
     {
         if (!isLocked)
         {
+            clickProgress = 0;
             animDire = -1f;
             mode = !mode;
-            if (mode)
-            {
-                politics.addAction(buttonTag);
-                //return; // reckon if it's unneeded or nah?
-            }
-            else
-            {
-                politics.removeAction(buttonTag);
-            }
+            politics.doAction(buttonTag, mode);
         }
     }
 }
