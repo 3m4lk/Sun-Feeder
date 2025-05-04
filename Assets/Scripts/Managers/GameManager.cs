@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -47,6 +48,12 @@ public class GameManager : MonoBehaviour
     [Space]
     public AnimationCurve cashScaleCurve;
     private float cashScaleProgress;
+    public Slider calamitySlider;
+    public TMP_Text calamityText;
+
+    public int currentYear = 82081;
+
+    public int[] yearsRange = new int[2] { 82021, 87121 };
     private void Awake()
     {
         //print(QualitySettings.vSyncCount);
@@ -103,6 +110,11 @@ public class GameManager : MonoBehaviour
 
         totalPlaytime += gameSpeed * Time.deltaTime;
         playtimePercentage = totalPlaytime / 5040f;
+
+        calamitySlider.value = 100f - playtimePercentage * 100f;
+        calamityText.text = "Sol: " + calamitySlider.value.ToString("0.0") + "%";
+
+        currentYear = Mathf.FloorToInt(Mathf.Lerp(yearsRange[0], yearsRange[1], playtimePercentage));
     }
     public void addCash(int amount)
     {

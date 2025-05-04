@@ -2,6 +2,12 @@ using TMPro;
 using UnityEngine;
 
 [System.Serializable]
+public class bAPR
+{
+    public GameObject buttonUnlock;
+    public float requirement;
+}
+[System.Serializable]
 public class pAc
 {
     public string name;
@@ -13,10 +19,10 @@ public class pAc
     [Range(0, 2)]
     public int movement;
 
-    [Space]
+    /*[Space]
     public float unlockRequirements;
     [Tooltip("whan above this threshold, action gets locked and cannot be used & chosen")]
-    public float lockRequirements;
+    public float lockRequirements;//*/
 
     [Space]
     public bool special;
@@ -118,13 +124,15 @@ public class PoliticsManager : MonoBehaviour
     [Tooltip("HARDCODING TIME: https://www.youtube.com/watch?v=X8z23t428kU")]
     public GameObject[] extrPopuliUnlock;
     public GameObject[] extrCoitionisUnlock;
+
     public GameObject populiWarUnlock;
-    public GameObject populiCoitionisUnlock;
+    public GameObject coitionisWarUnlock;
 
     public bool extrPopuliUnlocked;
     public bool extrCoitionisUnlocked;
+
     public bool populiWarUnlocked;
-    public bool populiCoitionisUnlocked;
+    public bool coitionisWarUnlocked;
     private void Awake()
     {
         for (int i = 0; i < buttons.Length; i++)
@@ -301,9 +309,9 @@ public class PoliticsManager : MonoBehaviour
             // spawn no longer extremist news
         }
 
-        // per action check for locking actions
+        // // per action check for locking actions
 
-        for (int i = 0; i < actions.Length; i++)
+        /*for (int i = 0; i < actions.Length; i++)
         {
             if (actions[i].unlockRequirements > 0)
             {
@@ -330,7 +338,7 @@ public class PoliticsManager : MonoBehaviour
             {
                 actions[i].isLocked = true;
             }
-        }
+        }//*/
 
         // update the scales
         lastRot = targetRot;
@@ -390,6 +398,36 @@ public class PoliticsManager : MonoBehaviour
                     break;
             } // for news prolly, idk
         } // alignment advancing
+
+        if (!extrPopuliUnlocked && politicalViews <= -70f)
+        {
+            extrPopuliUnlocked = true;
+            for (int i = 0; i < extrPopuliUnlock.Length; i++)
+            {
+                extrPopuliUnlock[i].SetActive(true);
+            }
+        }
+        else if (!extrCoitionisUnlocked && politicalViews >= 70f)
+        {
+            extrCoitionisUnlocked = true;
+            for (int i = 0; i < extrCoitionisUnlock.Length; i++)
+            {
+                extrCoitionisUnlock[i].SetActive(true);
+            }
+        }
+
+        else if (!populiWarUnlocked && politicalViews <= -95f)
+        {
+            populiWarUnlocked = true;
+            populiWarUnlock.SetActive(true);
+        }
+        else if (!coitionisWarUnlocked && politicalViews >= 95f)
+        {
+            coitionisWarUnlocked = true;
+            coitionisWarUnlock.SetActive(true);
+        }
+        // had i had more time i woulda made it betta
+        // speakin in written drunken slur even tho iaint drunk cause its just quickler
 
         polStatusText.text += ((int)Mathf.Abs(politicalViews)).ToString("0") + "</color>";
     } // called every year

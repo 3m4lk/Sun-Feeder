@@ -37,12 +37,12 @@ public class CommanderManager : MonoBehaviour
                     killCommander();
                 }
             }
-            commanderText.text = "Commander: " + commanderName + "\nYear ";
+            commanderText.text = "Commander: " + commanderName + "\nYear " + mManager.gameManager.currentYear + "-ALL";
         }
         else
         {
             commanderMournProgress = Mathf.Max(commanderMournProgress - Time.fixedDeltaTime, 0);
-            commanderText.text = "<color=#800000>Commander: " + commanderName + " (*)</color>\nYear ";
+            commanderText.text = "<color=#800000>Commander: " + commanderName + " (*)</color>\nYear " + mManager.gameManager.currentYear + "-ALL";
         }
     }
     public void killCommander()

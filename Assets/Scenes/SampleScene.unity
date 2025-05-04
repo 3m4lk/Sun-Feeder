@@ -4416,7 +4416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &93118262
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6425,9 +6425,9 @@ RectTransform:
   - {fileID: 1863664252}
   m_Father: {fileID: 366103137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -152}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &194402914
@@ -8248,9 +8248,9 @@ RectTransform:
   - {fileID: 815570092}
   m_Father: {fileID: 1118104505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -186}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &233273426
@@ -16838,6 +16838,81 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!1 &325182462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 325182463}
+  - component: {fileID: 325182465}
+  - component: {fileID: 325182464}
+  m_Layer: 5
+  m_Name: missingTime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &325182463
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325182462}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 916712477}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &325182464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325182462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.09411765, b: 0.29803923, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &325182465
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325182462}
+  m_CullTransparentMesh: 1
 --- !u!1 &325514253
 GameObject:
   m_ObjectHideFlags: 0
@@ -18433,9 +18508,9 @@ RectTransform:
   - {fileID: 2010612550}
   m_Father: {fileID: 366103137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -220}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &376259785
@@ -20045,9 +20120,9 @@ RectTransform:
   - {fileID: 976671313}
   m_Father: {fileID: 1118104505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -118}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &432278993
@@ -23897,10 +23972,10 @@ RectTransform:
   m_Father: {fileID: 916712477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &540787063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23914,8 +23989,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 0.972549, b: 0.90588236, a: 1}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -25213,9 +25288,9 @@ RectTransform:
   - {fileID: 1281744027}
   m_Father: {fileID: 1118104505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -84}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588015190
@@ -30876,9 +30951,9 @@ RectTransform:
   - {fileID: 1683861261}
   m_Father: {fileID: 366103137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -118}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &618525935
@@ -32447,6 +32522,142 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656013046}
   m_Mesh: {fileID: 6733355835473386470, guid: ef0f36e53ee499540a9a68b7506192a5, type: 3}
+--- !u!1 &656822408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 656822409}
+  - component: {fileID: 656822411}
+  - component: {fileID: 656822410}
+  m_Layer: 5
+  m_Name: calamText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &656822409
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656822408}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 916712477}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 10}
+  m_SizeDelta: {x: 96, y: 16}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &656822410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656822408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Sol: 100.0%'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 0b27fb0b13d50d14b8bdf80be100e35e, type: 2}
+  m_sharedMaterial: {fileID: 8740282252242457676, guid: 0b27fb0b13d50d14b8bdf80be100e35e, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4293392639
+  m_fontColor: {r: 1, g: 0.972549, b: 0.90588236, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 16
+  m_fontSizeBase: 16
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &656822411
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656822408}
+  m_CullTransparentMesh: 1
 --- !u!1 &658515846
 GameObject:
   m_ObjectHideFlags: 0
@@ -33026,8 +33237,6 @@ MonoBehaviour:
     fullName: Accessible Healthcare
     description: 
     movement: 0
-    unlockRequirements: 0
-    lockRequirements: 100
     special: 0
     growth: -0.4333333
     impact: -13
@@ -33038,8 +33247,6 @@ MonoBehaviour:
     fullName: Charity Events
     description: 
     movement: 0
-    unlockRequirements: -13
-    lockRequirements: 100
     special: 0
     growth: -0.5
     impact: -20
@@ -33050,8 +33257,6 @@ MonoBehaviour:
     fullName: Sanctions
     description: 
     movement: 0
-    unlockRequirements: -33
-    lockRequirements: 100
     special: 0
     growth: -0.74
     impact: -37
@@ -33062,8 +33267,6 @@ MonoBehaviour:
     fullName: Police Hour
     description: 
     movement: 0
-    unlockRequirements: -70
-    lockRequirements: 100
     special: 0
     growth: -0.375
     impact: -15
@@ -33074,8 +33277,6 @@ MonoBehaviour:
     fullName: Worker Rights
     description: 
     movement: 0
-    unlockRequirements: -85
-    lockRequirements: 100
     special: 0
     growth: -0.2333333
     impact: -7
@@ -33086,8 +33287,6 @@ MonoBehaviour:
     fullName: Wrongthink
     description: 
     movement: 0
-    unlockRequirements: -92
-    lockRequirements: 100
     special: 0
     growth: -0.3
     impact: -3
@@ -33098,8 +33297,6 @@ MonoBehaviour:
     fullName: War
     description: 
     movement: 0
-    unlockRequirements: -95
-    lockRequirements: 100
     special: 0
     growth: -100
     impact: -100
@@ -33110,8 +33307,6 @@ MonoBehaviour:
     fullName: Public Schools
     description: 
     movement: 2
-    unlockRequirements: 0
-    lockRequirements: -100
     special: 0
     growth: 0.4333333
     impact: 13
@@ -33122,8 +33317,6 @@ MonoBehaviour:
     fullName: Scholarships
     description: 
     movement: 2
-    unlockRequirements: 13
-    lockRequirements: -100
     special: 0
     growth: 0.5
     impact: 20
@@ -33134,8 +33327,6 @@ MonoBehaviour:
     fullName: Propaganda
     description: 
     movement: 2
-    unlockRequirements: 33
-    lockRequirements: -100
     special: 0
     growth: 0.74
     impact: 37
@@ -33146,8 +33337,6 @@ MonoBehaviour:
     fullName: Closed Borders
     description: 
     movement: 2
-    unlockRequirements: 70
-    lockRequirements: -100
     special: 0
     growth: 0.375
     impact: 15
@@ -33158,8 +33347,6 @@ MonoBehaviour:
     fullName: Technological Reneissance
     description: 
     movement: 2
-    unlockRequirements: 85
-    lockRequirements: -100
     special: 0
     growth: 0.2333333
     impact: 7
@@ -33170,8 +33357,6 @@ MonoBehaviour:
     fullName: Military State
     description: 
     movement: 2
-    unlockRequirements: 92
-    lockRequirements: -100
     special: 0
     growth: 0.3
     impact: 3
@@ -33182,8 +33367,6 @@ MonoBehaviour:
     fullName: War
     description: 
     movement: 2
-    unlockRequirements: 95
-    lockRequirements: -100
     special: 0
     growth: 100
     impact: 100
@@ -33194,8 +33377,6 @@ MonoBehaviour:
     fullName: Game Jams
     description: 
     movement: 1
-    unlockRequirements: 0
-    lockRequirements: 0
     special: 1
     growth: 0
     impact: 0
@@ -33340,6 +33521,14 @@ MonoBehaviour:
   polArrowTargets:
   - {fileID: 448057182}
   - {fileID: 1330963655}
+  extrPopuliUnlock: []
+  extrCoitionisUnlock: []
+  populiWarUnlock: {fileID: 0}
+  coitionisWarUnlock: {fileID: 0}
+  extrPopuliUnlocked: 0
+  extrCoitionisUnlocked: 0
+  populiWarUnlocked: 0
+  coitionisWarUnlocked: 0
 --- !u!1 &661599806
 GameObject:
   m_ObjectHideFlags: 0
@@ -34150,9 +34339,9 @@ RectTransform:
   - {fileID: 643546917}
   m_Father: {fileID: 366103137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -16}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &679750105
@@ -35139,9 +35328,9 @@ RectTransform:
   - {fileID: 1407676693}
   m_Father: {fileID: 1118104505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -16}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &709985083
@@ -36395,9 +36584,9 @@ RectTransform:
   - {fileID: 282917604}
   m_Father: {fileID: 366103137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -84}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &740883047
@@ -39184,7 +39373,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -41125,9 +41314,9 @@ RectTransform:
   - {fileID: 1225726830}
   m_Father: {fileID: 366103137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -50}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &890114800
@@ -42620,6 +42809,7 @@ GameObject:
   m_Component:
   - component: {fileID: 916712477}
   - component: {fileID: 916712479}
+  - component: {fileID: 916712480}
   - component: {fileID: 916712478}
   m_Layer: 5
   m_Name: calamityTimerSlider
@@ -42627,7 +42817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &916712477
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42640,7 +42830,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 984712830}
+  - {fileID: 325182463}
   - {fileID: 540787062}
+  - {fileID: 656822409}
   m_Father: {fileID: 1160036782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -42691,11 +42884,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 540787063}
   m_FillRect: {fileID: 540787062}
   m_HandleRect: {fileID: 0}
-  m_Direction: 0
+  m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 99.9
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 99.9
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -42707,6 +42900,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916712476}
   m_CullTransparentMesh: 1
+--- !u!114 &916712480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916712476}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.29803923, g: 0, b: 0, a: 0.7529412}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &918700662
 GameObject:
   m_ObjectHideFlags: 0
@@ -44704,6 +44927,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -8}
   m_SizeDelta: {x: 216, y: 152}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &984712829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 984712830}
+  - component: {fileID: 984712832}
+  - component: {fileID: 984712831}
+  m_Layer: 5
+  m_Name: outline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &984712830
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984712829}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 916712477}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 4, y: 4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &984712831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984712829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.9411765}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &984712832
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984712829}
+  m_CullTransparentMesh: 1
 --- !u!1 &985813246
 GameObject:
   m_ObjectHideFlags: 0
@@ -55276,6 +55574,9 @@ MonoBehaviour:
     - M
     - T
     - Maude
+    - Keitoke
+    - Yezi
+    - Rekko
     sn1stSyllables: []
     snMidSyllables: []
     snEndSyllables: []
@@ -55370,10 +55671,399 @@ MonoBehaviour:
     - Morning
     - Foxtrot
     - of Many
+    - Defuntoke
+    - Metal
     maxNameSyllables: 1
     maxSurnameSyllables: 1
     secondNameChance: 50
     thirdNameChance: 10
+  - name: English
+    n1stSyllables:
+    - Mi
+    - Ri
+    - A
+    - Pat
+    - And
+    - Ma
+    - Jas
+    - Ma
+    - Ben
+    - An
+    - Chris
+    - Gab
+    - Je
+    - To
+    - Gio
+    - Free
+    nMidSyllables:
+    - mo
+    - ri
+    - ve
+    - di
+    - ja
+    - po
+    - tho
+    - to
+    - na
+    - re
+    nEndSyllables:
+    - chael
+    - chard
+    - dam
+    - rick
+    - rew
+    - ry
+    - mine
+    - ley
+    - na
+    - sa
+    - ton
+    - ny
+    - son
+    - pher
+    - riel
+    - my
+    - rgio
+    - man
+    - zy
+    nOneSyllableNames:
+    - Joe
+    - Stan
+    - Quinn
+    - Finn
+    - Kai
+    - Ann
+    - Eva
+    - Jude
+    - Joan
+    - Jace
+    - Dwayne
+    - John
+    - Jane
+    - Amy
+    - Jack
+    - Ice
+    - Cold
+    sn1stSyllables:
+    - Mo
+    - Bla
+    - Go
+    - Gio
+    - Ar
+    - Sta
+    - John
+    - Will
+    - Win
+    - Dal
+    - Faw
+    - Ven
+    - O
+    - Wa
+    snMidSyllables:
+    - mo
+    - va
+    - ma
+    - llo
+    - ches
+    - det
+    - re
+    - '''Ne'
+    - ran
+    - shin
+    snEndSyllables:
+    - a
+    - ck
+    - on
+    - nni
+    - ne
+    - son
+    - iams
+    - is
+    - ter
+    - las
+    - kes
+    - ta
+    - al
+    - san
+    - gton
+    snOneSyllableSurnames:
+    - Slick
+    - Doe
+    - Wolf
+    - Guy
+    - Cruise
+    - Man
+    - Rose
+    - Gun
+    - Stone
+    - Killer
+    - Kid
+    maxNameSyllables: 3
+    maxSurnameSyllables: 3
+    secondNameChance: 30
+    thirdNameChance: 2
+  - name: Japanese
+    n1stSyllables:
+    - A
+    - Hi
+    - I
+    - Ma
+    - Sa
+    - Shi
+    - You
+    - Ta
+    - Ya
+    - Ha
+    - Su
+    - Yuu
+    - Ki
+    - Kei
+    - Re
+    nMidSyllables:
+    - tsu
+    - ro
+    - chi
+    - sa
+    - ru
+    - to
+    - ge
+    - ma
+    - mo
+    - gi
+    - ya
+    - o
+    - mi
+    - zu
+    - k
+    - ku
+    - to
+    nEndSyllables:
+    - shi
+    - mi
+    - go
+    - ru
+    - ri
+    - mu
+    - ra
+    - ka
+    - ya
+    - wa
+    - to
+    - ga
+    - ko
+    - ke
+    - no
+    nOneSyllableNames:
+    - Mai
+    - Mio
+    - Dai
+    - Kai
+    - Rei
+    - Cho
+    - Ume
+    - Shou
+    - Ren
+    - Yu
+    sn1stSyllables:
+    - Ya
+    - Yu
+    - Kon
+    - Hi
+    - Go
+    - Ho
+    - Yo
+    - Kan
+    - No
+    - Ra
+    - Ka
+    - Ai
+    - Na
+    - Mi
+    snMidSyllables:
+    - ku
+    - ka
+    - pa
+    - ro
+    - to
+    - ki
+    - su
+    - zo
+    - ri
+    - ru
+    - re
+    - zu
+    - ga
+    - no
+    - ha
+    - na
+    snEndSyllables:
+    - mo
+    - ri
+    - ku
+    - i
+    - u
+    - ta
+    - to
+    - ke
+    - no
+    - mu
+    - ro
+    - ma
+    - oi
+    - ra
+    - mi
+    snOneSyllableSurnames:
+    - Shiori
+    - Sho
+    - Jin
+    - Fuju
+    - Reo
+    - Jun
+    - Taiki
+    - Hio
+    - Aii
+    - Eiji
+    - Ryo
+    - Yuri
+    maxNameSyllables: 3
+    maxSurnameSyllables: 3
+    secondNameChance: 30
+    thirdNameChance: 2
+  - name: Arabic
+    n1stSyllables:
+    - Mu
+    - O
+    - Ah
+    - A
+    - Rush
+    - Kha
+    - Ga
+    - Fa
+    - Su
+    - Na
+    - She
+    - Hou
+    - Shou
+    - Zu
+    - Ma
+    - Bir
+    - Sa
+    - Yas
+    - Ab
+    - Sha
+    nMidSyllables:
+    - ham
+    - ri
+    - wei
+    - bi
+    - ry
+    - lan
+    - mi
+    - di
+    - dall
+    - dull
+    - bu
+    nEndSyllables:
+    - mad
+    - mar
+    - med
+    - del
+    - dy
+    - led
+    - mil
+    - ten
+    - ad
+    - dia
+    - han
+    - an
+    - kar
+    - da
+    - am
+    - ti
+    - a
+    - min
+    - ah
+    - dul
+    - yin
+    - di
+    nOneSyllableNames:
+    - Nour
+    - Ayaan
+    - Syed
+    - Rayyan
+    - Zayd
+    - Nuh
+    - Saad
+    - Jin
+    - Zoya
+    - Ain
+    - Abuyin
+    - Ibn
+    - Abu
+    sn1stSyllables:
+    - A
+    - E
+    - Sham
+    - Sha
+    - Ka
+    - Bal
+    - Was
+    - Ab
+    - Sak
+    - Jas
+    - Re
+    - Wa
+    - Mal
+    - Su
+    - Hi
+    - Al-
+    - Sha
+    snMidSyllables:
+    - la
+    - ' Al'
+    - del
+    - ' El'
+    - ' Ma'
+    - kal
+    - lay
+    - ' Wa'
+    - al-
+    - ri
+    snEndSyllables:
+    - li
+    - ma
+    - mam
+    - si
+    - hir
+    - ram
+    - tram
+    - souf
+    - nour
+    - ka
+    - smi
+    - bai
+    - lik
+    - lam
+    - man
+    - sham
+    - lid
+    - di
+    - zam
+    snOneSyllableSurnames:
+    - Ali
+    - Bakr
+    - Umar
+    - Ta'i'
+    - Adil
+    - Yahya
+    - Hafs
+    - Taleb
+    - Morsi
+    - Al'asad
+    maxNameSyllables: 3
+    maxSurnameSyllables: 3
+    secondNameChance: 30
+    thirdNameChance: 2
   testGen: 0
   output: Kurt Brzechtejchwa
 --- !u!4 &1229584433
@@ -63224,9 +63914,9 @@ RectTransform:
   - {fileID: 1265004554}
   m_Father: {fileID: 366103137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -186}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1321712513
@@ -70845,9 +71535,9 @@ RectTransform:
   - {fileID: 1259564870}
   m_Father: {fileID: 1118104505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -50}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1460218668
@@ -77952,9 +78642,9 @@ RectTransform:
   - {fileID: 2011693166}
   m_Father: {fileID: 1118104505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -220}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1682129896
@@ -97186,9 +97876,9 @@ RectTransform:
   - {fileID: 369016238}
   m_Father: {fileID: 1118104505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96, y: -152}
   m_SizeDelta: {x: 192, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2068227776
@@ -98474,6 +99164,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  calamitySlider: {fileID: 916712478}
+  calamityText: {fileID: 656822410}
+  currentYear: 82081
+  yearsRange: 6540010051540100
 --- !u!1 &2115672139
 GameObject:
   m_ObjectHideFlags: 0
