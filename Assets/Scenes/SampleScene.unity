@@ -6400,7 +6400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionManager: {fileID: 1706167847}
-  singularBody: {fileID: 0}
+  singularBody: {fileID: 709954305}
   multipleBodies: []
   infoName: 
   infoDesc: 
@@ -10409,1004 +10409,1205 @@ MonoBehaviour:
   - name: Mercury
     trueName: Sol I
     bodyTransform: {fileID: 147412984}
+    healthAdd: 0
     orbitSpeed: 0.24101096
     mass: 0.055
     orbitDistance: 0.387098
     orbitBody: {fileID: 1107975913}
     orbitProgress: 72.34276
     clusterIndex: 0
+    orbitGrowth: 0
     isAlive: 1
   - name: Venus
     trueName: Sol II
     bodyTransform: {fileID: 508671197}
+    healthAdd: 0
     orbitSpeed: 0.6156192
     mass: 0.815
     orbitDistance: 0.7233265
     orbitBody: {fileID: 1107975913}
     orbitProgress: 48.56498
     clusterIndex: 1
+    orbitGrowth: 0
     isAlive: 1
   - name: Earth
     trueName: Sol III
     bodyTransform: {fileID: 1985516394}
+    healthAdd: 0
     orbitSpeed: 1
     mass: 1
     orbitDistance: 1
     orbitBody: {fileID: 1107975913}
     orbitProgress: 15.851288
     clusterIndex: 2
+    orbitGrowth: 0
     isAlive: 1
   - name: Mars
     trueName: Sol IV
     bodyTransform: {fileID: 1620153547}
+    healthAdd: 0
     orbitSpeed: 1.88085
     mass: 0.107
     orbitDistance: 1.523805
     orbitBody: {fileID: 1107975913}
     orbitProgress: 15.890629
     clusterIndex: 3
+    orbitGrowth: 0
     isAlive: 1
   - name: "X\u014Dbibi"
     trueName: Planet X
     bodyTransform: {fileID: 1119520416}
+    healthAdd: 0
     orbitSpeed: 0.93437004
     mass: 0.49425
     orbitDistance: 1.8619025
     orbitBody: {fileID: 1107975913}
     orbitProgress: 55.64096
     clusterIndex: 4
+    orbitGrowth: 0
     isAlive: 1
   - name: Jupiter
     trueName: Sol V
     bodyTransform: {fileID: 1260681399}
+    healthAdd: 0
     orbitSpeed: 11.862
     mass: 317.8
     orbitDistance: 5.2038
     orbitBody: {fileID: 1107975913}
     orbitProgress: 87.85699
     clusterIndex: 5
+    orbitGrowth: 0
     isAlive: 1
   - name: Saturn
     trueName: Sol VI
     bodyTransform: {fileID: 1362685174}
+    healthAdd: 0
     orbitSpeed: 29.4475
     mass: 95.16
     orbitDistance: 14.33525
     orbitBody: {fileID: 1107975913}
     orbitProgress: 15.840374
     clusterIndex: 6
+    orbitGrowth: 0
     isAlive: 1
   - name: Uranus
     trueName: Sol VII
     bodyTransform: {fileID: 709954306}
+    healthAdd: 0
     orbitSpeed: 84.0205
     mass: 14.54
     orbitDistance: 19.1913
     orbitBody: {fileID: 1107975913}
     orbitProgress: 40.653164
     clusterIndex: 7
+    orbitGrowth: 0
     isAlive: 1
   - name: Neptune
     trueName: Sol VIII
     bodyTransform: {fileID: 1029085246}
+    healthAdd: 0
     orbitSpeed: 164.8
     mass: 17.15
     orbitDistance: 28.195
     orbitBody: {fileID: 1107975913}
     orbitProgress: 20.720528
     clusterIndex: 8
+    orbitGrowth: 0
     isAlive: 1
   - name: Caduceus
     trueName: Mercury I
     bodyTransform: {fileID: 893778045}
+    healthAdd: 0
     orbitSpeed: 0.024101095
     mass: 0.0055
-    orbitDistance: 0.0062366
+    orbitDistance: 0.0124732
     orbitBody: {fileID: 147412984}
     orbitProgress: 23.65388
     clusterIndex: 11
+    orbitGrowth: 0
     isAlive: 1
   - name: Neith
     trueName: Venus I
     bodyTransform: {fileID: 1595183327}
+    healthAdd: 0
     orbitSpeed: -0.1
     mass: 0.008
     orbitDistance: 0.01759768
     orbitBody: {fileID: 508671197}
     orbitProgress: 43.08819
     clusterIndex: 12
+    orbitGrowth: 0
     isAlive: 1
   - name: Moon
     trueName: Earth I
     bodyTransform: {fileID: 321946627}
+    healthAdd: 0
     orbitSpeed: 0.08090572
     mass: 0.0123
     orbitDistance: 0.019390648
     orbitBody: {fileID: 1985516394}
     orbitProgress: 18.285065
     clusterIndex: 13
+    orbitGrowth: 0
     isAlive: 1
   - name: Deimos
     trueName: Mars I
     bodyTransform: {fileID: 846679429}
+    healthAdd: 0
     orbitSpeed: 0.027682193
     mass: 2.528395e-10
     orbitDistance: 0.0091337
     orbitBody: {fileID: 1620153547}
     orbitProgress: 48.5712
     clusterIndex: 14
+    orbitGrowth: 0
     isAlive: 1
   - name: Phobos
     trueName: Mars I
     bodyTransform: {fileID: 310319257}
+    healthAdd: 0
     orbitSpeed: 0.013105901
     mass: 0.0000000017748999
-    orbitDistance: 0.0065
+    orbitDistance: 0.013
     orbitBody: {fileID: 1620153547}
     orbitProgress: 49.050785
     clusterIndex: 14
+    orbitGrowth: 0
     isAlive: 1
   - name: DeeDee
     trueName: 2014 UZ224
     bodyTransform: {fileID: 513429077}
+    healthAdd: 0
     orbitSpeed: 1117.5698
     mass: 0.0011
     orbitDistance: 31.925
     orbitBody: {fileID: 1107975913}
     orbitProgress: 3.0631843
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Varuna
     trueName: 20000 Varuna
     bodyTransform: {fileID: 1223504242}
+    healthAdd: 0
     orbitSpeed: 279.21
     mass: 0.0016
     orbitDistance: 21.25
     orbitBody: {fileID: 1107975913}
     orbitProgress: 12.255627
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: "G\u01C3k\xFAn\u01C1\u02BCh\xF2md\xEDm\xE0"
     trueName: "229762 G\u01C3k\xFAn\u01C1\u02BCh\xF2md\xEDm\xE0"
     bodyTransform: {fileID: 206938029}
+    healthAdd: 0
     orbitSpeed: 620.17
     mass: 0.000022788921
     orbitDistance: 24.166666
     orbitBody: {fileID: 1107975913}
     orbitProgress: 5.5028996
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Kitt
     trueName: 55637 2002 UX25
     bodyTransform: {fileID: 1775019172}
+    healthAdd: 0
     orbitSpeed: 276.95
     mass: 0.00002093031
     orbitDistance: 31.5
     orbitBody: {fileID: 1107975913}
     orbitProgress: 12.320354
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Ixion
     trueName: 28978 Ixion
     bodyTransform: {fileID: 123350896}
+    healthAdd: 0
     orbitSpeed: 251.11
     mass: 0.000010465155
     orbitDistance: 29.625
     orbitBody: {fileID: 1107975913}
     orbitProgress: 13.630543
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Varda
     trueName: 174567 Varda
     bodyTransform: {fileID: 1734636293}
+    healthAdd: 0
     orbitSpeed: 313.12
     mass: 0.00004102341
     orbitDistance: 22.75
     orbitBody: {fileID: 1107975913}
     orbitProgress: 10.931521
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Salacia
     trueName: 120347 Salacia
     bodyTransform: {fileID: 1017850621}
+    healthAdd: 0
     orbitSpeed: 273.98
     mass: 0.000082415194
     orbitDistance: 31.125
     orbitBody: {fileID: 1107975913}
     orbitProgress: 12.493879
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Sedna
     trueName: 90377 Sedna
     bodyTransform: {fileID: 1483129797}
+    healthAdd: 0
     orbitSpeed: 11390
     mass: 0.00002747173
     orbitDistance: 30.5805
     orbitBody: {fileID: 1107975913}
     orbitProgress: 0.29949576
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Orcus
     trueName: 90482 Orcus
     bodyTransform: {fileID: 384747018}
+    healthAdd: 0
     orbitSpeed: 245.19
     mass: 0.000091591035
     orbitDistance: 29.25
     orbitBody: {fileID: 1107975913}
     orbitProgress: 13.917293
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Ceres
     trueName: 1 Ceres
     bodyTransform: {fileID: 1409413800}
+    healthAdd: 0
     orbitSpeed: 1.28
     mass: 0.00016
     orbitDistance: 2.74
     orbitBody: {fileID: 1107975913}
     orbitProgress: 68.59173
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Quaoar
     trueName: 50000 Quaoar
     bodyTransform: {fileID: 1362535408}
+    healthAdd: 0
     orbitSpeed: 288.83
     mass: 0.00020227052
     orbitDistance: 21.625
     orbitBody: {fileID: 1107975913}
     orbitProgress: 11.856735
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Gonggong
     trueName: 225088 Gonggong
     bodyTransform: {fileID: 134797762}
+    healthAdd: 0
     orbitSpeed: 554.37
     mass: 0.00029302435
     orbitDistance: 33.5
     orbitBody: {fileID: 1107975913}
     orbitProgress: 6.158338
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Makemake
     trueName: 136472 Makemake
     bodyTransform: {fileID: 1710553918}
+    healthAdd: 0
     orbitSpeed: 306.21
     mass: 0.0005190717
     orbitDistance: 22.5
     orbitBody: {fileID: 1107975913}
     orbitProgress: 11.145519
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Haumea
     trueName: 136108 Haumea
     bodyTransform: {fileID: 1471828232}
+    healthAdd: 0
     orbitSpeed: 283.12
     mass: 0.00066
     orbitDistance: 21.115
     orbitBody: {fileID: 1107975913}
     orbitProgress: 12.068674
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Eris
     trueName: 136199 Eris
     bodyTransform: {fileID: 1833337908}
+    healthAdd: 0
     orbitSpeed: 561.38
     mass: 0.0027
     orbitDistance: 33.75
     orbitBody: {fileID: 1107975913}
     orbitProgress: 6.0826974
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Pluto
     trueName: 134340 Pluto
     bodyTransform: {fileID: 523130878}
+    healthAdd: 0
     orbitSpeed: 247.94
     mass: 0.00218
     orbitDistance: 29.25
     orbitBody: {fileID: 1107975913}
     orbitProgress: 13.737126
     clusterIndex: 9
+    orbitGrowth: 0
     isAlive: 1
   - name: Metis
     trueName: Jupiter XVI
     bodyTransform: {fileID: 1893221506}
+    healthAdd: 0
     orbitSpeed: 0.012921864
     mass: 0.000000010716376
     orbitDistance: 0.11
     orbitBody: {fileID: 1260681399}
     orbitProgress: 62.395214
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Adrastea
     trueName: Jupiter XV
     bodyTransform: {fileID: 238456323}
+    healthAdd: 0
     orbitSpeed: 0.019611618
     mass: 0.000000007144251
     orbitDistance: 0.129
     orbitBody: {fileID: 1260681399}
     orbitProgress: 81.27192
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Thebe
     trueName: Jupiter XIV
     bodyTransform: {fileID: 470663906}
+    healthAdd: 0
     orbitSpeed: 0.044353057
     mass: 0.000000015717353
     orbitDistance: 0.15
     orbitBody: {fileID: 1260681399}
     orbitProgress: 22.386074
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Leda
     trueName: Jupiter XIII
     bodyTransform: {fileID: 461282532}
+    healthAdd: 0
     orbitSpeed: 0.6630685
     mass: 0.000000011788014
     orbitDistance: 0.18
     orbitBody: {fileID: 1260681399}
     orbitProgress: 51.467316
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Ananke
     trueName: Jupiter XII
     bodyTransform: {fileID: 1003006751}
+    healthAdd: 0
     orbitSpeed: -1.7084657
     mass: 0.000000002813049
     orbitDistance: 0.21
     orbitBody: {fileID: 1260681399}
     orbitProgress: 0.6339148
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Carme
     trueName: Jupiter XI
     bodyTransform: {fileID: 1478051333}
+    healthAdd: 0
     orbitSpeed: -1.8990959
     mass: 0.00000001455083
     orbitDistance: 0.26
     orbitBody: {fileID: 1260681399}
     orbitProgress: 1.4585998
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Lysithea
     trueName: Jupiter X
     bodyTransform: {fileID: 1463425493}
+    healthAdd: 0
     orbitSpeed: 0.708411
     mass: 0.000000016005913
     orbitDistance: 0.32
     orbitBody: {fileID: 1260681399}
     orbitProgress: 21.681288
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Sinope
     trueName: Jupiter IX
     bodyTransform: {fileID: 966997667}
+    healthAdd: 0
     orbitSpeed: 2.13
     mass: 0.000000017606505
     orbitDistance: 0.41
     orbitBody: {fileID: 1260681399}
     orbitProgress: 3.7199252
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Pasiphae
     trueName: Jupiter VIII
     bodyTransform: {fileID: 1112812766}
+    healthAdd: 0
     orbitSpeed: 1.9790137
     mass: 2.8800106e-25
     orbitDistance: 0.63
     orbitBody: {fileID: 1260681399}
     orbitProgress: 26.048988
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Elara
     trueName: Jupiter VII
     bodyTransform: {fileID: 467831247}
+    healthAdd: 0
     orbitSpeed: 0.70863014
     mass: 1.4400053e-25
     orbitDistance: 0.86
     orbitBody: {fileID: 1260681399}
     orbitProgress: 20.30827
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Himalia
     trueName: Jupiter VI
     bodyTransform: {fileID: 391063310}
+    healthAdd: 0
     orbitSpeed: 0.6802466
     mass: 0.00000065302567
     orbitDistance: 1.1
     orbitBody: {fileID: 1260681399}
     orbitProgress: 21.180227
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Amalthea
     trueName: Jupiter V
     bodyTransform: {fileID: 289228332}
+    healthAdd: 0
     orbitSpeed: 0.043676
     mass: 0.00000034828037
     orbitDistance: 1.35
     orbitBody: {fileID: 1260681399}
     orbitProgress: 31.398642
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Callisto
     trueName: Jupiter IV
     bodyTransform: {fileID: 1243769271}
+    healthAdd: 0
     orbitSpeed: 0.045723338
     mass: 0.018
     orbitDistance: 1.61
     orbitBody: {fileID: 1260681399}
     orbitProgress: 3.4840746
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Ganymede
     trueName: Jupiter III
     bodyTransform: {fileID: 1233691960}
+    healthAdd: 0
     orbitSpeed: 0.31362417
     mass: 0.025
     orbitDistance: 1.88
     orbitBody: {fileID: 1260681399}
     orbitProgress: 35.392822
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Europa
     trueName: Jupiter II
     bodyTransform: {fileID: 1204299671}
+    healthAdd: 0
     orbitSpeed: 0.11675116
     mass: 0.008
     orbitDistance: 0.456
     orbitBody: {fileID: 1260681399}
     orbitProgress: 55.82326
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Io
     trueName: Jupiter I
     bodyTransform: {fileID: 1989519916}
+    healthAdd: 0
     orbitSpeed: 0.31020495
     mass: 0.015
     orbitDistance: 2.666
     orbitBody: {fileID: 1260681399}
     orbitProgress: 85.83577
     clusterIndex: 15
+    orbitGrowth: 0
     isAlive: 1
   - name: Mimas
     trueName: Saturn I
     bodyTransform: {fileID: 1531645021}
+    healthAdd: 0
     orbitSpeed: 0.015491868
     mass: 0.0000063
     orbitDistance: 0.085
     orbitBody: {fileID: 1362685174}
     orbitProgress: 8.929399
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Enceladus
     trueName: Saturn II
     bodyTransform: {fileID: 2137928717}
+    healthAdd: 0
     orbitSpeed: 0.030032177
     mass: 0.000018
     orbitDistance: 0.098
     orbitBody: {fileID: 1362685174}
     orbitProgress: 95.999855
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Tethys
     trueName: Saturn III
     bodyTransform: {fileID: 311717633}
+    healthAdd: 0
     orbitSpeed: 0.04137648
     mass: 0.000103
     orbitDistance: 0.113
     orbitBody: {fileID: 1362685174}
     orbitProgress: 6.25051
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Dione
     trueName: Saturn IV
     bodyTransform: {fileID: 117788369}
+    healthAdd: 0
     orbitSpeed: 0.022495192
     mass: 0.0001834
     orbitDistance: 0.129
     orbitBody: {fileID: 1362685174}
     orbitProgress: 67.475655
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Rhea
     trueName: Saturn V
     bodyTransform: {fileID: 200670876}
+    healthAdd: 0
     orbitSpeed: 0.02475732
     mass: 0.00039
     orbitDistance: 0.15
     orbitBody: {fileID: 1362685174}
     orbitProgress: 59.222652
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Titan
     trueName: Saturn VI
     bodyTransform: {fileID: 1399311889}
+    healthAdd: 0
     orbitSpeed: 0.043684933
     mass: 0.0225
     orbitDistance: 0.18
     orbitBody: {fileID: 1362685174}
     orbitProgress: 89.53339
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Hyperion
     trueName: Saturn VII
     bodyTransform: {fileID: 1978408198}
+    healthAdd: 0
     orbitSpeed: 0.05829041
     mass: 9.869147e-21
     orbitDistance: 0.21944444
     orbitBody: {fileID: 1362685174}
     orbitProgress: 97.997314
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Iapetus
     trueName: Saturn VIII
     bodyTransform: {fileID: 873930089}
+    healthAdd: 0
     orbitSpeed: 0.21731918
     mass: 3.21118e-21
     orbitDistance: 0.2888889
     orbitBody: {fileID: 1362685174}
     orbitProgress: 17.307135
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Phoebe
     trueName: Saturn IX
     bodyTransform: {fileID: 235591688}
+    healthAdd: 0
     orbitSpeed: 1.5083963
     mass: 0.0000013918321
     orbitDistance: 0.35833332
     orbitBody: {fileID: 1362685174}
     orbitProgress: 64.2895
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Janus
     trueName: Saturn X
     bodyTransform: {fileID: 2141921481}
+    healthAdd: 0
     orbitSpeed: 0.030450864
     mass: 0.000000317116
     orbitDistance: 0.42777777
     orbitBody: {fileID: 1362685174}
     orbitProgress: 12.576241
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Epimetheus
     trueName: Saturn XI
     bodyTransform: {fileID: 68727876}
+    healthAdd: 0
     orbitSpeed: 0.045654815
     mass: 0.00000008800894
     orbitDistance: 0.49722221
     orbitBody: {fileID: 1362685174}
     orbitProgress: 8.012684
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Helene
     trueName: Saturn XII
     bodyTransform: {fileID: 1928924110}
+    healthAdd: 0
     orbitSpeed: 0.0224952
     mass: 0.0000000011888416
     orbitDistance: 0.56666666
     orbitBody: {fileID: 1362685174}
     orbitProgress: 7.0537577
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Telesto
     trueName: Saturn XIII
     bodyTransform: {fileID: 933809950}
+    healthAdd: 0
     orbitSpeed: 0.03103236
     mass: 6.6976993e-25
     orbitDistance: 0.63611114
     orbitBody: {fileID: 1362685174}
     orbitProgress: 39.2878
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Calypso
     trueName: Saturn XIV
     bodyTransform: {fileID: 204401861}
+    healthAdd: 0
     orbitSpeed: 0.020688253
     mass: 3.3488496e-25
     orbitDistance: 0.70555556
     orbitBody: {fileID: 1362685174}
     orbitProgress: 31.366446
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Atlas
     trueName: Saturn XV
     bodyTransform: {fileID: 1457790584}
+    healthAdd: 0
     orbitSpeed: 0.019781748
     mass: 9.192592e-10
     orbitDistance: 0.775
     orbitBody: {fileID: 1362685174}
     orbitProgress: 0.7184677
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Prometheus
     trueName: Saturn XVI
     bodyTransform: {fileID: 1600343796}
+    healthAdd: 0
     orbitSpeed: 0.0268708
     mass: 0.000000026743914
     orbitDistance: 0.84444445
     orbitBody: {fileID: 1362685174}
     orbitProgress: 42.844044
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Pandora
     trueName: Saturn XVII
     bodyTransform: {fileID: 126326612}
+    healthAdd: 0
     orbitSpeed: 0.041326296
     mass: 0.000000022721945
     orbitDistance: 0.9138889
     orbitBody: {fileID: 1362685174}
     orbitProgress: 18.186703
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Pan
     trueName: Saturn XVIII
     bodyTransform: {fileID: 1552990232}
+    healthAdd: 0
     orbitSpeed: 0.050415393
     mass: 7.2000267e-10
     orbitDistance: 0.98333335
     orbitBody: {fileID: 1362685174}
     orbitProgress: 93.2576
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Ymir
     trueName: Saturn XIX
     bodyTransform: {fileID: 887602494}
+    healthAdd: 0
     orbitSpeed: -3.6
     mass: 0.0000009278881
     orbitDistance: 1.0527778
     orbitBody: {fileID: 1362685174}
     orbitProgress: 51.071365
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Paaliaq
     trueName: Saturn XX
     bodyTransform: {fileID: 1456594342}
+    healthAdd: 0
     orbitSpeed: 1.88
     mass: 0.000000004922809
     orbitDistance: 1.1222222
     orbitBody: {fileID: 1362685174}
     orbitProgress: 16.8745
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Tarvos
     trueName: Saturn XXI
     bodyTransform: {fileID: 248164567}
+    healthAdd: 0
     orbitSpeed: 2.54
     mass: 0.000000004430528
     orbitDistance: 1.1916667
     orbitBody: {fileID: 1362685174}
     orbitProgress: 44.714573
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Ijiraq
     trueName: Saturn XXII
     bodyTransform: {fileID: 590963907}
+    healthAdd: 0
     orbitSpeed: 1.24
     mass: 0.000000004873581
     orbitDistance: 1.2611111
     orbitBody: {fileID: 1362685174}
     orbitProgress: 54.63339
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Suttungr
     trueName: Saturn XXIII
     bodyTransform: {fileID: 2015583997}
+    healthAdd: 0
     orbitSpeed: -2.7854795
     mass: 0.0000000041425436
     orbitDistance: 0.21944444
     orbitBody: {fileID: 1362685174}
     orbitProgress: 73.764336
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Kiviuq
     trueName: Saturn XXIV
     bodyTransform: {fileID: 545195910}
+    healthAdd: 0
     orbitSpeed: 1.23
     mass: 0.000000031810725
     orbitDistance: 1.4
     orbitBody: {fileID: 1362685174}
     orbitProgress: 76.95289
     clusterIndex: 16
+    orbitGrowth: 0
     isAlive: 1
   - name: Ariel
     trueName: Uranus I
     bodyTransform: {fileID: 1659500270}
+    healthAdd: 0
     orbitSpeed: 0.020712327
     mass: 0.00020647443
     orbitDistance: 0.0666
     orbitBody: {fileID: 709954306}
     orbitProgress: 68.67279
     clusterIndex: 17
+    orbitGrowth: 0
     isAlive: 1
   - name: Umbriel
     trueName: Uranus II
     bodyTransform: {fileID: 1206096991}
+    healthAdd: 0
     orbitSpeed: 0.04541368
     mass: 0.00021575078
     orbitDistance: 0.30394
     orbitBody: {fileID: 709954306}
     orbitProgress: 70.996796
     clusterIndex: 17
+    orbitGrowth: 0
     isAlive: 1
   - name: Titania
     trueName: Uranus III
     bodyTransform: {fileID: 898478400}
+    healthAdd: 0
     orbitSpeed: 0.1431162
     mass: 0.00057851686
     orbitDistance: 0.54128
     orbitBody: {fileID: 709954306}
     orbitProgress: 25.948025
     clusterIndex: 17
+    orbitGrowth: 0
     isAlive: 1
   - name: Oberon
     trueName: Uranus IV
     bodyTransform: {fileID: 538728717}
+    healthAdd: 0
     orbitSpeed: 0.14754228
     mass: 0.0005208159
     orbitDistance: 0.77862
     orbitBody: {fileID: 709954306}
     orbitProgress: 62.39353
     clusterIndex: 17
+    orbitGrowth: 0
     isAlive: 1
   - name: Miranda
     trueName: Uranus V
     bodyTransform: {fileID: 956536203}
+    healthAdd: 0
     orbitSpeed: 0.09294108
     mass: 0.00001053721
     orbitDistance: 1.01596
     orbitBody: {fileID: 709954306}
     orbitProgress: 64.936806
     clusterIndex: 17
+    orbitGrowth: 0
     isAlive: 1
   - name: Cordelia
     trueName: Uranus VI
     bodyTransform: {fileID: 1747142640}
+    healthAdd: 0
     orbitSpeed: 0.058745656
     mass: 0.000000010180558
     orbitDistance: 1.2533
     orbitBody: {fileID: 709954306}
     orbitProgress: 12.04399
     clusterIndex: 17
+    orbitGrowth: 0
     isAlive: 1
   - name: Ophelia
     trueName: Uranus VII
     bodyTransform: {fileID: 12761289}
+    healthAdd: 0
     orbitSpeed: 0.13199796
     mass: 0.0000000059777285
     orbitDistance: 1.49064
     orbitBody: {fileID: 709954306}
     orbitProgress: 5.9573293
     clusterIndex: 17
+    orbitGrowth: 0
     isAlive: 1
   - name: Bianca
     trueName: Uranus VIII
     bodyTransform: {fileID: 1898775932}
+    healthAdd: 0
     orbitSpeed: 0.07620013
     mass: 0.0000000106828875
     orbitDistance: 1.72798
     orbitBody: {fileID: 709954306}
     orbitProgress: 14.436624
     clusterIndex: 17
+    orbitGrowth: 0
     isAlive: 1
   - name: Cressida
     trueName: Uranus IX
     bodyTransform: {fileID: 1262704208}
+    healthAdd: 0
     orbitSpeed: 0.09144389
     mass: 0.000000030792837
     orbitDistance: 1.96532
     orbitBody: {fileID: 709954306}
     orbitProgress: 81.95564
     clusterIndex: 17
+    orbitGrowth: 0
     isAlive: 1
   - name: Desdemona
     trueName: Uranus X
     bodyTransform: {fileID: 293547738}
+    healthAdd: 0
     orbitSpeed: 0.8642482
     mass: 0.000000020712747
     orbitDistance: 2.20266
     orbitBody: {fileID: 709954306}
     orbitProgress: 91.38361
     clusterIndex: 17
+    orbitGrowth: 0
     isAlive: 1
   - name: Juliet
     trueName: Uranus XI
     bodyTransform: {fileID: 1253537084}
+    healthAdd: 0
     orbitSpeed: 0.16435516
     mass: 0.000000064817335
     orbitDistance: 2.44
     orbitBody: {fileID: 709954306}
     orbitProgress: 82.5726
     clusterIndex: 17
+    orbitGrowth: 0
     isAlive: 1
   - name: Triton
     trueName: Neptune I
     bodyTransform: {fileID: 782405315}
+    healthAdd: 0
     orbitSpeed: 0.01610097
     mass: 0.00358
     orbitDistance: 0.08
     orbitBody: {fileID: 1029085246}
     orbitProgress: 42.331905
     clusterIndex: 18
+    orbitGrowth: 0
     isAlive: 1
   - name: Nereid
     trueName: Neptune II
     bodyTransform: {fileID: 1732752422}
+    healthAdd: 0
     orbitSpeed: 0.986
     mass: 0.00000598
     orbitDistance: 1.1375
     orbitBody: {fileID: 1029085246}
     orbitProgress: 64.3301
     clusterIndex: 18
+    orbitGrowth: 0
     isAlive: 1
   - name: Naiad
     trueName: Neptune III
     bodyTransform: {fileID: 416835958}
+    healthAdd: 0
     orbitSpeed: 0.025810042
     mass: 1.2e+17
     orbitDistance: 2.175
     orbitBody: {fileID: 1029085246}
     orbitProgress: 11.831498
     clusterIndex: 18
+    orbitGrowth: 0
     isAlive: 1
   - name: Thalassa
     trueName: Neptune IV
     bodyTransform: {fileID: 545820467}
+    healthAdd: 0
     orbitSpeed: 0.054616455
     mass: 3.54e+17
     orbitDistance: 3.2125
     orbitBody: {fileID: 1029085246}
     orbitProgress: 85.5
     clusterIndex: 18
+    orbitGrowth: 0
     isAlive: 1
   - name: Despina
     trueName: Neptune V
     bodyTransform: {fileID: 213426822}
+    healthAdd: 0
     orbitSpeed: 0.704152
     mass: -6.9e+17
     orbitDistance: 4.25
     orbitBody: {fileID: 1029085246}
     orbitProgress: 45.896698
     clusterIndex: 18
+    orbitGrowth: 0
     isAlive: 1
   - name: Galatea
     trueName: Neptune VI
     bodyTransform: {fileID: 1741882982}
+    healthAdd: 0
     orbitSpeed: 0.018794272
     mass: 1.94e+18
     orbitDistance: 0.16
     orbitBody: {fileID: 1029085246}
     orbitProgress: 22.168505
     clusterIndex: 18
+    orbitGrowth: 0
     isAlive: 1
   - name: Larissa
     trueName: Neptune VII
     bodyTransform: {fileID: 1337916109}
+    healthAdd: 0
     orbitSpeed: 0.24313568
     mass: -5.51e+18
     orbitDistance: 6.325
     orbitBody: {fileID: 1029085246}
     orbitProgress: 48.477283
     clusterIndex: 18
+    orbitGrowth: 0
     isAlive: 1
   - name: Proteus
     trueName: Neptune VIII
     bodyTransform: {fileID: 1293688833}
+    healthAdd: 0
     orbitSpeed: 0.4058782
     mass: 0.0000039
     orbitDistance: 7.3625
     orbitBody: {fileID: 1029085246}
     orbitProgress: 82.521095
     clusterIndex: 18
+    orbitGrowth: 0
     isAlive: 1
   - name: Hippocamp
     trueName: Neptune XIV
     bodyTransform: {fileID: 1178970275}
+    healthAdd: 0
     orbitSpeed: 1.3326029
     mass: -2.9841e+16
     orbitDistance: 8.4
     orbitBody: {fileID: 1029085246}
     orbitProgress: 47.060226
     clusterIndex: 18
+    orbitGrowth: 0
     isAlive: 1
   - name: Dysnomia
     trueName: Eris I
     bodyTransform: {fileID: 985813247}
+    healthAdd: 0
     orbitSpeed: 0.043249037
     mass: 0.00002327462
-    orbitDistance: 0.004
+    orbitDistance: 0.0082
     orbitBody: {fileID: 1833337908}
     orbitProgress: 77.58203
     clusterIndex: -1
+    orbitGrowth: 0
     isAlive: 1
   - name: "Hi\u02BBiaka"
     trueName: Haumea I
     bodyTransform: {fileID: 1119355661}
+    healthAdd: 0
     orbitSpeed: 0.13457534
     mass: 0.00000308933
-    orbitDistance: 0.006
+    orbitDistance: 0.009
     orbitBody: {fileID: 1471828232}
     orbitProgress: 81.448074
     clusterIndex: -1
+    orbitGrowth: 0
     isAlive: 1
   - name: Namaka
     trueName: Haumea II
     bodyTransform: {fileID: 390304313}
+    healthAdd: 0
     orbitSpeed: 0.050077535
     mass: 0.00000017581554
-    orbitDistance: 0.002627043
+    orbitDistance: 0.010508172
     orbitBody: {fileID: 1471828232}
     orbitProgress: 8.187339
     clusterIndex: -1
+    orbitGrowth: 0
     isAlive: 1
   - name: S/2015 (136472) 1 "MK2"
     trueName: Makemake I
     bodyTransform: {fileID: 618333185}
+    healthAdd: 0
     orbitSpeed: 0.033972602
     mass: 0.0007689495
-    orbitDistance: 0.0046745306
+    orbitDistance: 0.009349062
     orbitBody: {fileID: 1710553918}
     orbitProgress: 42.884193
     clusterIndex: -1
+    orbitGrowth: 0
     isAlive: 1
   - name: Charon
     trueName: Pluto I
     bodyTransform: {fileID: 902408557}
+    healthAdd: 0
     orbitSpeed: 0.06999696
     mass: 0.000266
     orbitDistance: 0.02619792
     orbitBody: {fileID: 523130878}
     orbitProgress: 29.5282
     clusterIndex: -1
+    orbitGrowth: 0
     isAlive: 1
   - name: Nix
     trueName: Pluto II
     bodyTransform: {fileID: 1484891634}
+    healthAdd: 0
     orbitSpeed: 0.06809488
     mass: 0.000000003918175
     orbitDistance: 0.13214844
     orbitBody: {fileID: 523130878}
     orbitProgress: 60.90794
     clusterIndex: -1
+    orbitGrowth: 0
     isAlive: 1
   - name: Hydra
     trueName: Pluto III
     bodyTransform: {fileID: 140999051}
+    healthAdd: 0
     orbitSpeed: 0.10466238
     mass: 0.000000004788881
     orbitDistance: 0.23809896
     orbitBody: {fileID: 523130878}
     orbitProgress: 35.277485
     clusterIndex: -1
+    orbitGrowth: 0
     isAlive: 1
   - name: Kerberos
     trueName: Pluto IV
     bodyTransform: {fileID: 394317934}
+    healthAdd: 0
     orbitSpeed: 0.0881303
     mass: 0.0000000027628158
     orbitDistance: 0.34404948
     orbitBody: {fileID: 523130878}
     orbitProgress: 57.518074
     clusterIndex: -1
+    orbitGrowth: 0
     isAlive: 1
   - name: Styx
     trueName: Pluto V
     bodyTransform: {fileID: 1265949232}
+    healthAdd: 0
     orbitSpeed: 0.22094847
     mass: 0.0000000012558253
     orbitDistance: 0.45
     orbitBody: {fileID: 523130878}
     orbitProgress: 23.20797
     clusterIndex: -1
+    orbitGrowth: 0
     isAlive: 1
   - name: Cynthia
     trueName: Galatea I
     bodyTransform: {fileID: 619612957}
+    healthAdd: 0
     orbitSpeed: -0.06211414
     mass: 0.00013151515
     orbitDistance: 0.0190512
     orbitBody: {fileID: 1741882982}
     orbitProgress: 46.238483
     clusterIndex: 19
+    orbitGrowth: 0
     isAlive: 1
   recalcLive: 1
+  Sol: {fileID: 1107975913}
   asteroidBeltRemaining: 0
 --- !u!4 &250589780
 Transform:
@@ -17883,7 +18084,7 @@ Transform:
   m_GameObject: {fileID: 310319256}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 73.036224, y: 46.67326, z: 0}
+  m_LocalPosition: {x: 73.058304, y: 46.30342, z: 0}
   m_LocalScale: {x: 0.11000004, y: 0.11000004, z: 0.11000004}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -20877,7 +21078,7 @@ Transform:
   m_GameObject: {fileID: 390304312}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 827.7419, y: 873.921, z: 0}
+  m_LocalPosition: {x: 827.96295, y: 874.3121, z: 0}
   m_LocalScale: {x: 0.0560204, y: 0.0560204, z: 0.0560204}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -33283,7 +33484,7 @@ Transform:
   m_GameObject: {fileID: 618333184}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 826.61237, y: 980.4271, z: 0}
+  m_LocalPosition: {x: 826.7276, y: 980.1868, z: 0}
   m_LocalScale: {x: 0.112045154, y: 0.12549059, z: 0.112045154}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -40728,7 +40929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionManager: {fileID: 1706167847}
-  singularBody: {fileID: 0}
+  singularBody: {fileID: 1029085245}
   multipleBodies: []
   infoName: 
   infoDesc: 
@@ -45535,7 +45736,7 @@ Transform:
   m_GameObject: {fileID: 893778044}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.403555, y: -3.6367652, z: 0}
+  m_LocalPosition: {x: -21.04934, y: -3.6067345, z: 0}
   m_LocalScale: {x: 0.14000002, y: 0.14000002, z: 0.14000002}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -48873,7 +49074,7 @@ Transform:
   m_GameObject: {fileID: 985813246}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 717.2389, y: 1784.9905, z: 0}
+  m_LocalPosition: {x: 717.0027, y: 1785.029, z: 0}
   m_LocalScale: {x: 0.049484223, y: 0.049484223, z: 0.049484223}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -53665,7 +53866,7 @@ Transform:
   m_GameObject: {fileID: 1119355660}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 827.3539, y: 873.9255, z: 0}
+  m_LocalPosition: {x: 827.1967, y: 873.99286, z: 0}
   m_LocalScale: {x: 0.0560204, y: 0.0560204, z: 0.0560204}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -57553,7 +57754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionManager: {fileID: 1706167847}
-  singularBody: {fileID: 0}
+  singularBody: {fileID: 1260681398}
   multipleBodies: []
   infoName: 
   infoDesc: 
@@ -69239,7 +69440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionManager: {fileID: 1706167847}
-  singularBody: {fileID: 0}
+  singularBody: {fileID: 1362685173}
   multipleBodies: []
   infoName: 
   infoDesc: 
@@ -69838,7 +70039,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionManager: {fileID: 1706167847}
   singularBody: {fileID: 0}
-  multipleBodies: []
+  multipleBodies:
+  - {fileID: 513429076}
+  - {fileID: 1223504241}
+  - {fileID: 206938028}
+  - {fileID: 1775019171}
+  - {fileID: 123350895}
+  - {fileID: 1734636292}
+  - {fileID: 1017850620}
+  - {fileID: 1483129796}
+  - {fileID: 384747017}
+  - {fileID: 1409413799}
+  - {fileID: 1362535407}
+  - {fileID: 134797761}
+  - {fileID: 1710553917}
+  - {fileID: 1471828231}
+  - {fileID: 1833337907}
+  - {fileID: 523130877}
   infoName: 
   infoDesc: 
   infoDescMinor: 
@@ -72008,12 +72225,14 @@ MonoBehaviour:
     - {fileID: 1810971110}
     - {fileID: 41660544}
     - {fileID: 462544637}
-    - {fileID: 90749553}
     isResearching: 0
     researchProgressor: {fileID: 0}
   - name: gravShipPDA
     fullName: GravShip PDA
-    description: 
+    description: Standard issue GUI Interface for your very own GravShip for income
+      generation purposes, or when you're bored with duties. Its sturdy, ellastic
+      hull makes it idiotproof, though some systems may freeze for a while if it
+      gets hit hard enough.
     unfinishedDescAdd: 
     finishedDescAdd: 
     completionMessage: 
@@ -72087,7 +72306,9 @@ MonoBehaviour:
     researchProgressor: {fileID: 0}
   - name: asteroidHurling
     fullName: Asteroid Hurling
-    description: 
+    description: By sending asteroids from the Kuiper Belt into close passes with
+      a planet we can ever-so-slightly nudge its orbit, making it close in on the
+      Sun every couple of years, and that's the time we need.
     unfinishedDescAdd: 
     finishedDescAdd: 
     completionMessage: 
@@ -72157,7 +72378,9 @@ MonoBehaviour:
     researchProgressor: {fileID: 0}
   - name: gasVenting
     fullName: Gas Venting
-    description: 
+    description: By syphoning out gases with a large megastructure we can propel
+      a gas giant straight into the Sun, while nullifying the maintenance costs by
+      selling the surplus gas. Pretty much like a deflating balloon.
     unfinishedDescAdd: 
     finishedDescAdd: 
     completionMessage: 
@@ -72227,7 +72450,10 @@ MonoBehaviour:
     researchProgressor: {fileID: 0}
   - name: reflectiveSolarSail
     fullName: Reflective Solar Sail
-    description: 
+    description: Regular Solar Sails can be used to propel lighter crafts into space
+      with pretty much negative power consumption. By using a reflective solar sail,
+      we can turn dwarf planets into smaller solar sails themselves, propelling them
+      closer to the Sun.
     unfinishedDescAdd: 
     finishedDescAdd: 
     completionMessage: 
@@ -72298,9 +72524,9 @@ MonoBehaviour:
     researchProgressor: {fileID: 0}
   - name: asteroidSyphon
     fullName: Asteroid Syphon
-    description: 
-    unfinishedDescAdd: 
-    finishedDescAdd: 
+    description: cut
+    unfinishedDescAdd: cut
+    finishedDescAdd: cut
     completionMessage: 
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
@@ -72367,8 +72593,11 @@ MonoBehaviour:
   - name: miningRigEfficiency
     fullName: Improved Mining Rig Efficiency
     description: 
-    unfinishedDescAdd: 
-    finishedDescAdd: 
+    unfinishedDescAdd: Better equipment and training allows for the mining rig to
+      generate more income from the same materials, multiplying income by x1.<lvl+>.
+    finishedDescAdd: Better equipment, training, regime and union-crushing makes
+      your mining rig generate more income than ever, multiplying received income
+      by x1.<lvl>.
     completionMessage: 
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
@@ -72434,7 +72663,10 @@ MonoBehaviour:
     researchProgressor: {fileID: 0}
   - name: verneGun
     fullName: Verne Gun
-    description: 
+    description: Many years ago Humans built first prototypes of massive guns capable
+      of shooting cargo into orbit without wasting then-expensive rocket fuel. By
+      shooting rocks and debris into the abyss we could move entire planets with
+      recoil itself.
     unfinishedDescAdd: 
     finishedDescAdd: 
     completionMessage: 
@@ -72504,7 +72736,9 @@ MonoBehaviour:
     researchProgressor: {fileID: 0}
   - name: arcCannon
     fullName: Arc Cannon
-    description: 
+    description: Top-notch megastructure that uses patented technologies to generate
+      beams of energy to move gas giants without being troubled by lack of solid
+      surfaces.
     unfinishedDescAdd: 
     finishedDescAdd: 
     completionMessage: 
@@ -72572,7 +72806,9 @@ MonoBehaviour:
     researchProgressor: {fileID: 0}
   - name: hiredMiners
     fullName: Hired Miners
-    description: 
+    description: While GravShip works great as a mean of income generation, things
+      get busy when you're the literal Crisis Prevention Commander That's where hired
+      workforce comes into play.
     unfinishedDescAdd: 
     finishedDescAdd: 
     completionMessage: 
@@ -72643,8 +72879,9 @@ MonoBehaviour:
   - name: betterThrusters
     fullName: Better GravShip Thrusters
     description: 
-    unfinishedDescAdd: 
-    finishedDescAdd: 
+    unfinishedDescAdd: Improved fuel intake and state-of-the-art components make
+      GravShips fast like the wind. An asteroid in this case.
+    finishedDescAdd: No scientifical breakthrough has been made in this field yet.
     completionMessage: 
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
@@ -72710,7 +72947,8 @@ MonoBehaviour:
     researchProgressor: {fileID: 0}
   - name: 500TONNukeEagleCharge
     fullName: '500 TON Nuke: Eagle Charge'
-    description: 
+    description: If war has taught us anything, it's certainly that Big Booms make
+      things fly far away!\nOr, into the Sun in this case.
     unfinishedDescAdd: 
     finishedDescAdd: 
     completionMessage: 
@@ -72778,7 +73016,9 @@ MonoBehaviour:
     researchProgressor: {fileID: 0}
   - name: 3TONNukeStabCharge
     fullName: '3 TON Nuke: Stab Charge'
-    description: 
+    description: While standard-issue 500 Ton nuclear devices are deemed too powerful
+      for smaller celestial bodies, smaller 3 Ton nuclear Stab Charges seem to work
+      just fine.
     unfinishedDescAdd: 
     finishedDescAdd: 
     completionMessage: 
@@ -72847,8 +73087,11 @@ MonoBehaviour:
   - name: upgradedGravFields
     fullName: Upgraded Gravitational Fields
     description: 
-    unfinishedDescAdd: 
-    finishedDescAdd: 
+    unfinishedDescAdd: UEC's own GravShip comes with its very own GravBeam, which
+      can be further improved by engineers to increase range and efficiency.
+    finishedDescAdd: GravBeam of UEC's GravShip is now in the finest condition it
+      could ever be, to large disapproval of GravTech Co. It's not like they can
+      sue the government!
     completionMessage: 
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
@@ -72915,8 +73158,11 @@ MonoBehaviour:
   - name: asteroidCaller
     fullName: Asteroid Caller
     description: 
-    unfinishedDescAdd: 
-    finishedDescAdd: 
+    unfinishedDescAdd: Applying enough electricity to Nightgem Wrigglite crystals
+      generates insane gravitational forces. These could help attract distant asteroids,
+      but will take time to recharge
+    finishedDescAdd: Press the Asteroid Caller button to attract asteroids to your
+      location!
     completionMessage: 
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
@@ -73060,8 +73306,10 @@ MonoBehaviour:
   - name: powerSolutions
     fullName: Power Generation Solutions
     description: 
-    unfinishedDescAdd: 
-    finishedDescAdd: 
+    unfinishedDescAdd: In preparations for The Great Winter after Sol dies, we might
+      as well prepare means to generate power without it.
+    finishedDescAdd: We made some breakthroughs in the end, these will last us only
+      around 200 years however...
     completionMessage: 
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
@@ -73130,8 +73378,9 @@ MonoBehaviour:
   - name: exoplanetObservation
     fullName: Exoplanet Observation
     description: 
-    unfinishedDescAdd: 
-    finishedDescAdd: 
+    unfinishedDescAdd: Scientists all around the globe work 24/7 in search of new
+      home for Humanity.
+    finishedDescAdd: Nothing has been found so far...
     completionMessage: 
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
@@ -73200,8 +73449,10 @@ MonoBehaviour:
   - name: stargazing
     fullName: Stargazing
     description: 
-    unfinishedDescAdd: 
-    finishedDescAdd: 
+    unfinishedDescAdd: Many people have never seen the wonders of space. With enough
+      funding we could buy everyone telescopes to see the stars for one last time
+      before we go dark.
+    finishedDescAdd: Campaign was a huge success, albeit it didn't improve our situation.
     completionMessage: 
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
@@ -73337,7 +73588,8 @@ MonoBehaviour:
     researchProgressor: {fileID: 0}
   - name: orbitalDisconnect
     fullName: Orbital Disconnect
-    description: 
+    description: Destabilizes orbits of all minor bodies within the Solar System,
+      weakening their orbits and making them fall into the Sun.
     unfinishedDescAdd: 
     finishedDescAdd: 
     completionMessage: 
@@ -75981,7 +76233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionManager: {fileID: 1706167847}
-  singularBody: {fileID: 0}
+  singularBody: {fileID: 1620153546}
   multipleBodies: []
   infoName: 
   infoDesc: 
@@ -82792,6 +83044,7 @@ MonoBehaviour:
   politicsManager: {fileID: 658775173}
   newsManager: {fileID: 684199206}
   popupManager: {fileID: 1697313466}
+  solManager: {fileID: 1839352057}
 --- !u!4 &1590529453
 Transform:
   m_ObjectHideFlags: 0
@@ -87095,16 +87348,6 @@ MonoBehaviour:
     isUnlocked: 00000000
     bodies:
     - {fileID: 1325318161}
-    - {fileID: 1332237399}
-    - {fileID: 1673015286}
-    - {fileID: 1489441908}
-    - {fileID: 999044926}
-    - {fileID: 1120240105}
-    - {fileID: 902510518}
-    - {fileID: 955554536}
-    - {fileID: 2116527740}
-    - {fileID: 1191707684}
-    - {fileID: 381186494}
   - name: Sol
     mainButton: {fileID: 1124139528}
     buttons:
@@ -92075,6 +92318,7 @@ MonoBehaviour:
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
   Sol: {fileID: 1107975911}
+  SolHealth: 0
 --- !u!1 &1847336195
 GameObject:
   m_ObjectHideFlags: 0
@@ -99290,7 +99534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionManager: {fileID: 1706167847}
-  singularBody: {fileID: 0}
+  singularBody: {fileID: 1119520415}
   multipleBodies: []
   infoName: 
   infoDesc: 

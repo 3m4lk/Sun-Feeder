@@ -16,6 +16,7 @@ public class MainManager : MonoBehaviour
     public PoliticsManager politicsManager;
     public NewsManager newsManager;
     public PopupManager popupManager;
+    public SolManager solManager;
 
     [ExecuteInEditMode]
     private void Awake()

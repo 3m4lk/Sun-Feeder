@@ -246,7 +246,7 @@ public class ResearchManager : MonoBehaviour
     {
         for (int i = 0; i < research.Length - 5; i++)
         {
-            if (!research[i].isCompleted)
+            if (!research[i].isCompleted && i != 5)
             {
                 //print("Failed on " + i + " ( " + research[i].name + " )");
                 return;

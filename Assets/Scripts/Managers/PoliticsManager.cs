@@ -141,6 +141,9 @@ public class PoliticsManager : MonoBehaviour
     public float animTime;
     private float animProgress;
     public float animDire = -1f;
+
+    private bool wasntPop;
+    private bool wasntCoal;
     private void Awake()
     {
         for (int i = 0; i < buttons.Length; i++)
@@ -313,6 +316,26 @@ public class PoliticsManager : MonoBehaviour
             politicalViews = Mathf.Clamp(politicalViews + currentGrowth, Mathf.Min(currentCap, politicalViews), Mathf.Max(currentCap, politicalViews));
         } // politix
 
+        if (Mathf.Abs(politicalViews) > neutralismThreshold)
+        {
+            if (politicalViews > 0)
+            {
+                if (!wasntCoal)
+                {
+                    wasntCoal = true;
+                    mManager.popupManager.newPopup("turnC");
+                }
+            }
+            else
+            {
+                if (!wasntPop)
+                {
+                    wasntPop = true;
+                    mManager.popupManager.newPopup("turnP");
+                }
+            }
+        }
+
         //politicalViews = Mathf.Clamp(politicalViews, -100f, 100f); // the ultimate clamp - don't touch it and don't alter politics beyond this very point
 
         if (!isExtremist && Mathf.Abs(politicalViews) >= extremismThreshold)
@@ -320,10 +343,12 @@ public class PoliticsManager : MonoBehaviour
             isExtremist = true;
             if (politicalViews > 0)
             {
+                mManager.popupManager.newPopup("extremismC");
                 mManager.newsManager.startExtremismCoitionis = true;
             } // coitionis
             else
             {
+                mManager.popupManager.newPopup("extremismP");
                 mManager.newsManager.startExtremismPopuli = true;
             }
             // spawn extremism news
@@ -379,6 +404,15 @@ public class PoliticsManager : MonoBehaviour
         if (Mathf.Abs(politicalViews) == 100f)
         {
             polStatusText.text = "<color=#000000>";
+
+            if (politicalViews > 0)
+            {
+                mManager.popupManager.newPopup("warC");
+            }
+            else
+            {
+                mManager.popupManager.newPopup("warP");
+            }
         }
         else
         {

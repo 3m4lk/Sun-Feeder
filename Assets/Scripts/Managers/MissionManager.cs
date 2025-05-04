@@ -189,13 +189,13 @@ public class MissionManager : MonoBehaviour
 
                     if (missionProps[i].missionObjectToDrop != null)
                     {
-                        GameObject dropThing = Instantiate(missionProps[i].missionObjectToDrop, missionProps[i].missionShipTravel[1]);
+                        //GameObject dropThing = Instantiate(missionProps[i].missionObjectToDrop, missionProps[i].missionShipTravel[1]);
 
-                        dropThing.transform.parent = missionProps[i].missionShipTravel[1];
-                        dropThing.transform.position = missionProps[i].missionShipTravel[1].position;
-                        dropThing.transform.localScale = Vector3.one;
+                        //dropThing.transform.parent = missionProps[i].missionShipTravel[1];
+                        //dropThing.transform.position = missionProps[i].missionShipTravel[1].position;
+                        //dropThing.transform.localScale = Vector3.one;
 
-                        dropThing.SetActive(true);
+                        //dropThing.SetActive(true);
 
                         Destroy(missionProps[i].gameObject);
                     }
@@ -211,33 +211,6 @@ public class MissionManager : MonoBehaviour
     }
     void missionAnimUpdate(float missionProgress)
     {
-        // on fixedupdate
-
-        /*for (int i = 0; i < missions.Length; i++)
-        {
-            if (missions[i].inProgress)
-            {
-                missionProps[i].objectTransform.position = missionProps[i].missionShipTravel[1].position;
-                if (missionProgress < 0.15f)
-                {
-                    missionProps[i].shipTransform.position = Vector3.Lerp(missionProps[i].missionShipTravel[0].position, missionProps[i].missionShipTravel[1].position, missionProgress / 0.15f);
-                } // 1. lerp 15% of mission as ship reaching planet JUST STRAIGHT UP FLIES INTO IT I DONT CARE I ONLY HAVE LIKE 4-6 HOURS LEFT IT'S ALMOST 8PM I HAVE WORK TOMORROW
-                else if (missionProgress < 0.2f)  // 2. lerp 5% of mission as thing setting self up (scaled by body scale and always facing towards sol, u alr set that up boe)
-                {                                  // ^-_ at this point do some animating if needed (bomb goes boom, gas vent starts ventin etc.; all as basic unity built-in animators)
-                    // missionObjectScaleUpCurve
-                    missionProps[i].shipTransform.gameObject.SetActive(false);
-
-                    float mult = (missionProgress - 0.15f) / 0.05f;
-
-                    missionProps[i].objectTransform.localScale = Vector3.one * missionObjectScaleUpCurve.Evaluate(mult);
-                }
-                else
-                {
-                    missionProps[i].objectTransform.localScale = Vector3.one;
-                    missionProps[i].objectTransform.GetComponent<Animator>().SetBool("doAnimation", true);
-                }// 3. 80% consists of literally just the mission (orbitAlterationSpeed * gameSpeed * politicsMult)
-            }
-        }//*/
 
         for (int i = 0; i < missions.Length; i++)
         {
@@ -346,7 +319,7 @@ public class MissionManager : MonoBehaviour
 
                 missionProps[selectedMissionSlot].shipTransform.position = EarthTransform.position;
 
-                mManager.setCameraAnchor(missionProps[selectedMissionSlot].shipTransform);
+                //mManager.setCameraAnchor(missionProps[selectedMissionSlot].shipTransform);
 
                 if (missName == "3TON")
                 {

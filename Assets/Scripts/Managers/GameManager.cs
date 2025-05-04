@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     [Space]
     [SerializeField]
-    public int money;
+    public float money;
     public TMP_Text cashText;
 
     public int valTest;
@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
             cashAddProgress = Mathf.Min(cashAddProgress + Time.deltaTime, 0f);
         } // negative
 
-        cashText.text = formatCash(smoothCash);
+        cashText.text = formatCash(Mathf.RoundToInt(smoothCash));
         //trueProgress = (cashAddProgress / cashSmoothTime);
         //cashText.color = cashAddGradient.Evaluate(cashAddCurve.Evaluate(0.5f + (trueProgress * 2f)));
         cashText.color = cashAddGradient.Evaluate(cashAddCurve.Evaluate(0.5f + ((cashAddProgress / cashSmoothTime) * 2f)));
@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
             mManager.popupManager.newPopup("solWarn" + alertTag);
         }
     }
-    public void addCash(int amount)
+    public void addCash(float amount)
     {
         if (amount == 0) return;
 

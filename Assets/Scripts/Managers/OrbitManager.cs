@@ -10,6 +10,9 @@ public class cBody
     public Transform bodyTransform;
 
     [Space]
+    public float healthAdd;
+
+    [Space]
     [Tooltip("in Earthen years / 100 (for accuracy)")]
     public float orbitSpeed;
     [Tooltip("in Earth masses")]
@@ -24,6 +27,8 @@ public class cBody
     [Space]
     public int clusterIndex;
 
+    public float orbitGrowth;
+
     public bool isAlive;
 }
 [ExecuteInEditMode]
@@ -35,6 +40,8 @@ public class OrbitManager : MonoBehaviour
 
     public bool recalcLive;
 
+    public Transform Sol;
+
     [Range(0f, 1f)]
     public float asteroidBeltRemaining;
     private void FixedUpdate()
@@ -45,6 +52,8 @@ public class OrbitManager : MonoBehaviour
 
             float sinOut = Mathf.Sin((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f));
             float cosOut = Mathf.Cos((float)Mathf.Repeat(bodies[i].orbitProgress / 100f * (Mathf.PI * 2f), Mathf.PI * 2f)); // not gonna simplify these by purging 100s and changing Mathf.Repeat to 1f - for precision and visual clarity reasons
+
+            alterOrbitDistance(i, bodies[i].orbitGrowth * Time.deltaTime * mManager.gameManager.gameSpeed);
 
             bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * mManager.gameManager.AstronomicalUnit;
         }
@@ -97,15 +106,45 @@ public class OrbitManager : MonoBehaviour
             bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * mManager.gameManager.AstronomicalUnit;
         }
     }
+    private int getBodyIndex(Transform input)
+    {
+        for (int i = 0; i < bodies.Length; i++)
+        {
+            if (bodies[i].bodyTransform == input) return i;
+        }
+        return -1;
+    }
     public void alterOrbitDistance(int index, float difference)
     {
+        if (!bodies[index].isAlive) return;
         Vector3 bScale = bodies[index].orbitBody.localScale;
-        float killDistance = ((bScale.x + bScale.y + bScale.z) / 3f) * bodies[index].bodyTransform.GetComponent<CircleCollider2D>().radius;
+        //float killDistance = ((bScale.x + bScale.y + bScale.z) / 3f) * bodies[index].bodyTransform.GetComponent<CircleCollider2D>().radius;
+
+        float killDistance = 0.32f;
+
+        if (bodies[index].orbitBody != Sol)
+        {
+            killDistance = 0.008f;
+        }
+
         bodies[index].orbitDistance = Mathf.Max(bodies[index].orbitDistance + difference, killDistance);
         if (bodies[index].orbitDistance == killDistance)
         {
             bodies[index].isAlive = false;
-            print("DESTROY THE BODY"); // create an explosion prefab in the body's spot under its orbiting body's hierarchy
+            print("DESTROY THE BODY: " + bodies[index].name); // create an explosion prefab in the body's spot under its orbiting body's hierarchy
+            bodies[index].bodyTransform.gameObject.SetActive(false);
+            bodies[index].isAlive = false;
+
+            if (bodies[index].orbitBody != Sol)
+            {
+                int theIndex = getBodyIndex(bodies[index].orbitBody);
+                alterOrbitDistance(theIndex, -bodies[theIndex].orbitDistance * 0.15f);
+                bodies[theIndex].healthAdd += bodies[index].healthAdd * 1.4f;
+            }
+            else
+            {
+                mManager.solManager.addHealth(bodies[index].healthAdd);
+            }
 
             if (index == -1) return; // don't do cluster stuff for other minor moons
             mManager.celManager.clusterAmountUpdate(index, -1);

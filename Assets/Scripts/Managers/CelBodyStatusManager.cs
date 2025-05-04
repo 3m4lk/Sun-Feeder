@@ -48,8 +48,11 @@ public class CelBodyStatusManager : MonoBehaviour
     } // when selected body type for mission (planet, dwarf etc.), pull up all the buttons in the cluster
     public void clusterAmountUpdate(int index, int amount)
     {
-        print("add amound to cluster[index]");
-        bodyCluster[index].amount = Mathf.Max(bodyCluster[index].amount + amount, 0);
+        if (index < bodyCluster.Length)
+        {
+            print("add amount to cluster[index]");
+            bodyCluster[index].amount = Mathf.Max(bodyCluster[index].amount + amount, 0);
+        }
         // after that, update button text (by calling the function within the button itself, the only data this function needs is its own index, and amount)
     }
     public Transform getBody(string clusterName, string bodyName = default, int inputIndex = -1)
