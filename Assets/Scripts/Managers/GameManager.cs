@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public MainManager iManager;
+    public MainManager mManager;
 
     [Tooltip("1f - in real time (used as a funny easter egg only)")]
     //[Range((1f / 60f / 60f / 23.39444444444444444444f / 365.256363004f), 16f)] // realtime -> 16 YPS
@@ -59,8 +59,20 @@ public class GameManager : MonoBehaviour
     public string[] speedSpeeds;
     public TMP_Text speedText;
 
+    [Space]
+    [Header("                   Vox Populi <- Vox Aequalis -> Vox Coitionis")]
+    [Space]
+    public float politicsPerc;
+    public AnimationCurve priceMultCurve;
+    public AnimationCurve speedMultCurve;
+    public float priceMult;
+    public float speedMult;
+    public TMP_Text polMultsText;
+
     [SerializeField]
     private bool isLocked;
+
+    public bool[] doneAlerts = new bool[5];
     private void Awake()
     {
         //print(QualitySettings.vSyncCount);
@@ -92,13 +104,60 @@ public class GameManager : MonoBehaviour
 
         formatTest = valTest.ToString(format);
 
-        totalPlaytime += gameSpeed * Time.deltaTime;
+        totalPlaytime = Mathf.Min(totalPlaytime + gameSpeed * Time.deltaTime, 5040f);
         playtimePercentage = totalPlaytime / 5040f;
 
         calamitySlider.value = 100f - playtimePercentage * 100f;
         calamityText.text = "Sol: " + calamitySlider.value.ToString("0.0") + "%";
 
         currentYear = Mathf.FloorToInt(Mathf.Lerp(yearsRange[0], yearsRange[1], playtimePercentage));
+
+        solAlerts();
+    }
+    void solAlerts()
+    {
+        float perc = 1f - playtimePercentage;
+        int alertTag = default;
+        bool proceed = false;
+        if (perc <= 0.01f && !doneAlerts[0])
+        {
+            proceed = true;
+            doneAlerts[0] = true;
+            alertTag = 99;
+        }
+        else if (perc <= 0.05f && !doneAlerts[1])
+        {
+            proceed = true;
+            doneAlerts[1] = true;
+            alertTag = 95;
+        }
+        else if (perc <= 0.25f && !doneAlerts[2])
+        {
+            proceed = true;
+            doneAlerts[2] = true;
+            alertTag = 75;
+        }
+        else if (perc <= 0.50f && !doneAlerts[3])
+        {
+            proceed = true;
+            doneAlerts[3] = true;
+            alertTag = 50;
+        }
+        else if (perc <= 0.75f && !doneAlerts[4])
+        {
+            proceed = true;
+            doneAlerts[4] = true;
+            alertTag = 25;
+        }
+        else if (perc == 0f)
+        {
+            print("Game End");
+        }
+
+        if (proceed)
+        {
+            mManager.popupManager.newPopup("solWarn" + alertTag);
+        }
     }
     public void addCash(int amount)
     {
@@ -244,5 +303,38 @@ public class GameManager : MonoBehaviour
     public int getSpeedMode()
     {
         return speedMode;
+    }
+    public void updatePoliticsStats(float input)
+    {
+        politicsPerc = (input + 100f) / 200f;
+        priceMult = priceMultCurve.Evaluate(politicsPerc);
+        speedMult = speedMultCurve.Evaluate(politicsPerc);
+        //float priceMultJustForTheText = priceMultCurve.Evaluate(1f - politicsPerc);
+
+        string[] speedWords = new string[] { " Slower", "", " Faster" };
+        string[] priceWords = new string[] { " Higher", "", " Lower" };
+
+        int speedInt = 2;
+        int priceInt = 1;
+
+        if (speedMult > 1)
+        {
+            speedInt = 2;
+        }
+        else if (speedMult < 1)
+        {
+            speedInt = 0;
+        }
+
+        if (priceMult > 1)
+        {
+            priceInt = 2;
+        }
+        else if (priceMult < 1)
+        {
+            priceInt = 0;
+        }
+
+        polMultsText.text = "Prices: x" + priceMult.ToString("0.0") + priceWords[priceInt] + "\nSpeed: x" + speedMult.ToString("0.0") + speedWords[speedInt];
     }
 }

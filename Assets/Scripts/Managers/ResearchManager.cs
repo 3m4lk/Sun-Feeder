@@ -172,7 +172,7 @@ public class ResearchManager : MonoBehaviour
         blinkProgress = Mathf.Repeat(blinkProgress + Time.deltaTime, blinkTime); // bubbles blinking in bg
         fadeProgress = Mathf.Clamp(fadeProgress + Time.deltaTime * motionDirection, 0f, fadeTime); // intro
 
-        print(fadeProgress == 0f);
+        //print(fadeProgress == 0f);
 
         bgBubbles.gameObject.SetActive(fadeProgress / fadeTime != 0);
         if (fadeProgress / fadeTime != 0f)

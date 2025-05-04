@@ -97,6 +97,11 @@ public class Buttons : MonoBehaviour
             ownImage.color = buttonColors[1];
             return;
         }
+        else if (buttonMode == 2)
+        {
+            ownImage.color = buttonColors[1];
+            return;
+        }
 
         isHovering = true;
         isDown = false;
@@ -124,6 +129,11 @@ public class Buttons : MonoBehaviour
             ownImage.color = buttonColors[0];
             return;
         }
+        else if (buttonMode == 2)
+        {
+            ownImage.color = buttonColors[0];
+            return;
+        }
 
         isHovering = false;
         isDown = false;
@@ -132,6 +142,11 @@ public class Buttons : MonoBehaviour
     {
         if (locked) return;
         if (buttonMode == 1)
+        {
+            ownImage.color = buttonColors[2];
+            return;
+        }
+        else if (buttonMode == 2)
         {
             ownImage.color = buttonColors[2];
             return;
@@ -146,6 +161,12 @@ public class Buttons : MonoBehaviour
         {
             ownImage.color = buttonColors[0];
             mManager.gameManager.changeSpeed(researchIndex);
+            return;
+        }
+        else if (buttonMode == 2)
+        {
+            ownImage.color = buttonColors[0];
+            mManager.popupManager.closePopup();
             return;
         }
 

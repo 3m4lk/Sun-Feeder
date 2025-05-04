@@ -147,3 +147,16 @@ public class MinigameManagerButton : Editor
         }
     }
 }
+[CustomEditor(typeof(PopupManager))]
+public class PopupManagerButton : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        PopupManager ppManager = (PopupManager)target;
+        base.OnInspectorGUI();
+        if (GUILayout.Button("Test Popup"))
+        {
+            ppManager.devTestPopup();
+        }
+    }
+}

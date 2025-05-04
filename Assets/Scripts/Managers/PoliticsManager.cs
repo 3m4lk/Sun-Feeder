@@ -462,6 +462,8 @@ public class PoliticsManager : MonoBehaviour
         }
 
         polStatusText.text += ((int)Mathf.Abs(politicalViews)).ToString("0") + "</color>";
+
+        mManager.gameManager.updatePoliticsStats(politicalViews);
     } // called every year
     public void toggleWindow(bool input)
     {

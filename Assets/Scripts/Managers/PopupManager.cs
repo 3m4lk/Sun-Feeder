@@ -1,38 +1,131 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
+[System.Serializable]
+public class pdt
+{
+    public string ownTag;
+    public string title;
+    public string description;
+    public string buttonName;
+
+    [Header("rule for colors: HSV S channel is ALWAYS 60, V ALWAYS at 100")]
+    public Color32 windowColor = Color.HSVToRGB(240, 60, 100) + new Color32(0, 0, 0, 255);
+
+    public Vector2 position;
+    public Vector2 size = new Vector2(128, 92);
+
+    [Space]
+    public string onCloseOpen;
+
+    public bool wasAlreadyOpened;
+}
 public class PopupManager : MonoBehaviour
 {
     public MainManager mManager;
     private int lastSpeedMode;
 
-    [Tooltip("used for tutorial only, most probably")]
-    public string currentTag;
+    public pdt[] popups;
+    private int currentPopupIndex;
 
     public bool isActive;
 
-    public GameManager ownPopup;
+    public GameObject ownPopup;
     [Tooltip("0 - title;\n1 - description;\n2 - proceed button")]
     public TMP_Text[] popupTexts;
 
-    public void spawnPopup(string pTag, string title, string description, string buttonName = "Okay")
+    [Space]
+    public AnimationCurve popupAppearCurve;
+    public float popupAppearTime;
+    private float popupAppearProgress;
+    private float popupDirection = -1f;
+
+    public int testPopup;
+    private bool wasMinigame;
+    private void Awake()
     {
+        spawnPopup(0);
+    }
+    private void Update()
+    {
+        popupAppearProgress = Mathf.Clamp(popupAppearProgress + Time.deltaTime * popupDirection, 0f, popupAppearTime);
+        ownPopup.transform.localScale = Vector3.one * popupAppearCurve.Evaluate(popupAppearProgress / popupAppearTime);
+    }
+    public void newPopup(string puTag)
+    {
+        for (int i = 0; i < popups.Length; i++)
+        {
+            if (popups[i].ownTag == puTag)
+            {
+                if (popups[i].wasAlreadyOpened)
+                {
+                    return;
+                }
+                spawnPopup(i);
+                return;
+            }
+        }
+        print("<color=red>POPUP NOT FOUND</color>");
+    }
+    public void devTestPopup()
+    {
+        spawnPopup(testPopup);
+    }
+    void spawnPopup(int index)
+    {
+        wasMinigame = false;
+        if (mManager.minigameManager.windowDirection == 1f)
+        {
+            mManager.closeAllWindows();
+            wasMinigame = true;
+        } // close minigame window to prevent exploiting
+
+        popups[index].wasAlreadyOpened = true;
         lastSpeedMode = mManager.gameManager.getSpeedMode();
         mManager.gameManager.lockSpeed(false); // precaution for minigame
         mManager.gameManager.changeSpeed(0);
         mManager.gameManager.lockSpeed(true);
 
-        currentTag = pTag;
-        popupTexts[0].text = title;
-        popupTexts[1].text = description;
-        popupTexts[2].text = buttonName;
+        currentPopupIndex = index;
+        popupTexts[0].text = popups[index].title;
+        popupTexts[1].text = popups[index].description;
+        popupTexts[2].text = popups[index].buttonName;
+
+        ownPopup.transform.localPosition = popups[index].position;
+        ownPopup.GetComponent<RectTransform>().sizeDelta = popups[index].size;
+
+        popupDirection = 1f;
+        popupAppearProgress = 0;
+        ownPopup.GetComponent<Image>().color = popups[index].windowColor;
+
+        ownPopup.SetActive(true);
+
+        mManager.toggleCam(1f);
     }
     public void closePopup()
     {
+        mManager.gameManager.lockSpeed(false);
         mManager.gameManager.changeSpeed(lastSpeedMode);
-        if (mManager.minigameManager.windowDirection == -1)
+
+        if (wasMinigame)
         {
-            mManager.gameManager.lockSpeed(false);
-        } // game speed doesn't unlock when minigame is up
+            wasMinigame = false;
+            mManager.minigameManager.toggleWindow();
+        }
+
+        popupDirection = -1f;
+        mManager.toggleCam(-1f);
+
+        switch (popups[currentPopupIndex].ownTag)
+        {
+            default:
+                break;
+        } // exclusive stuff from popups
+
+        if (popups[currentPopupIndex].onCloseOpen != "")
+        {
+            newPopup(popups[currentPopupIndex].onCloseOpen);
+        }
     }
 }

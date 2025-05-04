@@ -165,6 +165,10 @@ public class MissionManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        updateMissions();
+    }
+    void updateMissions()
+    {
         // mission progress updating
         for (int i = 0; i < missions.Length; i++)
         {

@@ -515,7 +515,7 @@ public class MinigameManager : MonoBehaviour
             if (windowDirection == 1)
             {
                 lastSpeedMode = mManager.gameManager.getSpeedMode();
-                mManager.gameManager.changeSpeed(2);
+                mManager.gameManager.changeSpeed(3);
                 mManager.gameManager.lockSpeed(true);
             }
             else

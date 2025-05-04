@@ -19,5 +19,6 @@ public class missionVisProp : MonoBehaviour
 
         ownMain.rotation = Quaternion.Lerp(defaultRotation.rotation, targetLooker.rotation, lookCurve.Evaluate(lookProgress / lookTime));
 
+
     }
 }
