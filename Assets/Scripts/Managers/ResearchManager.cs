@@ -74,6 +74,22 @@ public class ResearchManager : MonoBehaviour
     public cso[] researchPages;
     public float motionDirection = -1f;
 
+    [Space]
+    public CanvasGroup bgBubbles;
+
+    public AnimationCurve bubblesRiseCurve;
+    public float riseTime;
+    private float riseProgress;
+
+    [Tooltip("flicker.")]
+    public AnimationCurve bubblesBlinkCurve;
+    public float blinkTime;
+    private float blinkProgress;
+
+    public AnimationCurve bubblesFadeCurve;
+    public float fadeTime;
+    public float fadeProgress;
+
     public bool devMode;
     private void Awake()
     {
@@ -150,7 +166,21 @@ public class ResearchManager : MonoBehaviour
                 researchPages[i].movedObjects[a].position = Vector3.Lerp(researchPages[i].motionTargets[0].position, researchPages[i].motionTargets[1].position, researchPages[i].motionCurve.Evaluate(researchPages[i].motionProgress / researchPages[i].motionTime));
             }
         }
+
         // bubble particles floating upwards control of some sorts
+        riseProgress = Mathf.Repeat(riseProgress + Time.deltaTime, riseTime); // bubbles rising
+        blinkProgress = Mathf.Repeat(blinkProgress + Time.deltaTime, blinkTime); // bubbles blinking in bg
+        fadeProgress = Mathf.Clamp(fadeProgress + Time.deltaTime * motionDirection, 0f, fadeTime); // intro
+
+        print(fadeProgress == 0f);
+
+        bgBubbles.gameObject.SetActive(fadeProgress / fadeTime != 0);
+        if (fadeProgress / fadeTime != 0f)
+        {
+            bgBubbles.alpha = bubblesFadeCurve.Evaluate(fadeProgress / fadeTime);
+            bgBubbles.alpha *= bubblesBlinkCurve.Evaluate(blinkProgress / blinkTime);
+            bgBubbles.transform.localPosition = Vector3.up * bubblesRiseCurve.Evaluate(riseProgress / riseTime);
+        }
     }
     void researchCheck(string input, int currentLevel = -1)
     {

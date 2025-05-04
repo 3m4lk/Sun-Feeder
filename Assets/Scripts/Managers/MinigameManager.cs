@@ -171,6 +171,8 @@ public class MinigameManager : MonoBehaviour
     [Space]
     public Transform[] positionsToAutograb;
 
+    private int lastSpeedMode;
+
     // Asteroid types:
     // - Regular = 100
     // - Silver = 1,000 (Palladium)
@@ -512,8 +514,13 @@ public class MinigameManager : MonoBehaviour
             mManager.gameManager.lockSpeed(false);
             if (windowDirection == 1)
             {
+                lastSpeedMode = mManager.gameManager.getSpeedMode();
                 mManager.gameManager.changeSpeed(2);
                 mManager.gameManager.lockSpeed(true);
+            }
+            else
+            {
+                mManager.gameManager.changeSpeed(lastSpeedMode);
             }
 
             Input.ResetInputAxes();

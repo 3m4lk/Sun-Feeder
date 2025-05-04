@@ -241,4 +241,8 @@ public class GameManager : MonoBehaviour
     {
         isLocked = mode;
     }
+    public int getSpeedMode()
+    {
+        return speedMode;
+    }
 }
