@@ -504,18 +504,19 @@ public class MinigameManager : MonoBehaviour
     {
         if (isGSPDABought)
         {
-            windowDirection = -windowDirection;
-            mManager.missionManager.animDirection = -1f;
-            mManager.researchManager.motionDirection = -1f;
+            float ownDire = windowDirection;
+            mManager.closeAllWindows();
+            windowDirection = -ownDire;
+            mManager.toggleCam(windowDirection);
 
-            mManager.camManager.toggleCameraControls(windowDirection);
-
+            mManager.gameManager.lockSpeed(false);
             if (windowDirection == 1)
             {
-                mManager.gameManager.speedMode = 2;
+                mManager.gameManager.changeSpeed(2);
+                mManager.gameManager.lockSpeed(true);
             }
 
-            //Input.ResetInputAxes();
+            Input.ResetInputAxes();
         }
     }
     public void asteroidCaller()

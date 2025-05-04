@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    public MainManager mManager;
+
     public Camera ownCam;
     public Camera minigameCamera;
+
+    public Transform Sol;
 
     public Transform camRotTarget;
     public Transform camAnchor;
@@ -59,7 +63,7 @@ public class CameraManager : MonoBehaviour
     private float outputBaseBodyDistance;
 
     [Space]
-    public Transform newAnchor;
+    public Transform newAnchor; // for editor anchor changing only
 
     public bool cameraControls;
     private void Awake()
@@ -70,6 +74,10 @@ public class CameraManager : MonoBehaviour
     }
     private void Update()
     {
+        if (currentAnchor == null)
+        {
+            changeAnchor(Sol);
+        }
         for (int i = 0; i < 3; i++)
         {
             if (Input.GetMouseButtonDown(i))

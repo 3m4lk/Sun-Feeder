@@ -17,9 +17,15 @@ public class CommanderManager : MonoBehaviour
     private bool assignNewCommander;
 
     public TMP_Text commanderText;
+
+    public TMP_Text betrayalText;
+    private Vector3 betrayalTextOGPos;
+    public float betrayalTextTimer;
+    public float betrayalTextRange;
     private void Awake()
     {
         assignCommander();
+        betrayalTextOGPos = betrayalText.transform.position;
     }
     private void FixedUpdate()
     {
@@ -44,6 +50,13 @@ public class CommanderManager : MonoBehaviour
             commanderMournProgress = Mathf.Max(commanderMournProgress - Time.fixedDeltaTime, 0);
             commanderText.text = "<color=#800000>Commander: " + commanderName + " (*)</color>\nYear " + mManager.gameManager.currentYear + "-ALL";
         }
+
+        betrayalTextTimer = Mathf.Max(betrayalTextTimer - Time.fixedDeltaTime, 0);
+        betrayalText.gameObject.SetActive(betrayalTextTimer != 0);
+        if (betrayalTextTimer != 0)
+        {
+            betrayalText.transform.position = betrayalTextOGPos + Vector3.ClampMagnitude(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)), 1f) * betrayalTextRange;
+        }
     }
     public void killCommander()
     {
@@ -58,7 +71,11 @@ public class CommanderManager : MonoBehaviour
     }
     public void hurlEarthScenario()
     {
-        print("<color=red>Are you insane!?</color>");
+        mManager.newsManager.betray();
+        betrayalTextTimer = 3f;
+        betrayalText.gameObject.SetActive(true);
+        //print("<color=red>Are you insane!?</color>");
+        betrayalText.text = new string[] { "<color=red>ARE YOU INSANE?!?</color>", "<color=red>WHAT ARE YOU DOING?!?</color>" }[Random.Range(0, 2)];
         killCommander();
         // kill current Commander
     }

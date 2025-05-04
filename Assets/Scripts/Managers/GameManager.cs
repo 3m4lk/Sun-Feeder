@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour
     //[Range((1f / 60f / 60f / 23.39444444444444444444f / 365.256363004f), 16f)] // realtime -> 16 YPS
     public float gameSpeed = 1f;
 
-    [Tooltip("0 - Accurate;\n1 - 1 year per minute;\n2 - 0.1 year per second;\n3 - 1 year per second;\n4 - 3 years per second;\n5 - 10 years per second;\n6 - 16 years per second")]
-    [Range(0, 6)]
-    public int speedMode = 3;
+    //[Tooltip("0 - Accurate;\n1 - 1 year per minute;\n2 - 0.1 year per second;\n3 - 1 year per second;\n4 - 3 years per second;\n5 - 10 years per second;\n6 - 24 years per second")]
+    [Tooltip("0 - Accurate;\n1 - 0.1 year per second;\n2 - 1 year per second;\n3 - 10 years per second;\n4 - 24 years per second;\n5 - 48 years per second")]
+    [Range(0, 5)]
+    private int speedMode = 3;
 
     [Tooltip("distance from Sun to Earth; here, a multiplier")]
     public float AstronomicalUnit;
@@ -54,11 +55,18 @@ public class GameManager : MonoBehaviour
     public int currentYear = 82081;
 
     public int[] yearsRange = new int[2] { 82021, 87121 };
+
+    public string[] speedSpeeds;
+    public TMP_Text speedText;
+
+    [SerializeField]
+    private bool isLocked;
     private void Awake()
     {
         //print(QualitySettings.vSyncCount);
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = 120;
+        changeSpeed(1);
     }
     private void Update()
     {
@@ -83,30 +91,6 @@ public class GameManager : MonoBehaviour
         cashText.rectTransform.localScale = Vector3.one * cashScaleCurve.Evaluate(cashScaleProgress / cashSmoothTime);
 
         formatTest = valTest.ToString(format);
-        switch (speedMode)
-        {
-            case 0:
-                gameSpeed = (1f / 60f / 60f / 23.39444444444444444444f / 365.256363004f);
-                break;
-            case 1:
-                gameSpeed = (1f / 60f);
-                break;
-            case 2:
-                gameSpeed = 0.1f;
-                break;
-            case 3:
-                gameSpeed = 1f;
-                break;
-            case 4:
-                gameSpeed = 3f;
-                break;
-            case 5:
-                gameSpeed = 10f;
-                break;
-            case 6:
-                gameSpeed = 16f;
-                break;
-        }
 
         totalPlaytime += gameSpeed * Time.deltaTime;
         playtimePercentage = totalPlaytime / 5040f;
@@ -201,5 +185,60 @@ public class GameManager : MonoBehaviour
                 return (money / (divAmount)).ToString("0.00") + units[unitIndex] + " mk"; // >unintins
             }
         }
+    }
+    public void changeSpeed(int input)
+    {
+        if (!isLocked)
+        {
+            speedMode = input;
+            switch (speedMode)
+            {
+                /*case 0:
+                    gameSpeed = (1f / 60f / 60f / 23.39444444444444444444f / 365.256363004f);
+                    break;
+                case 1:
+                    gameSpeed = (1f / 60f);
+                    break;
+                case 2:
+                    gameSpeed = 0.1f;
+                    break;
+                case 3:
+                    gameSpeed = 1f;
+                    break;
+                case 4:
+                    gameSpeed = 3f;
+                    break;
+                case 5:
+                    gameSpeed = 10f;
+                    break;
+                case 6:
+                    gameSpeed = 24f;
+                    break;//*/
+
+                case 0:
+                    gameSpeed = (1f / 60f / 60f / 23.39444444444444444444f / 365.256363004f);
+                    break;
+                case 1:
+                    gameSpeed = 0.1f;
+                    break;
+                case 2:
+                    gameSpeed = 1f;
+                    break;
+                case 3:
+                    gameSpeed = 10f;
+                    break;
+                case 4:
+                    gameSpeed = 24f;
+                    break;
+                case 5:
+                    gameSpeed = 48f;
+                    break;
+            }
+            speedText.text = "Speed: " + speedSpeeds[input];
+        }
+    }
+    public void lockSpeed(bool mode)
+    {
+        isLocked = mode;
     }
 }

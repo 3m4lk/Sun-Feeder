@@ -55,6 +55,8 @@ public class resLv
 
     [Space]
     public bool isResearching;
+
+    public Image researchProgressor;
 }
 public class ResearchManager : MonoBehaviour
 {
@@ -80,6 +82,13 @@ public class ResearchManager : MonoBehaviour
         {
             research[i].researchProgress = research[i].duration;
             researchButtons[i].researchIndex = i;
+
+            if (research[i].isLevellable)
+            {
+                research[i].levelSlider = researchButtons[i].GetComponentInChildren<Slider>();
+                research[i].levelSlider.maxValue = research[i].maxLevel;
+            }
+            research[i].researchProgressor = researchButtons[i].transform.GetChild(2).GetComponent<Image>();
         }
     }
     private void FixedUpdate()
@@ -89,6 +98,9 @@ public class ResearchManager : MonoBehaviour
             if (!research[i].isCompleted && research[i].isResearching)
             {
                 research[i].researchProgress = Mathf.Min(research[i].researchProgress + Time.fixedDeltaTime * mManager.gameManager.gameSpeed, research[i].duration); // * researchSpeedMult from politics manager
+
+                research[i].researchProgressor.fillAmount = 1f - (research[i].researchProgress / research[i].duration);
+
                 if (research[i].researchProgress == research[i].duration)
                 {
                     research[i].isResearching = false;
@@ -221,6 +233,18 @@ public class ResearchManager : MonoBehaviour
     {
         changeText(index);
         allResearchCheck();
+
+        if (research[index].isLevellable)
+        {
+            print("ADD LEVEL");
+            research[index].levelSlider.value = research[index].currentLevel;
+
+            if (research[index].currentLevel == research[index].maxLevel)
+            {
+                //print("MAXED OUT");
+                research[index].levelSlider.gameObject.SetActive(false);
+            }
+        }
     } // must work for ALL types of research finishes, that is: finishing unlevelling research, levelling up levelled research, and finishing levelled research
     private void completeResearch(int index)
     {
@@ -292,10 +316,9 @@ public class ResearchManager : MonoBehaviour
     }
     public void togglePage()
     {
-        motionDirection = -motionDirection;
-        mManager.minigameManager.windowDirection = -1f;
-        mManager.missionManager.animDirection = -1f;
-
-        mManager.camManager.toggleCameraControls(motionDirection);
+        float ownDire = motionDirection;
+        mManager.closeAllWindows();
+        motionDirection = -ownDire;
+        mManager.toggleCam(motionDirection);
     }
 }

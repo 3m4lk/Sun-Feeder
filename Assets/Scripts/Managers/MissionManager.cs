@@ -36,6 +36,9 @@ public class mssn
 
     [Space]
     public int missionTypeInt;
+
+    [Space]
+    public Transform missionBody;
 }
 public class MissionManager : MonoBehaviour
 {
@@ -121,6 +124,8 @@ public class MissionManager : MonoBehaviour
             initialNoOperationsText.SetActive(false);
         }
     } // 0 - Planets;\n1-  Kuiper Belt;\n2 - Gas Giants\n3 - Minor Bodies;\n4 - Sol
+
+    public missionVisProp[] missionProps = new missionVisProp[5];
     private void Awake()
     {
         slotArrowTarget = initialSlotArrowTarget;
@@ -178,6 +183,10 @@ public class MissionManager : MonoBehaviour
                 }
             }
         }
+    }
+    public void missionedBodyCamAnchorChange(int index)
+    {
+        //missions[index]
     }
     void missionAnimUpdate(string missionType, float missionProgress)
     {
@@ -268,6 +277,10 @@ public class MissionManager : MonoBehaviour
                 print("durtion multiplied by politics mult");
                 // also add the actual price calculation things somewhere in the scripts above
 
+                // set missioned body transform
+
+
+
                 selectedMissionSlot = -1;
                 selectedMissionType = -1;
                 selectedMission = -1;
@@ -312,10 +325,9 @@ public class MissionManager : MonoBehaviour
     }
     public void toggleWindow()
     {
-        animDirection = -animDirection;
-        mManager.minigameManager.windowDirection = -1f;
-        mManager.researchManager.motionDirection = -1f;
-
-        mManager.camManager.toggleCameraControls(animDirection);
+        float ownDire = animDirection;
+        mManager.closeAllWindows();
+        animDirection = -ownDire;
+        mManager.toggleCam(animDirection);
     }
 }

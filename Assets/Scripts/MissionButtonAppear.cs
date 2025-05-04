@@ -132,6 +132,14 @@ public class MissionButtonAppear : MonoBehaviour
         {
             GetComponentInChildren<Image>().color = hoverColor;
         }
+
+        switch (buttonType)
+        {
+            case "missionSlotSelect":
+                missionManager.missionedBodyCamAnchorChange(index);
+                // change camera target, if mission is undergoing
+                break;
+        }
     }
     public void onExit()
     {

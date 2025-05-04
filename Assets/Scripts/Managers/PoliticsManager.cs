@@ -92,8 +92,8 @@ public class PoliticsManager : MonoBehaviour
 
     public TMP_Text infoName, infoDesc;
 
-    private float warLock;
-    public int warTime;
+    //private float warLock;
+    //public int warTime;
 
     public TMP_Text modifiersText;
     public TMP_Text polStatusText;
@@ -118,6 +118,7 @@ public class PoliticsManager : MonoBehaviour
     public TMP_Text alignmentText;
 
     public Transform polArrow;
+    public Transform polCapBlock;
     public Transform[] polArrowTargets;
 
     [Space]
@@ -125,14 +126,21 @@ public class PoliticsManager : MonoBehaviour
     public GameObject[] extrPopuliUnlock;
     public GameObject[] extrCoitionisUnlock;
 
-    public GameObject populiWarUnlock;
-    public GameObject coitionisWarUnlock;
+    //public GameObject populiWarUnlock;
+    //public GameObject coitionisWarUnlock;
 
     public bool extrPopuliUnlocked;
     public bool extrCoitionisUnlocked;
 
     public bool populiWarUnlocked;
     public bool coitionisWarUnlocked;
+
+    [Space]
+    public CanvasGroup ownWindow;
+    public AnimationCurve animCurve;
+    public float animTime;
+    private float animProgress;
+    public float animDire = -1f;
     private void Awake()
     {
         for (int i = 0; i < buttons.Length; i++)
@@ -153,7 +161,7 @@ public class PoliticsManager : MonoBehaviour
             updatePolitical();
         }
 
-        warLock = Mathf.Max(warLock - Time.fixedDeltaTime, 0f);
+        //warLock = Mathf.Max(warLock - Time.fixedDeltaTime, 0f);
 
         /*if (politicalViews < -neutralismThreshold)
         {
@@ -168,6 +176,10 @@ public class PoliticsManager : MonoBehaviour
     {
         pikeProgress = Mathf.Min(pikeProgress + Time.deltaTime, pikeTime);
         descBgProgress = Mathf.Repeat(descBgProgress + Time.deltaTime, descBgTime);
+        animProgress = Mathf.Clamp(animProgress + Time.deltaTime * animDire, 0f, animTime);
+
+        ownWindow.alpha = animCurve.Evaluate(animProgress / animTime);
+        ownWindow.gameObject.SetActive(animProgress != 0);
 
         descBg.localRotation = Quaternion.Euler(0, 0, descBgCurve.Evaluate(descBgProgress / descBgTime));
 
@@ -184,8 +196,8 @@ public class PoliticsManager : MonoBehaviour
     {
         if (!actions[getActionIndex(input)].isLocked)
         {
-            if (warLock != 0)
-            {
+            //if (warLock != 0)
+            //{
                 switch (input)
                 {
                     default:
@@ -198,7 +210,7 @@ public class PoliticsManager : MonoBehaviour
                         // unwar is not allow
                         break;
                 }
-            }
+            /*}
             else
             {
                 actions[getActionIndex(input)].isActive = mode;
@@ -211,7 +223,7 @@ public class PoliticsManager : MonoBehaviour
                         warLock = warTime;
                         break;
                 }
-            }
+            }//*/
         }
         updateActions();
     }
@@ -257,7 +269,7 @@ public class PoliticsManager : MonoBehaviour
 
                 currentGrowth += actions[i].growth;
                 currentCap += actions[i].impact;
-                switch (actions[i].name)
+                /*switch (actions[i].name)
                 {
                     case "pWar":
                         politicalViews = -100f;
@@ -269,9 +281,14 @@ public class PoliticsManager : MonoBehaviour
                         currentGrowth = 100f;
                         currentCap = 100f;
                         return; // War (coitionis)
-                }
+                }//*/
             }
         }
+
+        float ownHeight = polCapBlock.position.y;
+        Vector3 blockPos = Vector3.Lerp(polArrowTargets[0].position, polArrowTargets[1].position, (currentCap + 100f) / 200f);
+        blockPos.y = ownHeight;
+        polCapBlock.position = blockPos;
     }
     void setLock(int index, bool mode)
     {
@@ -287,9 +304,9 @@ public class PoliticsManager : MonoBehaviour
     }
     void updatePolitical()
     {
-        if (currentGrowth == 0)
+        if (currentGrowth == 0 && Mathf.Abs(politicalViews) > neutralismThreshold)
         {
-            politicalViews = Mathf.Clamp(politicalViews + (0.01f * -Mathf.Sign(politicalViews)), Mathf.Min(currentCap, politicalViews), Mathf.Max(currentCap, politicalViews));
+            politicalViews = Mathf.Clamp(politicalViews + (0.1f * -Mathf.Sign(politicalViews)), Mathf.Min(currentCap, politicalViews), Mathf.Max(currentCap, politicalViews));
         } // aequalis
         else
         {
@@ -301,11 +318,21 @@ public class PoliticsManager : MonoBehaviour
         if (!isExtremist && Mathf.Abs(politicalViews) >= extremismThreshold)
         {
             isExtremist = true;
+            if (politicalViews > 0)
+            {
+                mManager.newsManager.startExtremismCoitionis = true;
+            } // coitionis
+            else
+            {
+                mManager.newsManager.startExtremismPopuli = true;
+            }
             // spawn extremism news
         }
         else if (isExtremist && Mathf.Abs(politicalViews) < extremismThreshold)
         {
             isExtremist = false;
+            mManager.newsManager.startExtremismPopuli = false;
+            mManager.newsManager.startExtremismCoitionis = false;
             // spawn no longer extremist news
         }
 
@@ -416,7 +443,7 @@ public class PoliticsManager : MonoBehaviour
             }
         }
 
-        else if (!populiWarUnlocked && politicalViews <= -95f)
+        /*else if (!populiWarUnlocked && politicalViews <= -95f)
         {
             populiWarUnlocked = true;
             populiWarUnlock.SetActive(true);
@@ -425,10 +452,22 @@ public class PoliticsManager : MonoBehaviour
         {
             coitionisWarUnlocked = true;
             coitionisWarUnlock.SetActive(true);
-        }
+        }//*/
         // had i had more time i woulda made it betta
         // speakin in written drunken slur even tho iaint drunk cause its just quickler
 
+        if (Mathf.Abs(politicalViews) >= 100f)
+        {
+            mManager.newsManager.doWarNews = true; // declare war
+        }
+
         polStatusText.text += ((int)Mathf.Abs(politicalViews)).ToString("0") + "</color>";
     } // called every year
+    public void toggleWindow(bool input)
+    {
+        float ownDire = animDire;
+        mManager.closeAllWindows();
+        animDire = -ownDire;
+        mManager.toggleCam(animDire);
+    }
 }
