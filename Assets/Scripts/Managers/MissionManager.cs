@@ -97,6 +97,7 @@ public class MissionManager : MonoBehaviour
     public int selectedMission;
     public int selectedMissionTarget;
     public Color32 selectedMissionColor;
+    public GameObject selectedBodyTarget;
 
     [Space]
     public Transform currentSlotArrow;
@@ -106,6 +107,8 @@ public class MissionManager : MonoBehaviour
     public float slotArrowTime;
     private float slotArrowProgress;
     private Vector3 arrowLastPosition;
+
+    public Transform EarthTransform;
     public void addMissionSlot(int index)
     {
         invitationTexts[0].SetActive(true);
@@ -125,7 +128,7 @@ public class MissionManager : MonoBehaviour
         }
     } // 0 - Planets;\n1-  Kuiper Belt;\n2 - Gas Giants\n3 - Minor Bodies;\n4 - Sol
 
-    public missionVisProp[] missionProps = new missionVisProp[5];
+    public missionPack[] missionProps = new missionPack[5];
     private void Awake()
     {
         slotArrowTarget = initialSlotArrowTarget;
@@ -167,7 +170,7 @@ public class MissionManager : MonoBehaviour
     {
         updateMissions();
     }
-    void updateMissions()
+    void updateMissions() // on fixedupdate
     {
         // mission progress updating
         for (int i = 0; i < missions.Length; i++)
@@ -178,27 +181,76 @@ public class MissionManager : MonoBehaviour
 
                 missions[i].progressFill.fillAmount = missions[i].progress / missions[i].duration;
 
-                missionAnimUpdate(missions[i].name, missions[i].progress / missions[i].duration);
+                missionAnimUpdate(missions[i].progress / missions[i].duration); // on fixedupdate
 
                 if (missions[i].progress == missions[i].duration)
                 {
                     print("FINISH MISSION " + i + "!");
+
+                    if (missionProps[i].missionObjectToDrop != null)
+                    {
+                        GameObject dropThing = Instantiate(missionProps[i].missionObjectToDrop, missionProps[i].missionShipTravel[1]);
+
+                        dropThing.transform.parent = missionProps[i].missionShipTravel[1];
+                        dropThing.transform.position = missionProps[i].missionShipTravel[1].position;
+                        dropThing.transform.localScale = Vector3.one;
+
+                        dropThing.SetActive(true);
+
+                        Destroy(missionProps[i].gameObject);
+                    }
+
                     resetSlot(i);
                 }
             }
         }
-    }
+    } // on fixedupdate
     public void missionedBodyCamAnchorChange(int index)
     {
         //missions[index]
     }
-    void missionAnimUpdate(string missionType, float missionProgress)
+    void missionAnimUpdate(float missionProgress)
     {
-        switch (missionType)
+        // on fixedupdate
+
+        /*for (int i = 0; i < missions.Length; i++)
         {
-            default:
-                break;
+            if (missions[i].inProgress)
+            {
+                missionProps[i].objectTransform.position = missionProps[i].missionShipTravel[1].position;
+                if (missionProgress < 0.15f)
+                {
+                    missionProps[i].shipTransform.position = Vector3.Lerp(missionProps[i].missionShipTravel[0].position, missionProps[i].missionShipTravel[1].position, missionProgress / 0.15f);
+                } // 1. lerp 15% of mission as ship reaching planet JUST STRAIGHT UP FLIES INTO IT I DONT CARE I ONLY HAVE LIKE 4-6 HOURS LEFT IT'S ALMOST 8PM I HAVE WORK TOMORROW
+                else if (missionProgress < 0.2f)  // 2. lerp 5% of mission as thing setting self up (scaled by body scale and always facing towards sol, u alr set that up boe)
+                {                                  // ^-_ at this point do some animating if needed (bomb goes boom, gas vent starts ventin etc.; all as basic unity built-in animators)
+                    // missionObjectScaleUpCurve
+                    missionProps[i].shipTransform.gameObject.SetActive(false);
+
+                    float mult = (missionProgress - 0.15f) / 0.05f;
+
+                    missionProps[i].objectTransform.localScale = Vector3.one * missionObjectScaleUpCurve.Evaluate(mult);
+                }
+                else
+                {
+                    missionProps[i].objectTransform.localScale = Vector3.one;
+                    missionProps[i].objectTransform.GetComponent<Animator>().SetBool("doAnimation", true);
+                }// 3. 80% consists of literally just the mission (orbitAlterationSpeed * gameSpeed * politicsMult)
+            }
+        }//*/
+
+        for (int i = 0; i < missions.Length; i++)
+        {
+            if (missions[i].inProgress)
+            {
+                missionProps[i].shipTransform.position = Vector3.Slerp(missionProps[i].missionShipTravel[0].position, missionProps[i].missionShipTravel[1].position, missionProgress);
+                missionProps[i].shipTransform.LookAt(missionProps[i].missionShipTravel[1]);
+            }
         }
+
+        // ship flies into the thing for the entire duration
+        // and then spawns its thing on the body
+        // the body then receives a perament orbit decrease in that directi0on
     }
     public void openTab(int index, int missionType = -1, string missionTag = default)
     {
@@ -283,12 +335,37 @@ public class MissionManager : MonoBehaviour
 
                 // set missioned body transform
 
+                missions[selectedMissionSlot].missionBody = selectedBodyTarget.transform;
 
+                missionProps[selectedMissionSlot] = Instantiate(Resources.Load<GameObject>("MissionKit"), selectedBodyTarget.transform.position, Quaternion.identity).GetComponent<missionPack>();
+
+                missionProps[selectedMissionSlot].missionObjectToDrop = Resources.Load<GameObject>("MissionStuff/" + missions[selectedMissionSlot].name);
+
+                missionProps[selectedMissionSlot].missionShipTravel[0] = EarthTransform;
+                missionProps[selectedMissionSlot].missionShipTravel[1] = selectedBodyTarget.transform;
+
+                missionProps[selectedMissionSlot].shipTransform.position = EarthTransform.position;
+
+                mManager.setCameraAnchor(missionProps[selectedMissionSlot].shipTransform);
+
+                if (missName == "3TON")
+                {
+                    missionProps[selectedMissionSlot].ownBomb3.SetActive(true);
+                }
+                else if (missName == "500TON")
+                {
+                    missionProps[selectedMissionSlot].ownBomb500.SetActive(true);
+                }
+
+                missionProps[selectedMissionSlot].gameObject.SetActive(true);
+                //print("AT MISSIONED TRANSFORM");
 
                 selectedMissionSlot = -1;
                 selectedMissionType = -1;
                 selectedMission = -1;
                 selectedMissionTarget = -1;
+                selectedBodyTarget = default;
+
                 openTab(0);
                 updateSlotArrow(initialSlotArrowTarget);
             }
@@ -303,6 +380,8 @@ public class MissionManager : MonoBehaviour
         missions[index].inProgress = false;
         missions[index].progress = 0;
         missions[index].progressFill.fillAmount = 0;
+
+        Destroy(missionProps[index].gameObject);
 
         updateSlotIcons();
     }

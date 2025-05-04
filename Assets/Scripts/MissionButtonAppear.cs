@@ -7,6 +7,10 @@ public class MissionButtonAppear : MonoBehaviour
     public MissionManager missionManager;
 
     [Space]
+    public GameObject singularBody;
+    public GameObject[] multipleBodies;
+
+    [Space]
     public string infoName;
     public string infoDesc;
     public string infoDescMinor;
@@ -69,6 +73,7 @@ public class MissionButtonAppear : MonoBehaviour
                 missionManager.missions[missionManager.selectedMissionSlot].progressFill.sprite = missionManager.missionTypeIcons[missionType];
 
                 missionManager.selectedMissionType = missionType;
+
                 missionManager.openTab(2, missionType);
                 break;
             case "missionTypeSelect":
@@ -79,6 +84,16 @@ public class MissionButtonAppear : MonoBehaviour
                 missionManager.selectedMissionTarget = index;
                 missionManager.selectedMissionColor = GetComponentInChildren<TMP_Text>().color;
                 missionManager.missions[missionManager.selectedMissionSlot].missionIcon.color = missionManager.selectedMissionColor;
+
+                if (singularBody != null)
+                {
+                    missionManager.selectedBodyTarget = singularBody;
+                }
+                else if (multipleBodies.Length != 0)
+                {
+                    missionManager.selectedBodyTarget = multipleBodies[Random.Range(0, multipleBodies.Length)];
+                }
+
                 print("make mission initiable: " + missionType);
                 break;
             case "missionStart":

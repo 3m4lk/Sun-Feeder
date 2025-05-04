@@ -354,7 +354,7 @@ public class MinigameManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                toggleWindow();
+                //toggleWindow();
             }
             windowProgress = Mathf.Clamp(windowProgress + Time.deltaTime * windowDirection, 0f, windowToggleTime);
 
@@ -509,7 +509,7 @@ public class MinigameManager : MonoBehaviour
             float ownDire = windowDirection;
             mManager.closeAllWindows();
             windowDirection = -ownDire;
-            mManager.toggleCam(windowDirection);
+            //mManager.toggleCam(windowDirection);
 
             mManager.gameManager.lockSpeed(false);
             if (windowDirection == 1)

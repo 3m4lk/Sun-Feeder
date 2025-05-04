@@ -73,6 +73,8 @@ public class GameManager : MonoBehaviour
     private bool isLocked;
 
     public bool[] doneAlerts = new bool[5];
+
+    private float dTap;
     private void Awake()
     {
         //print(QualitySettings.vSyncCount);
@@ -82,6 +84,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+        dTap = Mathf.Max(dTap - Time.deltaTime, 0f);
         cashSmoothProgress = Mathf.Min(cashSmoothProgress + Time.deltaTime, cashSmoothTime);
         smoothCash = Mathf.FloorToInt(Mathf.Lerp(lastCashPoint, money, cashSmoothCurve.Evaluate(cashSmoothProgress / cashSmoothTime)));
         cashScaleProgress = Mathf.Max(cashScaleProgress - Time.deltaTime, 0f);
@@ -113,6 +116,20 @@ public class GameManager : MonoBehaviour
         currentYear = Mathf.FloorToInt(Mathf.Lerp(yearsRange[0], yearsRange[1], playtimePercentage));
 
         solAlerts();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            mManager.closeAllWindows();
+
+            if (dTap > 0 && mManager.camManager.currentAnchor != mManager.camManager.Sol)
+            {
+                mManager.setCameraAnchor(mManager.camManager.Sol);
+            }
+            else
+            {
+                dTap = 0.5f;
+            }
+        }
     }
     void solAlerts()
     {

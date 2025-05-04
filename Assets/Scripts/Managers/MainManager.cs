@@ -25,6 +25,8 @@ public class MainManager : MonoBehaviour
     }
     public void closeAllWindows()
     {
+        toggleCam(-1f);
+        gameManager.lockSpeed(false);
         minigameManager.windowDirection = -1f;
         researchManager.motionDirection = -1f;
         missionManager.animDirection = -1f;
@@ -33,5 +35,10 @@ public class MainManager : MonoBehaviour
     public void toggleCam(float input)
     {
         camManager.toggleCameraControls(input);
+    }
+
+    public void setCameraAnchor(Transform input)
+    {
+        camManager.changeAnchor(input);
     }
 }
