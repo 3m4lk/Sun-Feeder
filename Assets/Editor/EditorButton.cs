@@ -1,5 +1,7 @@
+using System;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CustomEditor(typeof(NameGenerator))]
 public class NameGeneratorButton : Editor
@@ -116,6 +118,13 @@ public class researchManagerButton : Editor
                     rManager.research[i].duration = 1;
                 }
             }
+            if (GUILayout.Button("Set All Prices To 1"))
+            {
+                for (int i = 0; i < rManager.research.Length; i++)
+                {
+                    rManager.research[i].price = 1;
+                }
+            }
             if (GUILayout.Button("Set All Curves To First One's"))
             {
                 for (int i = 0; i < rManager.research.Length; i++)
@@ -154,9 +163,23 @@ public class PopupManagerButton : Editor
     {
         PopupManager ppManager = (PopupManager)target;
         base.OnInspectorGUI();
-        if (GUILayout.Button("Test Popup"))
+        if (1 == 0 && GUILayout.Button("Test Popup"))
         {
             ppManager.devTestPopup();
+        }
+        else if (GUILayout.Button("Create Popup"))
+        {
+            ppManager.popupDev.title = ppManager.popupTexts[0].text;
+            ppManager.popupDev.description = ppManager.popupTexts[1].text;
+            ppManager.popupDev.buttonName = ppManager.popupTexts[2].text;
+
+            ppManager.popupDev.position = ppManager.ownPopup.transform.localPosition;
+            ppManager.popupDev.size = ppManager.ownPopup.GetComponent<RectTransform>().sizeDelta;
+
+            ppManager.popupDev.windowColor = ppManager.ownPopup.GetComponent<Image>().color;
+
+            ppManager.popupDev.blockerPos = ppManager.blocker.transform.localPosition;
+            ppManager.popupDev.addBlocker = ppManager.blocker.gameObject.activeSelf;
         }
     }
 }

@@ -39,6 +39,8 @@ public class mssn
 
     [Space]
     public Transform missionBody;
+
+    public float growthToAdd;
 }
 public class MissionManager : MonoBehaviour
 {
@@ -129,6 +131,12 @@ public class MissionManager : MonoBehaviour
     } // 0 - Planets;\n1-  Kuiper Belt;\n2 - Gas Giants\n3 - Minor Bodies;\n4 - Sol
 
     public missionPack[] missionProps = new missionPack[5];
+
+    public int hiredMinersCount = 0;
+    public float everyYear;
+
+    public float hiredMinersCash;
+
     private void Awake()
     {
         slotArrowTarget = initialSlotArrowTarget;
@@ -175,7 +183,7 @@ public class MissionManager : MonoBehaviour
         // mission progress updating
         for (int i = 0; i < missions.Length; i++)
         {
-            if (missions[i].inProgress)
+            if (missions[i].inProgress && missions[i].name != "hMiners")
             {
                 missions[i].progress = Mathf.Min(missions[i].progress + Time.fixedDeltaTime * mManager.gameManager.gameSpeed, missions[i].duration);
 
@@ -186,6 +194,10 @@ public class MissionManager : MonoBehaviour
                 if (missions[i].progress == missions[i].duration)
                 {
                     print("FINISH MISSION " + i + "!");
+
+                    //mManager.orbManager.bodies[mManager.orbManager.getBodyIndex(missionProps[i].missionShipTravel[1])].orbitGrowth += 
+                    print(missions[i].name);
+                    mManager.orbManager.doMission(mManager.orbManager.getBodyIndex(missionProps[i].missionShipTravel[1]), missions[i].growthToAdd, "MissionStuff/" + missions[i].name);
 
                     if (missionProps[i].missionObjectToDrop != null)
                     {
@@ -201,6 +213,16 @@ public class MissionManager : MonoBehaviour
                     }
 
                     resetSlot(i);
+                }
+            }
+            else
+            {
+                //mManager.gameManager.addCash()
+                everyYear += Time.fixedDeltaTime * mManager.gameManager.gameSpeed;
+                for (; everyYear > 1f; everyYear--)
+                {
+                    //print("CASHADD BY MINERS");
+                    mManager.gameManager.addCash(mManager.celManager.bodyCluster[9].amount * hiredMinersCount * hiredMinersCash);
                 }
             }
         }
@@ -278,9 +300,11 @@ public class MissionManager : MonoBehaviour
             string missName = tabButtons[selectedMissionType].buttons[selectedMission].name;
 
             mdbe dbEntry = getMissionData(missName);
+            print(missName);
 
             if (mManager.gameManager.money >= dbEntry.cost)
             {
+
                 if (selectedMissionType == 0 && selectedMissionTarget == 2)
                 {
                     mManager.commanderManager.hurlEarthScenario();
@@ -296,17 +320,34 @@ public class MissionManager : MonoBehaviour
                 }
 
                 missions[selectedMissionSlot].name = missName; // set name
-                                                                                                                    // set duration
+                                                               // set duration
                 missions[selectedMissionSlot].progress = 0;
                 missions[selectedMissionSlot].inProgress = true; // start mission
                 missions[selectedMissionSlot].missionIconColor = selectedMissionColor;
                 missions[selectedMissionSlot].missionTypeInt = selectedMissionType;
 
                 missions[selectedMissionSlot].duration = dbEntry.duration;
-                print("durtion multiplied by politics mult");
+                missions[selectedMissionSlot].duration /= mManager.gameManager.speedMult;
+                //print("durtion multiplied by politics mult");
                 // also add the actual price calculation things somewhere in the scripts above
 
                 // set missioned body transform
+
+                if (missName == "hMiners")
+                {
+                    hiredMinersCount++;
+
+                    selectedMissionSlot = -1;
+                    selectedMissionType = -1;
+                    selectedMission = -1;
+                    selectedMissionTarget = -1;
+                    selectedBodyTarget = default;
+
+                    openTab(0);
+                    updateSlotArrow(initialSlotArrowTarget);
+
+                    return;
+                }
 
                 missions[selectedMissionSlot].missionBody = selectedBodyTarget.transform;
 
@@ -346,15 +387,24 @@ public class MissionManager : MonoBehaviour
             {
                 print("<color=#789922>>poor</color>");
             }
+
         }
     }
     public void resetSlot(int index)
     {
+        if (missions[index].name == "hMiners")
+        {
+            hiredMinersCount--;
+        }
+
         missions[index].inProgress = false;
         missions[index].progress = 0;
         missions[index].progressFill.fillAmount = 0;
 
-        Destroy(missionProps[index].gameObject);
+        if (missions[index].name != "hMiners")
+        {
+            Destroy(missionProps[index].gameObject);
+        }
 
         updateSlotIcons();
     }
@@ -374,6 +424,8 @@ public class MissionManager : MonoBehaviour
                 output.name = missionDatabase[i].name;
                 output.cost = missionDatabase[i].cost;
                 output.duration = missionDatabase[i].duration;
+
+                print(i + " - thatsa thse inedex");
                 return output;
             }
         }

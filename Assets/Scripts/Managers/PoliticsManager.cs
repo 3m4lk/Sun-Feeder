@@ -401,8 +401,17 @@ public class PoliticsManager : MonoBehaviour
 
         int alignmentID = 0;
 
-        if (Mathf.Abs(politicalViews) == 100f)
+        if (Mathf.Abs(politicalViews) >= 100f)
         {
+            if (politicalViews > 0)
+            {
+                alignmentID = 2;
+            } // Coitionis
+            else
+            {
+                alignmentID = 1;
+            } // Populi
+
             polStatusText.text = "<color=#000000>";
 
             if (politicalViews > 0)

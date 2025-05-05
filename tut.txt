@@ -1,0 +1,71 @@
+This is the Research Tab. Here you can make scientific discoveries to progress, unlock missions, and upgrade your GravShip.
+
+-GravShip?
+
+
+Your personal remote-controlled spaceship, you use it to earn money. You will need to unlock GravShip PDA through the Research tree first.
+
+110 mk has been deposited to your account. Now start by unlocking Mission Operative.
+
+Research takes too long? Change the game speed on the top-right corner of your screen.
+
+You have 10mk left, just enough to buy GravShip PDA. Proceed.
+
+GravShip upgrades happen instantly, while Research can often take millennia to complete. Make sure to check on this tab from time to time.
+
+Return to the main screen. You can do this by pressing the Research Tab button again, or by hitting [Space].
+
+This is your GravShip PDA, here you control a GravShip in the Asteroid Belt.
+
+Controls are simple, use w/a/s/d or arrow keys to move around.
+
+Any asteroid that gets caught in the ship's GravBeam gets automatically pulled to this Mining Rig for processing. Sturdy construction ensures no damage.
+Try it. Try to attract a passing asteroid to it.
+
+Excellent. Now let's go back.
+
+Every nation in history needed a strong and straightforward direction, United Earth Coalition is no different.
+Head to the Politics Tab.
+
+Politics allow you to gain benefits based on two main political views: Vox Populi and Vox Coitionis.
+
+Vox Populi favors making everything cheaper, at cost of making Research and Missions 
+take longer.
+Vox Coitionis favors making Research and Missions take less time, while making both more expensive.
+
+The further you go to either side, the stronger the benefits. Penalties become larger too, however.
+
+
+Both are a double-edged sword, so make sure to fluctuate and change sides accordingly.
+
+In order to save the Sun, we'll need to complete Missions. Here is the Missions Tab.
+
+You don't have any missions yet. Head back to Research Tab and unlock Reflective Solar Sail with the money you made.
+
+First, choose a Mission Slot. More can be unlocked by researching Mission Operative.
+
+Choose a Celestial Body type. For now you only have Minor Bodies.
+
+Pick Reflective Solar Sail, that's the Mission you're going to launch.
+
+All dwarf planets have been placed under one option for User convenience. Other planets aren't that lucky.
+Choose Dwarf Planets, and Launch the Mission.
+
+And now we wait... Make sure to speed up time if needed.
+
+There we go! Took you long enough, but you've prolonged the Sun's life by... about 40 years, which is about the same time you've spent here as Crisis Prevention Commander.
+
+<Life signal: Offline>
+
+Another one bites the dust. Not first, and certainly not the last...
+
+*Sigh* Why do I even bother training mortals? I'll just start showing them a tutorial video when they arrive.
+
+*Ahem* Welcome, Commander...
+
+
+From now, you're on your own.
+You have 5,000 years to keep the Sun alive.
+Humanity's fate is on your hands.
+
+-Let's do this.

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     //[Tooltip("0 - Accurate;\n1 - 1 year per minute;\n2 - 0.1 year per second;\n3 - 1 year per second;\n4 - 3 years per second;\n5 - 10 years per second;\n6 - 24 years per second")]
     [Tooltip("0 - Accurate;\n1 - 0.1 year per second;\n2 - 1 year per second;\n3 - 10 years per second;\n4 - 24 years per second;\n5 - 48 years per second")]
     [Range(0, 5)]
-    private int speedMode = 3;
+    private int speedMode = 0;
 
     [Tooltip("distance from Sun to Earth; here, a multiplier")]
     public float AstronomicalUnit;
@@ -80,10 +80,13 @@ public class GameManager : MonoBehaviour
         //print(QualitySettings.vSyncCount);
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 120;
-        changeSpeed(1);
     }
     private void Update()
     {
+        if (Application.isEditor && Input.GetKeyDown("m"))
+        {
+            addCash(424242f);
+        }
         dTap = Mathf.Max(dTap - Time.deltaTime, 0f);
         cashSmoothProgress = Mathf.Min(cashSmoothProgress + Time.deltaTime, cashSmoothTime);
         smoothCash = Mathf.FloorToInt(Mathf.Lerp(lastCashPoint, money, cashSmoothCurve.Evaluate(cashSmoothProgress / cashSmoothTime)));
@@ -220,11 +223,11 @@ public class GameManager : MonoBehaviour
         // >1000000000000 // trilly
         // >1000000000000000 // quad
 
-        if (input >= 1000000000000000) unitIndex = 5;
-        else if (input >= 1000000000000) unitIndex = 4;
-        else if (input >= 1000000000) unitIndex = 3;
-        else if (input >= 1000000) unitIndex = 2;
-        else if (input >= 1000) unitIndex = 1;
+        if (input >= 1000000000000000f) unitIndex = 5;
+        else if (input >= 1000000000000f) unitIndex = 4;
+        else if (input >= 1000000000f) unitIndex = 3;
+        else if (input >= 1000000f) unitIndex = 2;
+        else if (input >= 1000f) unitIndex = 1;
 
         if (unitIndex == 0)
         {
@@ -324,34 +327,73 @@ public class GameManager : MonoBehaviour
     public void updatePoliticsStats(float input)
     {
         politicsPerc = (input + 100f) / 200f;
-        priceMult = priceMultCurve.Evaluate(politicsPerc);
-        speedMult = speedMultCurve.Evaluate(politicsPerc);
-        //float priceMultJustForTheText = priceMultCurve.Evaluate(1f - politicsPerc);
 
-        string[] speedWords = new string[] { " Slower", "", " Faster" };
-        string[] priceWords = new string[] { " Higher", "", " Lower" };
-
-        int speedInt = 2;
-        int priceInt = 1;
-
-        if (speedMult > 1)
+        switch (mManager.politicsManager.currentAlignment)
         {
-            speedInt = 2;
-        }
-        else if (speedMult < 1)
-        {
-            speedInt = 0;
+            default:
+                priceMult = 1f;
+                speedMult = 1f;
+                break;
+            case "Vox Populi":
+                if (Mathf.Abs(mManager.politicsManager.politicalViews) == 100f)
+                {
+                    priceMult = 16f;
+                    speedMult = 1f / 8f;
+                    break;
+                } // war
+                else if (Mathf.Abs(mManager.politicsManager.politicalViews) >= mManager.politicsManager.extremismThreshold)
+                {
+                    priceMult = 8f;
+                    speedMult = 1f / 4f;
+                    break;
+                } // extremism
+                else if (Mathf.Abs(mManager.politicsManager.politicalViews) >= mManager.politicsManager.neutralismThreshold)
+                {
+                    priceMult = 3f;
+                    speedMult = 1f / 2f;
+                    break;
+                } // normal
+
+                priceMult = 1f;
+                speedMult = 1f;
+                // neutral
+                break;
+            case "Vox Coitionis":
+                if (Mathf.Abs(mManager.politicsManager.politicalViews) == 100f)
+                {
+                    speedMult = 16f;
+                    priceMult = 8f;
+                    break;
+                } // war
+                else if (Mathf.Abs(mManager.politicsManager.politicalViews) >= mManager.politicsManager.extremismThreshold)
+                {
+                    speedMult = 8f;
+                    priceMult = 4f;
+                    break;
+                } // extremism
+                else if (Mathf.Abs(mManager.politicsManager.politicalViews) >= mManager.politicsManager.neutralismThreshold)
+                {
+                    speedMult = 3f;
+                    priceMult = 2f;
+                    break;
+                } // normal
+
+                priceMult = 1f;
+                speedMult = 1f;
+                // neutral
+                break;
         }
 
-        if (priceMult > 1)
+        int wordsInt = 1;
+        if (politicsPerc > 0.5f)
         {
-            priceInt = 2;
-        }
-        else if (priceMult < 1)
+            wordsInt = 2;
+        } // Coitionis
+        else if (politicsPerc < 0.5f)
         {
-            priceInt = 0;
-        }
+            wordsInt = 0;
+        } // Populi
 
-        polMultsText.text = "Prices: x" + priceMult.ToString("0.0") + priceWords[priceInt] + "\nSpeed: x" + speedMult.ToString("0.0") + speedWords[speedInt];
+        polMultsText.text = "<color=#FF0038>Prices: x" + priceMult + "</color>\n<color=#0038FF>Speed: x" + speedMult + "</color>";
     }
 }

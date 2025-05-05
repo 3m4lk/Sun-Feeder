@@ -20,11 +20,16 @@ public class pdt
     public string onCloseOpen;
 
     public bool wasAlreadyOpened;
+
+    public bool addBlocker;
+    public Vector2 blockerPos;
+
+    public GameObject[] objectsToEnable;
 }
 public class PopupManager : MonoBehaviour
 {
     public MainManager mManager;
-    private int lastSpeedMode;
+    public int lastSpeedMode;
 
     public pdt[] popups;
     private int currentPopupIndex;
@@ -43,14 +48,31 @@ public class PopupManager : MonoBehaviour
 
     public int testPopup;
     private bool wasMinigame;
+
+    public AnimationCurve blockerCurve;
+    public float blockerTime;
+    private float blockerProgress = 0;
+
+    public CanvasGroup blocker;
+
+    [Space]
+    public pdt popupDev;
+
+    //public GameObject[] enableAll;
     private void Awake()
     {
-        spawnPopup(0);
+        mManager.gameManager.changeSpeed(0);
+        //spawnPopup(0);
+        newPopup("tut0");
     }
     private void Update()
     {
         popupAppearProgress = Mathf.Clamp(popupAppearProgress + Time.deltaTime * popupDirection, 0f, popupAppearTime);
         ownPopup.transform.localScale = Vector3.one * popupAppearCurve.Evaluate(popupAppearProgress / popupAppearTime);
+
+        blockerProgress = Mathf.Min(blockerProgress + Time.deltaTime, blockerTime);
+
+        blocker.alpha = blockerCurve.Evaluate(blockerProgress / blockerTime);
     }
     public void newPopup(string puTag)
     {
@@ -74,6 +96,15 @@ public class PopupManager : MonoBehaviour
     }
     void spawnPopup(int index)
     {
+        switch (popups[index].ownTag)
+        {
+            case "tut6":
+                mManager.gameManager.money = 0;
+                //mManager.gameManager.addCash(110);
+                print("zsfgd vaav ");
+                break;
+        }
+
         wasMinigame = false;
         if (mManager.minigameManager.windowDirection == 1f)
         {
@@ -102,6 +133,18 @@ public class PopupManager : MonoBehaviour
         ownPopup.SetActive(true);
 
         mManager.toggleCam(1f);
+
+        for (int i = 0; i < popups[index].objectsToEnable.Length; i++)
+        {
+            popups[index].objectsToEnable[i].SetActive(true);
+        }
+
+        blocker.gameObject.SetActive(popups[index].addBlocker);
+        if (popups[index].addBlocker)
+        {
+            blocker.transform.localPosition = popups[index].blockerPos;
+            blockerProgress = 0;
+        }
     }
     public void closePopup()
     {
@@ -127,5 +170,14 @@ public class PopupManager : MonoBehaviour
         {
             newPopup(popups[currentPopupIndex].onCloseOpen);
         }
+    }
+    public void disableBlocker()
+    {
+        blocker.gameObject.SetActive(false);
+    }
+
+    public void openByIndex()
+    {
+
     }
 }

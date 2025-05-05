@@ -32,6 +32,8 @@ public class resLv
     [Tooltip("when ALL research is finished (or when it just finishes, in case of singular research stages)")]
     public bool isCompleted;
 
+    public bool ignoreMeInCheckForAll;
+
     [Space]
     public int price;
     public float duration;
@@ -113,7 +115,7 @@ public class ResearchManager : MonoBehaviour
         {
             if (!research[i].isCompleted && research[i].isResearching)
             {
-                research[i].researchProgress = Mathf.Min(research[i].researchProgress + Time.fixedDeltaTime * mManager.gameManager.gameSpeed, research[i].duration); // * researchSpeedMult from politics manager
+                research[i].researchProgress = Mathf.Min(research[i].researchProgress + Time.fixedDeltaTime * mManager.gameManager.gameSpeed * mManager.gameManager.speedMult, research[i].duration); // * researchSpeedMult from politics manager
 
                 research[i].researchProgressor.fillAmount = 1f - (research[i].researchProgress / research[i].duration);
 
@@ -246,22 +248,21 @@ public class ResearchManager : MonoBehaviour
     {
         for (int i = 0; i < research.Length - 5; i++)
         {
-            if (!research[i].isCompleted && i != 5)
+            if (!research[i].isCompleted && !research[i].ignoreMeInCheckForAll)
             {
                 //print("Failed on " + i + " ( " + research[i].name + " )");
                 return;
             }
         }
-        if (!research[research.Length - 1].isCompleted)
+        /*if (!research[research.Length - 1].isCompleted)
         {
             //print("Failed on " + (research.Length - 1) + " ( " + research[(research.Length - 1)].name + " )");
             return;
-        } // literally just Orbital Disconnect
+        } // literally just Orbital Disconnect//*/
         finalResearch.SetActive(true);
     }
     void onResearchFinish(int index)
     {
-        changeText(index);
         allResearchCheck();
 
         if (research[index].isLevellable)
@@ -269,12 +270,15 @@ public class ResearchManager : MonoBehaviour
             print("ADD LEVEL");
             research[index].levelSlider.value = research[index].currentLevel;
 
+            research[index].price = Mathf.RoundToInt((float)research[index].priceProgressionCurve.Evaluate((float)research[index].currentLevel / (float)research[index].maxLevel));
+
             if (research[index].currentLevel == research[index].maxLevel)
             {
                 //print("MAXED OUT");
                 research[index].levelSlider.gameObject.SetActive(false);
             }
         }
+        changeText(index);
     } // must work for ALL types of research finishes, that is: finishing unlevelling research, levelling up levelled research, and finishing levelled research
     private void completeResearch(int index)
     {
@@ -287,7 +291,7 @@ public class ResearchManager : MonoBehaviour
         {
             researchName.text = research[index].fullName;
             researchDesc.text = levelify(research[index].description, index);
-            researchPriceDuration.text = "Cost: " + research[index].price + " Marks\nDuration: " + research[index].duration + " years";
+            researchPriceDuration.text = "Cost: " + Mathf.RoundToInt(research[index].price * mManager.gameManager.priceMult) + " Marks\nDuration: " + research[index].duration + " years";
 
             if (research[index].isCompleted)
             {
@@ -299,7 +303,7 @@ public class ResearchManager : MonoBehaviour
                 researchDesc.text += levelify(research[index].unfinishedDescAdd, index);
                 if (research[index].duration == 1)
                 {
-                    researchPriceDuration.text = "Cost: " + research[index].price + " Marks\nDuration: " + research[index].duration + " year";
+                    researchPriceDuration.text = "Cost: " + Mathf.RoundToInt(research[index].price * mManager.gameManager.priceMult) + " Marks\nDuration: " + research[index].duration + " year";
                 }
                 if (research[index].isResearching)
                 {
@@ -330,7 +334,7 @@ public class ResearchManager : MonoBehaviour
     }
     public bool buyResearch(int index)
     {
-        if (mManager.gameManager.money >= research[index].price)
+        if (mManager.gameManager.money >= Mathf.RoundToInt(research[index].price * mManager.gameManager.priceMult))
         {
             startResearch(index);
             return true;

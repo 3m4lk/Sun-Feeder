@@ -106,7 +106,7 @@ public class OrbitManager : MonoBehaviour
             bodies[i].bodyTransform.position = bodies[i].orbitBody.position + new Vector3(sinOut, cosOut, 0) * bodies[i].orbitDistance * mManager.gameManager.AstronomicalUnit;
         }
     }
-    private int getBodyIndex(Transform input)
+    public int getBodyIndex(Transform input)
     {
         for (int i = 0; i < bodies.Length; i++)
         {
@@ -148,6 +148,19 @@ public class OrbitManager : MonoBehaviour
 
             if (index == -1) return; // don't do cluster stuff for other minor moons
             mManager.celManager.clusterAmountUpdate(index, -1);
+        }
+    }
+    public void doMission(int index, float growthAmount, string visName)
+    {
+        if (!visName.Contains("hiredMiners"))
+        {
+            bodies[index].orbitGrowth += growthAmount;
+            GameObject newVis = Instantiate(Resources.Load<GameObject>(visName));
+            newVis.transform.parent = bodies[index].bodyTransform;
+            newVis.transform.localPosition = Vector3.zero;
+            newVis.transform.localRotation = Quaternion.identity;
+            newVis.transform.localScale = Vector3.one;
+            newVis.SetActive(true);
         }
     }
 }

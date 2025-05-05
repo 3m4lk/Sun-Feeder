@@ -931,9 +931,9 @@ RectTransform:
   - {fileID: 1404436135}
   m_Father: {fileID: 251224155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 72, y: -6}
   m_SizeDelta: {x: 16, y: 12}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &25353965
@@ -1033,7 +1033,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1284721857, guid: d7be99c9f4a712144a95dafce039ea9d, type: 3}
+  m_Sprite: {fileID: 1222088641, guid: d7be99c9f4a712144a95dafce039ea9d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2356,7 +2356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 480}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 640, y: 480}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &49907382
@@ -6872,6 +6872,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173924444}
   m_Mesh: {fileID: 6733355835473386470, guid: ef0f36e53ee499540a9a68b7506192a5, type: 3}
+--- !u!1 &174988527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 174988528}
+  - component: {fileID: 174988530}
+  - component: {fileID: 174988529}
+  m_Layer: 5
+  m_Name: blocker (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &174988528
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174988527}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 332238631}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 96}
+  m_SizeDelta: {x: 1920, y: 480}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &174988529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174988527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.1254902, b: 0.2509804, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &174988530
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174988527}
+  m_CullTransparentMesh: 1
 --- !u!1 &178027525
 GameObject:
   m_ObjectHideFlags: 0
@@ -8803,7 +8878,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &219411685
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8941,7 +9016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &220029320
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8962,7 +9037,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 128}
+  m_SizeDelta: {x: 256, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &220029321
 MonoBehaviour:
@@ -8977,7 +9052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4, g: 0.4, b: 1, a: 1}
+  m_Color: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9134,7 +9209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Test Popup
+  m_text: <color=black>SOL-87,121</color>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
   m_sharedMaterial: {fileID: 3089428623778903180, guid: c22ab79dd53aaed4895e19d105bcc262, type: 2}
@@ -11715,7 +11790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &251224155
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12850,7 +12925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -456}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 522, y: 458}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &302986229
@@ -19071,6 +19146,67 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &332238630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 332238631}
+  - component: {fileID: 332238633}
+  - component: {fileID: 332238632}
+  m_Layer: 5
+  m_Name: blocker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &332238631
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332238630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 700901462}
+  - {fileID: 174988528}
+  - {fileID: 1543732679}
+  - {fileID: 1454211977}
+  m_Father: {fileID: 1160036782}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 366.4, y: 1.5}
+  m_SizeDelta: {x: 168, y: 96}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &332238632
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332238630}
+  m_Enabled: 1
+  m_Alpha: 0.6
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!222 &332238633
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332238630}
+  m_CullTransparentMesh: 1
 --- !u!1 &335728406
 GameObject:
   m_ObjectHideFlags: 0
@@ -21051,6 +21187,81 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!1 &387943358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 387943359}
+  - component: {fileID: 387943361}
+  - component: {fileID: 387943360}
+  m_Layer: 5
+  m_Name: revResearch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &387943359
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387943358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1160036782}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &387943360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387943358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8687dfe7b5b5d6e47bff05f7b00e89ae, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &387943361
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387943358}
+  m_CullTransparentMesh: 1
 --- !u!1 &390304312
 GameObject:
   m_ObjectHideFlags: 0
@@ -21540,7 +21751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -480}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 640, y: 480}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &416835957
@@ -24562,7 +24773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -480}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 640, y: 480}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &482031109
@@ -25879,7 +26090,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 224, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 224, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &525063958
@@ -26238,7 +26449,7 @@ RectTransform:
   m_Father: {fileID: 916712477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
@@ -26606,7 +26817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Uhh, okay?
+  m_text: Let's do it.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b27fb0b13d50d14b8bdf80be100e35e, type: 2}
   m_sharedMaterial: {fileID: 8740282252242457676, guid: 0b27fb0b13d50d14b8bdf80be100e35e, type: 2}
@@ -28475,7 +28686,7 @@ RectTransform:
   m_Father: {fileID: 1817465002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -35971,7 +36182,7 @@ MonoBehaviour:
   actions:
   - name: pAHealthcare
     fullName: Accessible Healthcare
-    description: 
+    description: A healthy citizen is a loyal citizen.
     movement: 0
     special: 0
     growth: -0.4333333
@@ -35981,7 +36192,7 @@ MonoBehaviour:
     buttonColor: 0
   - name: pCEvents
     fullName: Charity Events
-    description: 
+    description: Give back to the weak, and the weak will give back to you.
     movement: 0
     special: 0
     growth: -0.5
@@ -35991,7 +36202,7 @@ MonoBehaviour:
     buttonColor: 0
   - name: pSanctions
     fullName: Sanctions
-    description: 
+    description: Promote local products, at cost of market diversity.
     movement: 0
     special: 0
     growth: -0.74
@@ -36001,7 +36212,8 @@ MonoBehaviour:
     buttonColor: 0
   - name: pPHour
     fullName: Police Hour
-    description: 
+    description: Suspiciously acting citizens caught outside in early morning get
+      arrested.
     movement: 0
     special: 0
     growth: -0.375
@@ -36011,7 +36223,8 @@ MonoBehaviour:
     buttonColor: 1
   - name: pWRights
     fullName: Worker Rights
-    description: 
+    description: Right to work is a must. Right to work in a safe environment is
+      a luxury.
     movement: 0
     special: 0
     growth: -0.2333333
@@ -36021,7 +36234,7 @@ MonoBehaviour:
     buttonColor: 1
   - name: pWrongthink
     fullName: Wrongthink
-    description: 
+    description: People who think like us are good. People who don't, disappear.
     movement: 0
     special: 0
     growth: -0.3
@@ -36041,7 +36254,7 @@ MonoBehaviour:
     buttonColor: 4
   - name: cPSchools
     fullName: Public Schools
-    description: 
+    description: Well educated citizen is a strong ally to any nation.
     movement: 2
     special: 0
     growth: 0.4333333
@@ -36051,7 +36264,8 @@ MonoBehaviour:
     buttonColor: 2
   - name: cScholarships
     fullName: Scholarships
-    description: 
+    description: Give back to the educated, and they will provide a solid foundation
+      to your governing body.
     movement: 2
     special: 0
     growth: 0.5
@@ -36061,7 +36275,8 @@ MonoBehaviour:
     buttonColor: 2
   - name: cPropaganda
     fullName: Propaganda
-    description: 
+    description: Every side uses propaganda for their needs. But a well informed
+      propaganda beats any other.
     movement: 2
     special: 0
     growth: 0.74
@@ -36071,7 +36286,8 @@ MonoBehaviour:
     buttonColor: 2
   - name: cClosedBorders
     fullName: Closed Borders
-    description: 
+    description: Restricted inter-districtial movements enable easier management
+      of efficiency.
     movement: 2
     special: 0
     growth: 0.375
@@ -36081,7 +36297,8 @@ MonoBehaviour:
     buttonColor: 3
   - name: cProscience
     fullName: Technological Reneissance
-    description: 
+    description: Cures to previously  uncurable diseases get discovered every few
+      months. Scientific advancements reach new heights.
     movement: 2
     special: 0
     growth: 0.2333333
@@ -36091,7 +36308,8 @@ MonoBehaviour:
     buttonColor: 3
   - name: cMartialLaw
     fullName: Military State
-    description: 
+    description: Lazy citizen is a useless citizen. Military will make sure no living
+      citizen is useless.
     movement: 2
     special: 0
     growth: 0.3
@@ -36332,9 +36550,9 @@ RectTransform:
   - {fileID: 1904338507}
   m_Father: {fileID: 251224155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 56, y: -6}
   m_SizeDelta: {x: 16, y: 12}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &660102512
@@ -36871,9 +37089,9 @@ RectTransform:
   - {fileID: 817539817}
   m_Father: {fileID: 251224155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 40, y: -6}
   m_SizeDelta: {x: 16, y: 12}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &672946987
@@ -38559,6 +38777,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697617218}
+  m_CullTransparentMesh: 1
+--- !u!1 &700901461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700901462}
+  - component: {fileID: 700901464}
+  - component: {fileID: 700901463}
+  m_Layer: 5
+  m_Name: blocker (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &700901462
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700901461}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 332238631}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -96}
+  m_SizeDelta: {x: 1920, y: 480}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &700901463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700901461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.1254902, b: 0.2509804, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &700901464
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700901461}
   m_CullTransparentMesh: 1
 --- !u!1 &709954305
 GameObject:
@@ -43146,7 +43439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 480, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 320, y: 480}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &837391726
@@ -46673,7 +46966,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &916712477
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49841,7 +50134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1017744203
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49858,9 +50151,9 @@ RectTransform:
   - {fileID: 1535267606}
   m_Father: {fileID: 251224155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 80, y: -6}
   m_SizeDelta: {x: 16, y: 12}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1017744204
@@ -52870,7 +53163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 480}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 640, y: 480}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1088968753
@@ -53280,7 +53573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1105672694
 RectTransform:
   m_ObjectHideFlags: 0
@@ -55560,7 +55853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1136883526
 Transform:
   m_ObjectHideFlags: 0
@@ -56045,6 +56338,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1697313466}
+          m_TargetAssemblyTypeName: PopupManager, Assembly-CSharp
+          m_MethodName: newPopup
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1146405180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56516,9 +56821,9 @@ RectTransform:
   - {fileID: 1645503425}
   m_Father: {fileID: 251224155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 8, y: -6}
   m_SizeDelta: {x: 16, y: 12}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1158141359
@@ -57349,6 +57654,7 @@ RectTransform:
   - {fileID: 1726467093}
   - {fileID: 916712477}
   - {fileID: 1723820583}
+  - {fileID: 387943359}
   - {fileID: 972949283}
   - {fileID: 951101537}
   - {fileID: 1379566416}
@@ -57366,8 +57672,11 @@ RectTransform:
   - {fileID: 1146405175}
   - {fileID: 525442866}
   - {fileID: 219411685}
-  - {fileID: 220029320}
   - {fileID: 1637721711}
+  - {fileID: 2026039463}
+  - {fileID: 1508987100}
+  - {fileID: 332238631}
+  - {fileID: 220029320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -60328,7 +60637,7 @@ MonoBehaviour:
   buttonTextSingle: 
   buttonTextMultiple: 
   index: 0
-  missionType: 2
+  missionType: 1
   buttonType: missionTypeSelect
   defaultColor:
     serializedVersion: 2
@@ -60763,6 +61072,8 @@ MonoBehaviour:
     - Keitoke
     - Yezi
     - Rekko
+    - Forth
+    - Right
     sn1stSyllables: []
     snMidSyllables: []
     snEndSyllables: []
@@ -60859,6 +61170,7 @@ MonoBehaviour:
     - of Many
     - Defuntoke
     - Metal
+    - MC
     maxNameSyllables: 1
     maxSurnameSyllables: 1
     secondNameChance: 50
@@ -63758,7 +64070,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 480, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 320, y: 480}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &1297251588
@@ -72163,7 +72475,8 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
+    ignoreMeInCheckForAll: 0
+    price: 100
     duration: 1
     researchProgress: 0
     progressSlider: {fileID: 0}
@@ -72172,22 +72485,22 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        value: 100
+        inSlope: 124179.08
+        outSlope: 124179.08
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.10443864
       - serializedVersion: 3
         time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        value: 500000
+        inSlope: 881617.7
+        outSlope: 881617.7
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.054830313
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -72197,21 +72510,21 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 1
-        inSlope: 31
-        outSlope: 31
-        tangentMode: 34
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 32
-        inSlope: 31
-        outSlope: 31
-        tangentMode: 34
+        value: 16
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -72239,7 +72552,8 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
+    ignoreMeInCheckForAll: 0
+    price: 10
     duration: 0
     researchProgress: 0
     progressSlider: {fileID: 0}
@@ -72315,8 +72629,9 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
-    duration: 1
+    ignoreMeInCheckForAll: 0
+    price: 200
+    duration: 42
     researchProgress: 0
     progressSlider: {fileID: 0}
     priceProgressionCurve:
@@ -72387,8 +72702,9 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
-    duration: 1
+    ignoreMeInCheckForAll: 0
+    price: 200
+    duration: 42
     researchProgress: 0
     progressSlider: {fileID: 0}
     priceProgressionCurve:
@@ -72460,8 +72776,9 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
-    duration: 1
+    ignoreMeInCheckForAll: 0
+    price: 150
+    duration: 24
     researchProgress: 0
     progressSlider: {fileID: 0}
     priceProgressionCurve:
@@ -72531,7 +72848,8 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
+    ignoreMeInCheckForAll: 1
+    price: 1
     duration: 1
     researchProgress: 0
     progressSlider: {fileID: 0}
@@ -72602,7 +72920,8 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
+    ignoreMeInCheckForAll: 0
+    price: 100
     duration: 0
     researchProgress: 0
     progressSlider: {fileID: 0}
@@ -72611,22 +72930,22 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        value: 100
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        value: 10000
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -72673,8 +72992,9 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
-    duration: 1
+    ignoreMeInCheckForAll: 0
+    price: 10000
+    duration: 128
     researchProgress: 0
     progressSlider: {fileID: 0}
     priceProgressionCurve:
@@ -72745,8 +73065,9 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
-    duration: 1
+    ignoreMeInCheckForAll: 0
+    price: 50000
+    duration: 1000
     researchProgress: 0
     progressSlider: {fileID: 0}
     priceProgressionCurve:
@@ -72806,17 +73127,19 @@ MonoBehaviour:
     researchProgressor: {fileID: 0}
   - name: hiredMiners
     fullName: Hired Miners
-    description: While GravShip works great as a mean of income generation, things
-      get busy when you're the literal Crisis Prevention Commander That's where hired
-      workforce comes into play.
-    unfinishedDescAdd: 
-    finishedDescAdd: 
+    description: 
+    unfinishedDescAdd: While GravShip works great as a mean of income generation,
+      things get busy when you're the literal Crisis Prevention Commander That's
+      where hired workforce comes into play.
+    finishedDescAdd: Miners can now be hired from Mission tab to mine Dwarf Planets
+      for passive income of 300 mk per year. Income scales with quantity.
     completionMessage: 
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
-    duration: 1
+    ignoreMeInCheckForAll: 0
+    price: 30000
+    duration: 16
     researchProgress: 0
     progressSlider: {fileID: 0}
     priceProgressionCurve:
@@ -72886,7 +73209,8 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
+    ignoreMeInCheckForAll: 0
+    price: 200
     duration: 0
     researchProgress: 0
     progressSlider: {fileID: 0}
@@ -72895,22 +73219,22 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        value: 200
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        value: 5000
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -72955,8 +73279,9 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
-    duration: 1
+    ignoreMeInCheckForAll: 0
+    price: 10000000
+    duration: 500
     researchProgress: 0
     progressSlider: {fileID: 0}
     priceProgressionCurve:
@@ -73025,8 +73350,9 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
-    duration: 1
+    ignoreMeInCheckForAll: 0
+    price: 10000000
+    duration: 128
     researchProgress: 0
     progressSlider: {fileID: 0}
     priceProgressionCurve:
@@ -73087,8 +73413,9 @@ MonoBehaviour:
   - name: upgradedGravFields
     fullName: Upgraded Gravitational Fields
     description: 
-    unfinishedDescAdd: UEC's own GravShip comes with its very own GravBeam, which
-      can be further improved by engineers to increase range and efficiency.
+    unfinishedDescAdd: UEC's GravShip comes with its own GravBeam used to attract
+      oncoming asteroids straight into your mining rig. Can be further improved by
+      engineers to increase range and efficiency.
     finishedDescAdd: GravBeam of UEC's GravShip is now in the finest condition it
       could ever be, to large disapproval of GravTech Co. It's not like they can
       sue the government!
@@ -73096,7 +73423,8 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
+    ignoreMeInCheckForAll: 0
+    price: 500
     duration: 0
     researchProgress: 0
     progressSlider: {fileID: 0}
@@ -73105,22 +73433,22 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        value: 500
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        value: 50000
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -73167,7 +73495,8 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
+    ignoreMeInCheckForAll: 0
+    price: 10000
     duration: 0
     researchProgress: 0
     progressSlider: {fileID: 0}
@@ -73244,7 +73573,8 @@ MonoBehaviour:
       free though.
     - 
     isCompleted: 0
-    price: 0
+    ignoreMeInCheckForAll: 0
+    price: 500
     duration: 0
     researchProgress: 0
     progressSlider: {fileID: 0}
@@ -73253,22 +73583,22 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        value: 500
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        value: 100000
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -73314,8 +73644,9 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
-    duration: 1
+    ignoreMeInCheckForAll: 1
+    price: 10000000
+    duration: 24
     researchProgress: 0
     progressSlider: {fileID: 0}
     priceProgressionCurve:
@@ -73385,8 +73716,9 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
-    duration: 1
+    ignoreMeInCheckForAll: 1
+    price: 20000000
+    duration: 32
     researchProgress: 0
     progressSlider: {fileID: 0}
     priceProgressionCurve:
@@ -73457,8 +73789,9 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
-    duration: 1
+    ignoreMeInCheckForAll: 1
+    price: 50000000
+    duration: 48
     researchProgress: 0
     progressSlider: {fileID: 0}
     priceProgressionCurve:
@@ -73527,8 +73860,9 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
-    duration: 1
+    ignoreMeInCheckForAll: 1
+    price: 100000000
+    duration: 1000
     researchProgress: 0
     progressSlider: {fileID: 0}
     priceProgressionCurve:
@@ -73596,8 +73930,9 @@ MonoBehaviour:
     useLevelExclusiveDescAdd: 0
     levelExclusiveDescAdd: []
     isCompleted: 0
-    price: 0
-    duration: 1
+    ignoreMeInCheckForAll: 0
+    price: 6000000
+    duration: 1000
     researchProgress: 0
     progressSlider: {fileID: 0}
     priceProgressionCurve:
@@ -73897,7 +74232,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   fadeTime: 1.5
   fadeProgress: 0
-  devMode: 0
+  devMode: 1
 --- !u!1 &1387597671
 GameObject:
   m_ObjectHideFlags: 0
@@ -75397,7 +75732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1404436136
@@ -76592,7 +76927,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -480, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 320, y: 480}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1435695764
@@ -77270,6 +77605,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451949136}
+  m_CullTransparentMesh: 1
+--- !u!1 &1454211976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1454211977}
+  - component: {fileID: 1454211979}
+  - component: {fileID: 1454211978}
+  m_Layer: 5
+  m_Name: blocker (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1454211977
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454211976}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 332238631}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 168, y: 0}
+  m_SizeDelta: {x: 1920, y: 96}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &1454211978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454211976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.1254902, b: 0.2509804, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1454211979
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454211976}
   m_CullTransparentMesh: 1
 --- !u!1 &1454870374
 GameObject:
@@ -80210,6 +80620,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499469758}
   m_CullTransparentMesh: 1
+--- !u!1 &1508987099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1508987100}
+  - component: {fileID: 1508987102}
+  - component: {fileID: 1508987101}
+  m_Layer: 5
+  m_Name: temp (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1508987100
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508987099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1160036782}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1508987101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508987099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 353b6a42c19b8704db3419c92ba06db2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1508987102
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508987099}
+  m_CullTransparentMesh: 1
 --- !u!1 &1511480684
 GameObject:
   m_ObjectHideFlags: 0
@@ -80528,9 +81013,9 @@ RectTransform:
   - {fileID: 1296748650}
   m_Father: {fileID: 251224155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 24, y: -6}
   m_SizeDelta: {x: 16, y: 12}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1527694714
@@ -80951,7 +81436,7 @@ MonoBehaviour:
   buttonTextSingle: 
   buttonTextMultiple: 
   index: 0
-  missionType: 1
+  missionType: 2
   buttonType: missionTypeSelect
   defaultColor:
     serializedVersion: 2
@@ -81184,6 +81669,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 220, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1543732678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1543732679}
+  - component: {fileID: 1543732681}
+  - component: {fileID: 1543732680}
+  m_Layer: 5
+  m_Name: blocker (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1543732679
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543732678}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 332238631}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -168, y: 0}
+  m_SizeDelta: {x: 1920, y: 96}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &1543732680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543732678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.1254902, b: 0.2509804, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1543732681
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543732678}
+  m_CullTransparentMesh: 1
 --- !u!1 &1544145371
 GameObject:
   m_ObjectHideFlags: 0
@@ -83362,7 +83922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -480, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 320, y: 480}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1597361828
@@ -86781,7 +87341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1765954064}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1697313466
 MonoBehaviour:
@@ -86796,6 +87356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mManager: {fileID: 1590529452}
+  lastSpeedMode: 0
   popups:
   - ownTag: test
     title: Test Popup
@@ -86808,6 +87369,9 @@ MonoBehaviour:
     size: {x: 160, y: 128}
     onCloseOpen: lalilulelo
     wasAlreadyOpened: 1
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
   - ownTag: lalilulelo
     title: zsfukdyghv
     description: ausdtfvc
@@ -86819,6 +87383,9 @@ MonoBehaviour:
     size: {x: 160, y: 128}
     onCloseOpen: 
     wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
   - ownTag: extremismP
     title: Vox Populi
     description: United Earth Coalition becomes an Extremist Nation!
@@ -86830,6 +87397,9 @@ MonoBehaviour:
     size: {x: 224, y: 128}
     onCloseOpen: 
     wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
   - ownTag: extremismC
     title: Vox Coitionis
     description: United Earth Coalition becomes an Extremist Nation!
@@ -86841,6 +87411,9 @@ MonoBehaviour:
     size: {x: 224, y: 128}
     onCloseOpen: 
     wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
   - ownTag: turnP
     title: Vox Populi
     description: United Earth Coalition becomes a Vox Populi Nation!
@@ -86852,6 +87425,9 @@ MonoBehaviour:
     size: {x: 224, y: 128}
     onCloseOpen: 
     wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
   - ownTag: turnC
     title: Vox Coitionis
     description: United Earth Coalition becomes a Vox Coitionis Nation!
@@ -86863,6 +87439,9 @@ MonoBehaviour:
     size: {x: 224, y: 128}
     onCloseOpen: 
     wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
   - ownTag: warP
     title: War
     description: United Earth Coalition becomes a full Vox Populi nation. War has
@@ -86875,6 +87454,9 @@ MonoBehaviour:
     size: {x: 224, y: 176}
     onCloseOpen: 
     wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
   - ownTag: warC
     title: Vox Coitionis
     description: United Earth Coalition becomes a full Vox Coitionis nation. War
@@ -86887,6 +87469,9 @@ MonoBehaviour:
     size: {x: 224, y: 176}
     onCloseOpen: 
     wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
   - ownTag: solWarn25
     title: '<color=black>Sol Alert: 25%'
     description: Sun has lost 25% of its mass, there's only 3750 years left!
@@ -86898,6 +87483,9 @@ MonoBehaviour:
     size: {x: 208, y: 128}
     onCloseOpen: 
     wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
   - ownTag: solWarn50
     title: '<color=black>Sol Alert: 50%'
     description: Sun has lost 50% of its mass, we only have 2,500 years left!
@@ -86909,6 +87497,9 @@ MonoBehaviour:
     size: {x: 208, y: 128}
     onCloseOpen: 
     wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
   - ownTag: solWarn75
     title: '<color=black>Sol Alert: 75%'
     description: Sun has only 25% of its mass remaining, we must do something, there's
@@ -86921,6 +87512,9 @@ MonoBehaviour:
     size: {x: 208, y: 144}
     onCloseOpen: 
     wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
   - ownTag: solWarn95
     title: 'Sol Alert: 95%'
     description: Sun has lost over 95% of its total mass, it was an honor knowing
@@ -86933,6 +87527,9 @@ MonoBehaviour:
     size: {x: 208, y: 144}
     onCloseOpen: 
     wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
   - ownTag: solWarn99
     title: 'Sol Alert: 99%'
     description: ...
@@ -86944,6 +87541,533 @@ MonoBehaviour:
     size: {x: 128, y: 96}
     onCloseOpen: 
     wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
+  - ownTag: tut0
+    title: Tutorial
+    description: 'Welcome, Commander.
+
+      Your objective is simple,
+
+      and
+      we believe you have
+
+      been informed well on
+
+      your briefing.'
+    buttonName: Yes
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: 0}
+    size: {x: 240, y: 160}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
+  - ownTag: tut1
+    title: Tutorial
+    description: 'In 5040 years, the Sun will run out of fuel to burn through. When
+      that happens, it will start shrinking
+
+      rapidly, matter of fact
+
+      it''s
+      shrinking
+
+      as we speak.'
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: 0}
+    size: {x: 240, y: 192}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
+  - ownTag: tut2
+    title: Tutorial
+    description: 'Why don''t we start with
+
+      the basics? Money doesn''t grow
+      on trees, and you will need all the money and resources you can put your hands
+      on.'
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: 0}
+    size: {x: 240, y: 176}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 0, y: 0}
+    objectsToEnable: []
+  - ownTag: tut3
+    title: Tutorial
+    description: 'Let''s go to the Research
+
+      Tab. it''s on the
+
+      bottom-left
+      corner of your screen, I''m sure
+
+      you''ll find it.'
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: 0}
+    size: {x: 240, y: 160}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 1
+    blockerPos: {x: -282, y: -230}
+    objectsToEnable:
+    - {fileID: 1146405174}
+  - ownTag: tut4
+    title: Tutorial
+    description: 'This is the Research Tab. Here you can make
+
+      scientific discoveries
+      to progress, unlock missions, and upgrade your GravShip.'
+    buttonName: GravShip?
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: 0}
+    size: {x: 240, y: 160}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: -282, y: -230}
+    objectsToEnable: []
+  - ownTag: tut5
+    title: Tutorial
+    description: Your personal remote-controlled spaceship, you use it to earn money.
+      You will need to unlock GravShip PDA through the Research tree first.
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: 0}
+    size: {x: 240, y: 176}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: -282, y: -230}
+    objectsToEnable: []
+  - ownTag: tut6
+    title: Tutorial
+    description: 110 mk has been deposited to your account. Now start by unlocking
+      Mission Operative.
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: -180, y: 147.59}
+    size: {x: 240, y: 128}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 1
+    blockerPos: {x: 0, y: 208}
+    objectsToEnable: []
+  - ownTag: tut7
+    title: Tutorial
+    description: Research takes too long? Change the game speed on the top-right
+      corner of your screen.
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 195.4, y: 103.8}
+    size: {x: 240, y: 144}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 1
+    blockerPos: {x: 273.5, y: 226.93}
+    objectsToEnable: []
+  - ownTag: tut8
+    title: Tutorial
+    description: 'You have 10mk left, just enough to buy GravShip PDA.
+
+      Proceed.'
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: -187.9, y: 48.1}
+    size: {x: 192, y: 144}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 273.5, y: 226.93}
+    objectsToEnable: []
+  - ownTag: tut9
+    title: Tutorial
+    description: 'GravShip upgrades happen instantly, while Research
+
+      can often
+      take millennia to complete. Make sure to
+
+      check on this tab
+
+      from
+      time to time.'
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: -187.9, y: 48.1}
+    size: {x: 246, y: 176}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 273.5, y: 226.93}
+    objectsToEnable: []
+  - ownTag: tut10
+    title: Tutorial
+    description: Return to main screen. You can do this by pressing the Research
+      Tab button again, or by hitting [Space].
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: -73.8, y: -163.4}
+    size: {x: 246, y: 144}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 273.5, y: 226.93}
+    objectsToEnable: []
+  - ownTag: tut11
+    title: Tutorial
+    description: This is your GravShip PDA, here you control a GravShip in the Asteroid
+      Belt.
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: -217.2, y: -128.9}
+    size: {x: 198, y: 144}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 273.5, y: 226.93}
+    objectsToEnable: []
+  - ownTag: tut12
+    title: Tutorial
+    description: 'Controls are simple,
+
+      use w/a/s/d,
+
+      or arrow keys
+
+      to
+      move around.'
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: -217.2, y: -128.9}
+    size: {x: 198, y: 144}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 273.5, y: 226.93}
+    objectsToEnable: []
+  - ownTag: tut13
+    title: Tutorial
+    description: 'Any asteroid that gets caught in the ship''s GravBeam gets automatically
+      pulled to this Mining Rig for processing. Sturdy construction ensures no damage.
+
+      Try
+      it. Try to attract a passing asteroid to it.'
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: -217.2, y: -82.4}
+    size: {x: 198, y: 238}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 273.5, y: 226.93}
+    objectsToEnable: []
+  - ownTag: tut14
+    title: Tutorial
+    description: 'Excellent.
+
+      Go back.'
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: -117, y: -182.1}
+    size: {x: 128, y: 112}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 273.5, y: 226.93}
+    objectsToEnable: []
+  - ownTag: tut15
+    title: Tutorial
+    description: 'Every nation in history needed a strong and straightforward direction,
+      United Earth Coalition is no different.
+
+      Head to the Politics Tab.'
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 63.2, y: -150.85}
+    size: {x: 230, y: 176}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 1
+    blockerPos: {x: 284.5, y: -220.1}
+    objectsToEnable:
+    - {fileID: 675036272}
+  - ownTag: tut16
+    title: Tutorial
+    description: 'Politics allow you to gain benefits based on two main political
+      views: Vox Populi and Vox Coitionis.'
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: -204, y: -22}
+    size: {x: 230, y: 144}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 284.5, y: -220.1}
+    objectsToEnable: []
+  - ownTag: tut17
+    title: Tutorial
+    description: "Vox Populi favors making everything cheaper, at cost of making
+      Research and Missions \r\ntake longer.\r\nVox Coitionis favors making Research
+      and Missions take\nless time, while making both more expensive.\r\n\r\nThe
+      closer you inch to Extremism regardless of side, the stronger your benefits
+      become. Penalties become larger too, however..."
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: 0}
+    size: {x: 544, y: 208}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 284.5, y: -220.1}
+    objectsToEnable: []
+  - ownTag: tut18
+    title: Tutorial
+    description: Both are a double-edged sword, so make sure to fluctuate and change
+      sides accordingly.
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: 0}
+    size: {x: 192, y: 160}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 284.5, y: -220.1}
+    objectsToEnable: []
+  - ownTag: tut19
+    title: Tutorial
+    description: In order to save the Sun, we'll need to complete Missions. Here
+      is the Missions Tab.
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 166.2, y: -3.8}
+    size: {x: 192, y: 136}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 1
+    blockerPos: {x: 366.4, y: 1.5}
+    objectsToEnable: []
+  - ownTag: tut20
+    title: Tutorial
+    description: You don't have any missions yet. Head back to Research Tab and unlock
+      Reflective Solar Sail with the money you made.
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: -4}
+    size: {x: 192, y: 168}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 366.4, y: 1.5}
+    objectsToEnable: []
+  - ownTag: tut21
+    title: Tutorial
+    description: First, choose a Mission Slot. More can be unlocked by researching
+      Mission Operative.
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: -4}
+    size: {x: 192, y: 144}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 366.4, y: 1.5}
+    objectsToEnable: []
+  - ownTag: tut22
+    title: Tutorial
+    description: Choose a Celestial Body type. For now you only have Minor Bodies.
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: -4}
+    size: {x: 192, y: 128}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 366.4, y: 1.5}
+    objectsToEnable: []
+  - ownTag: tut23
+    title: Tutorial
+    description: Pick Reflective Solar Sail, that's the Mission you're going to launch.
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: -4}
+    size: {x: 192, y: 136}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 366.4, y: 1.5}
+    objectsToEnable: []
+  - ownTag: tut24
+    title: Tutorial
+    description: 'All dwarf planets have been placed under one option for User convenience.
+      Other planets aren''t that lucky.
+
+      Choose Dwarf Planets, and Launch
+      the Mission.'
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: -4}
+    size: {x: 192, y: 200}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 366.4, y: 1.5}
+    objectsToEnable: []
+  - ownTag: tut25
+    title: Tutorial
+    description: And now we wait... Make sure to speed up time if needed.
+    buttonName: Okay
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: -4}
+    size: {x: 192, y: 120}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 366.4, y: 1.5}
+    objectsToEnable: []
+  - ownTag: tut26
+    title: Tutorial
+    description: There we go! Took you long enough, but you've prolonged the Sun's
+      life by... about 40 years, which is about the same time you've just spent here
+      as Crisis Prevention Commander.
+    buttonName: ...
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: -4}
+    size: {x: 192, y: 224}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 366.4, y: 1.5}
+    objectsToEnable: []
+  - ownTag: tut27
+    title: Crisis Prevention Commander Statu...
+    description: '<Life signal: Offline>'
+    buttonName: ...
+    windowColor:
+      serializedVersion: 2
+      rgba: 4280295456
+    position: {x: -54.7, y: -4}
+    size: {x: 280, y: 224}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 366.4, y: 1.5}
+    objectsToEnable: []
+  - ownTag: tut28
+    title: Tutorial
+    description: Another one bites the dust. Not first, and certainly not the last...
+    buttonName: ...
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: 0}
+    size: {x: 192, y: 136}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 366.4, y: 1.5}
+    objectsToEnable: []
+  - ownTag: tut29
+    title: Tutorial
+    description: '*Sigh* Why do I even bother training mortals? I''ll just start
+      showing them a tutorial video when they arrive.
+
+      
+
+      *Ahem* Welcome,
+      Commander...'
+    buttonName: ...
+    windowColor:
+      serializedVersion: 2
+      rgba: 4294926336
+    position: {x: 0, y: 0}
+    size: {x: 320, y: 192}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 366.4, y: 1.5}
+    objectsToEnable: []
+  - ownTag: tut30
+    title: <color=black>SOL-87,121</color>
+    description: 'From now, you''re on your own.
+
+      You have 5,000 years to
+      keep the Sun alive.
+
+      Humanity''s fate is on your hands.'
+    buttonName: Let's do it.
+    windowColor:
+      serializedVersion: 2
+      rgba: 4293322470
+    position: {x: 0, y: 0}
+    size: {x: 256, y: 160}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 366.4, y: 1.5}
+    objectsToEnable: []
   isActive: 0
   ownPopup: {fileID: 220029319}
   popupTexts:
@@ -86985,6 +88109,52 @@ MonoBehaviour:
     m_RotationOrder: 4
   popupAppearTime: 0.3
   testPopup: 0
+  blockerCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.6
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  blockerTime: 0.3
+  blocker: {fileID: 332238632}
+  popupDev:
+    ownTag: tut30
+    title: <color=black>SOL-87,121</color>
+    description: 'From now, you''re on your own.
+
+      You have 5,000 years to
+      keep the Sun alive.
+
+      Humanity''s fate is on your hands.'
+    buttonName: Let's do it.
+    windowColor:
+      serializedVersion: 2
+      rgba: 4293322470
+    position: {x: 0, y: 0}
+    size: {x: 256, y: 160}
+    onCloseOpen: 
+    wasAlreadyOpened: 0
+    addBlocker: 0
+    blockerPos: {x: 366.4, y: 1.5}
+    objectsToEnable: []
 --- !u!1 &1697881333
 GameObject:
   m_ObjectHideFlags: 0
@@ -87342,8 +88512,8 @@ MonoBehaviour:
     mainButton: {fileID: 222553838}
     buttons:
     - {fileID: 49907382}
-    - {fileID: 1533943005}
     - {fileID: 1228620592}
+    - {fileID: 1533943005}
     - {fileID: 1581535004}
     isUnlocked: 00000000
     bodies:
@@ -87367,6 +88537,7 @@ MonoBehaviour:
     progressFill: {fileID: 847341169}
     missionTypeInt: 0
     missionBody: {fileID: 0}
+    growthToAdd: 0
   - name: 
     inProgress: 0
     duration: 5
@@ -87378,6 +88549,7 @@ MonoBehaviour:
     progressFill: {fileID: 1857530511}
     missionTypeInt: 0
     missionBody: {fileID: 0}
+    growthToAdd: 0
   - name: 
     inProgress: 0
     duration: 48
@@ -87389,6 +88561,7 @@ MonoBehaviour:
     progressFill: {fileID: 1347830358}
     missionTypeInt: 0
     missionBody: {fileID: 0}
+    growthToAdd: 0
   - name: 
     inProgress: 0
     duration: 0
@@ -87400,6 +88573,7 @@ MonoBehaviour:
     progressFill: {fileID: 847236343}
     missionTypeInt: 0
     missionBody: {fileID: 0}
+    growthToAdd: 0
   - name: 
     inProgress: 0
     duration: 0
@@ -87411,6 +88585,7 @@ MonoBehaviour:
     progressFill: {fileID: 1861637026}
     missionTypeInt: 0
     missionBody: {fileID: 0}
+    growthToAdd: 0
   missionDatabase:
   - name: aHurling
     duration: 1
@@ -87433,12 +88608,12 @@ MonoBehaviour:
   - name: rsSail
     duration: 1
     cost: 1000
+  - name: hMiners
+    duration: 100000
+    cost: 10000
   - name: 3TON
     duration: 1
     cost: 1000
-  - name: hMiners
-    duration: 1000
-    cost: 10000
   - name: oDisconnect
     duration: 1
     cost: 1000
@@ -87607,6 +88782,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  hiredMinersCount: 0
+  everyYear: 0
+  hiredMinersCash: 100
 --- !u!1 &1710553917
 GameObject:
   m_ObjectHideFlags: 0
@@ -89410,7 +90588,6 @@ Transform:
   - {fileID: 1847336196}
   - {fileID: 560721030}
   - {fileID: 1839352056}
-  - {fileID: 1697313465}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1773298973
@@ -90109,7 +91286,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hiya bossman, this is a test message!
+  m_text: 'From now, you''re on your own.
+
+    You have 5,000 years to keep the
+    Sun alive.
+
+    Humanity''s fate is on your hands.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b27fb0b13d50d14b8bdf80be100e35e, type: 2}
   m_sharedMaterial: {fileID: 8740282252242457676, guid: 0b27fb0b13d50d14b8bdf80be100e35e, type: 2}
@@ -97680,8 +98862,8 @@ RectTransform:
   - {fileID: 797496865}
   - {fileID: 1010380885}
   - {fileID: 49907383}
-  - {fileID: 1533943006}
   - {fileID: 1228620593}
+  - {fileID: 1533943006}
   - {fileID: 1581535005}
   - {fileID: 1196344}
   m_Father: {fileID: 1791581367}
@@ -99807,6 +100989,81 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!1 &2026039462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2026039463}
+  - component: {fileID: 2026039465}
+  - component: {fileID: 2026039464}
+  m_Layer: 5
+  m_Name: temp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2026039463
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026039462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1160036782}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2026039464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026039462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9a66c2ee39a2f2246893edcb6dedd72c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2026039465
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026039462}
+  m_CullTransparentMesh: 1
 --- !u!1 &2028529664
 GameObject:
   m_ObjectHideFlags: 0
@@ -107229,7 +108486,7 @@ MonoBehaviour:
   totalPlaytime: 0
   playtimePercentage: 0
   canvasTransform: {fileID: 1160036782}
-  money: 0
+  money: 110
   cashText: {fileID: 1693538683}
   valTest: 0
   formatTest: 
@@ -107497,8 +108754,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  priceMult: 0
-  speedMult: 0
+  priceMult: 1
+  speedMult: 1
   polMultsText: {fileID: 661835298}
   isLocked: 1
   doneAlerts: 0000000000
@@ -109659,3 +110916,4 @@ SceneRoots:
   - {fileID: 1252086586}
   - {fileID: 1233809556}
   - {fileID: 1210346407}
+  - {fileID: 1697313465}

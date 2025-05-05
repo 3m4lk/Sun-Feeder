@@ -507,6 +507,9 @@ public class MinigameManager : MonoBehaviour
         if (isGSPDABought)
         {
             float ownDire = windowDirection;
+
+            //mManager.toggleCam(-ownDire);
+
             mManager.closeAllWindows();
             windowDirection = -ownDire;
             //mManager.toggleCam(windowDirection);
@@ -515,7 +518,7 @@ public class MinigameManager : MonoBehaviour
             if (windowDirection == 1)
             {
                 lastSpeedMode = mManager.gameManager.getSpeedMode();
-                mManager.gameManager.changeSpeed(3);
+                mManager.gameManager.changeSpeed(2);
                 mManager.gameManager.lockSpeed(true);
             }
             else
