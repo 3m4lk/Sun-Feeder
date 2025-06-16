@@ -1119,6 +1119,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1
   idleAnimationTime: 0
   locked: 0
+  tutExc: -1
   buttonColors:
   - serializedVersion: 2
     rgba: 4284243036
@@ -2208,6 +2209,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &41660548
@@ -3017,6 +3019,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &56657046
@@ -4824,6 +4827,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &90749557
@@ -12625,6 +12629,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1
   idleAnimationTime: 0
   locked: 0
+  tutExc: -1
   buttonColors:
   - serializedVersion: 2
     rgba: 4294967295
@@ -23914,6 +23919,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &462544641
@@ -26083,7 +26089,6 @@ RectTransform:
   - {fileID: 2146476901}
   - {fileID: 576151613}
   - {fileID: 846322634}
-  - {fileID: 1446094944}
   - {fileID: 1763136052}
   - {fileID: 1791924361}
   m_Father: {fileID: 1705755502}
@@ -27623,6 +27628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f204b758ca471449067b5953adf707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mManager: {fileID: 0}
   iconScaleCurve:
     serializedVersion: 2
     m_Curve:
@@ -27679,6 +27685,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   thingToScale: {fileID: 0}
+  tutorialId: -1
 --- !u!1 &573302068
 GameObject:
   m_ObjectHideFlags: 0
@@ -36093,6 +36100,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &658515850
@@ -36738,6 +36746,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1
   idleAnimationTime: 0
   locked: 0
+  tutExc: -1
   buttonColors:
   - serializedVersion: 2
     rgba: 4284243036
@@ -37277,6 +37286,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1
   idleAnimationTime: 0
   locked: 0
+  tutExc: -1
   buttonColors:
   - serializedVersion: 2
     rgba: 4284243036
@@ -37443,6 +37453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f204b758ca471449067b5953adf707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mManager: {fileID: 0}
   iconScaleCurve:
     serializedVersion: 2
     m_Curve:
@@ -37499,6 +37510,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   thingToScale: {fileID: 0}
+  tutorialId: -1
 --- !u!1 &675172565
 GameObject:
   m_ObjectHideFlags: 0
@@ -38243,197 +38255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mManager: {fileID: 1590529452}
-  newsRandom:
-  - NEWS!!!
-  - Local child totally OBLITERATES the Grandmaster of Chess with a handgun, Experts
-    baffled.
-  - '"I think the big science-heads should terraform Venus!", says celebrity. "On
-    my cold grave, we''re not doing this again. We still don''t know what got into
-    <i>those</i> clowns'' heads who did <i>that</i>", says Terraforming Specialist.'
-  - '"On everybody''s souls we''re all gooning to Tasque Manager" - speaker of these
-    words suspected of being the biggest cause of Human death in history.'
-  - blep
-  - Geometry Dash 2.21 expected to release somewhere next summer, informs Robert
-    Topala Jr. XVIII.
-  - '"I mean I love science, but why Orbital Mining Drills?", says weirdo.'
-  - Alright, spcial mssag to th suckr who stol th ky btwn w and r from my kyboard,
-    plas giv it back, this is not a jok, i'm vry srious.
-  - Sudden pressure change destroys all cargo in Europan submarine, local old man's
-    birthday gift ruined.
-  - Local teen "steals police officer's nose", execution by explosion tomorrow.
-  - Scientists discover traces of magic world, they nickname it "Gensokyo".
-  - '"Gee, it sure is boring around here!", says local teen. "My boy, this peace
-    is what all true warriors are striving for!", says prime minister.'
-  - E-archeologists discover e-fossils of an ancient entertainment medium called
-    "YTP", works are underway to discover what this acronym stands for.
-  - Hi, boss! There is a memecoin project of stealya.money ,can we cooperate?
-  - yo I just paid for this spot in the news bar, use code PROBARON for 42% off in
-    Shotgun Grandma shop!
-  - Error discovered in supercomputer Deep Thought's code, calculation of Answer
-    to the Ultimate Question of Life, the Universe, and Everything set back by 60
-    thousand years.
-  - Local child buys popsicle in middle of summer. SWAT and FBI involved.
-  - '"I miss the frogs man", says Friend 1. "Dude, they went extinct 50-something
-    thousand years ago!", says Friend 2.'
-  - Boulder Valley Moulder reclaims #1 spot as most popular caving attraction on
-    Earth, beating Monkey Tail Cave and Stalactite Trap Cave.
-  - Engineers create machine that can't run Doom. Unemployed hobbyist runs Doom on
-    it anyway.
-  - Child not yearning for the mines found in Quambler county, Mars.
-  - Chuligan zmienil jezyk mojego panelu na Polski, IT prosze zrobcie cos z tym.
-  - Lunarian girl running from green haired principal with bull horns starts flinging
-    her arm vertically. "I would do the same.", says EIRIN Foundation representative.
-  - Over 75,000 years pass since Slick Rick underwent RIEY surgery. "Best decision
-    ever made!", says loycal fan of Slick Rick.
-  - Archeologists find bones of neckless game developer with floating head from over
-    80,000 years ago. "Not worth RIEY-ing him.", says Bone Incinerator Operator.
-  - '"Stop telling us to bring back frogs. I don''t wanna, they''re gross!", says
-    RIEY Machine Operator.'
-  - Man gets run over by hover train at young age of 163, bystanders describe it
-    as "gnoash at hilarious".
-  - '"Skrumpawing" wins the "Teenagers'' Gnoashest Word of the Year" award, headquarters
-    cudared by furious protesters.'
-  - Woman complains about cronyism problem in UEC government. "False and utterly
-    baseless accusations!", says Minister of Left Handed Toilet Flushes.
-  - School nurse applies "smiley advesive bandage" to explosion wound, receives third
-    Medal of Honor for bravery.
-  - Veterans fight over who has more decorations, flee when soldier with Virtuti
-    Militari walks by.
-  - Prospectors disappointed after gravel mine turns out to be full of worthless
-    jewels.
-  - Scientists regret not teaching bees how to sing earlier, "I just love these little
-    guys, why didn't we think of this earlier, and not just now?".
-  - Are you ready, Princesses and Princes?
-  - Husband has nut allergy. Wife not happy.
-  - Wife has nut allergy. Husband not happy.
-  - Husband 1 has nut allergy. Husband 2 not happy.
-  - Wife 1 has nut allergy. Wife 2 not happy.
-  - Over 70 thousand years after birth, Hatsune Miku's voice is still the same, scientists
-    report.
-  - Over 70 thousand years after birth, Kasane Teto is still 31 years old, scientists
-    report.
-  - Over 70 thousand years after birth, Kasane Teto is still obese, scientists report.
-  - KATAMARI by Femtanyl becomes new national anthem of United Earth Coalition.
-  - Underage spy busted after refusing to partake in company's "Eat Your Vegetables
-    Day".
-  - 2 year old civillian woman suddenly exploded. "I had nothing to do with it!",
-    says crazy soldier loosely affiliated with "Falsalvata State" holding a rocket
-    gun.
-  - Intercoalitional tensions rise after local news reporter says "fr*ck".
-  - '"For the last time, RIEY surgery stands for ''Resurrection, Immortalization
-    and giving Eternal Youth'', not ''Rufus Iufus Eufus Yapponator''!", says disgruntled
-    RIEY Operator.'
-  - RIEY surgery cheaper than bread. "The water is wet, what's your deal?", responds
-    interviewed citizen.
-  - Local HR employee found folding paper airplanes from job applications and throwing
-    them around the office, pay increased by 400%.
-  - Millennia pass, Balatro is still popular as ever.
-  - Yare yare, da ze~
-  - Man in suit found standing in front of lambda symbols, suddenly vanishes from
-    interview attempts.
-  - '"You like tagging walls and pranking calls? Then graffitis my [CENSORED]!",
-    says GraffitiGirl31337.'
-  - The same amount of time passed between now and creation of Skibidi Toilet, and
-    between creation of Skibidi Toilet and first extinction of Mammoths. "Uhm, no???
-    Skibidi Toilet is way older than the mammoths", says RIEY Operator.
-  - Oldest man on Ceres sadly passes a fart in his chair after hearing a funny joke.
-  - Oldest man under Europa calmly passes a Way in bed... To his wife! || Tastiest
-    chocolate bar in all of Europa, get your Way! (Sponsored by Fruca Snacks & Co.
-    Ltd.)
-  - United Earth Coalition officials questioned about why Crisis Prevention Commanders
-    can't undergo RIEY surgery. "We must uphold sanctity of the State", responds
-    UEC spokeswoman.
-  - '"Stop talking about my goddamn hat, and report some ACTUAL news for once!",
-    says celebrity in a ridiculous orange hat.'
-  - '"Some folks are just too stupid for their own good. I revived this guy THIRTY
-    THREE TIMES, AND HE''S STILL TRYING TO SWIM IN THE EUROPAN DEPTHS FOR THE LAUGHS!?!?!?",
-    says RIEY Machine Operator, while resurrecting celebrity gearlessBaroholic74.'
-  - Richest man on Ceres gets cannibalized 7th time this week. "These wagies can't
-    keep taking "eat the rich" so seriously. I'll convince the UEC to quadruple Cerean
-    Tax!" he responds, looking tasty as ever.
-  - frick
-  - Blueskinned game developer drinks milk and chokes to death. "I guess he got THICC
-    of it...", responds RIEY Machine Operator.
-  - Two bears mauled by a child.
-  - Man walks into a RIEY clinic, asks Operator if they have "Ha". Responds with
-    "HaRIEY Balls!" after being questioned.
-  - Intern erases two first letters of "Uncrashable IV" on spaceship. Asteroid crashes
-    into it immediately.
-  - Girl with key in her back denies accusations of being a robot, despite being
-    alive even before RIEY surgeries were invented.
-  - Man buys video game legitimately. Encounters faulty anti-piracy AI.
-  - Fiery-eyed mage in purple robe pops out of thin air in Gyazo, Mars. Vanishes
-    after getting shot to death by police force.
-  - Man gets hit with road sign by humanoid floating pumpkin.
-  - Annual Granny Shotgun Deathmatch next week in local retirement home - Bring your
-    Grandmother! And a Shotgun!
-  - World's Youngest Child just turned 12 years old.
-  - Scientists almost find Ballmer Peak, but fail as they overshoot by 0.0001mL of
-    alcohol.
-  - Ancient remains discovered of alleged person who asked.
-  - Alcohol consumption found to increase drivers' focus by 130%, researchers report.
-    // Drunk driver crashes submarine into outpost under Europa, 58 people died.
-  - Scientists discover Alcohol increases drivers' hand-eye coordination by 270%.
-    // Drunk driver crashes spaceship into lunar base, 3,049 people died.
-  - '"I like my homies like I like my grapes!", says rapper 25Grapes4tATime.'
-  - '"News is not allow." - popstonia'
-  - Hey, you reading this! This is a robbery, wire 300,000mk to my e-walle
-  - Now move your hands and clap your feet - That's the song of the News Machine!
-  - Ramblers are still rambling, allegedly.
-  - A Cerean woman. Thousands die.
-  - Recent findings show Humans 70,000 years ago breathed in space using "long plastic
-    straws connected from Earth to their space suits".
-  - '"THOSE ARE NOT MOUNTAINS THOSE ARE NOT MOUNTAINS THOSE ARE NOT MOUNTAINS", rambles
-    upset astronaut.'
-  - Kalafior the beaver escapes local zoo. "Perhaps it wasn't my brightest idea to
-    keep him in a cage made of wood", comments Director of Mar-Terra Zoo.
-  - Martian hiker discovers enigmatic "Candlejack", says he possesses unusual abili
-  - Engineers begin work on the first blood-fueled machine, purposes are unknown.
-  - Leek stock drops by 150%, farmers report.
-  - Baguette stock drops by 150%, bakers report.
-  - Yellow Flip-Phone stock drops by 150%, engineers report.
-  - Eesti ennekoike!
-  - Polska gora!
-  - Lieutenant Torvalds "Thresher" Tiger takes submarine where the fishes sleep.
-    "It wasn't as deep as I thought", says after noticing floating carcass of Europan
-    wildlife.
-  - Newsu, Newsu, you can call me Newsu. Propa-ganda, and news from around Sun!
-  - Hatsune Miku is older than the dinosaurs. No, that's not a lie. No I didn't make
-    that up.
-  - Kasane Teto is heavier than Sol itself. Yes that's real, look it up.
-  - GUMI exists, I guess...
-  - Hey you, next guy on the panel. Where did our coffee machine go? // It's in the
-    break room you moron.
-  - The beat finally dropped, local partygoer reports.
-  - Dragons can't be purple because if they were they'd breathe marshmallows and
-    they would choke, local child reports.
-  - Cyborg with thick German accent finally re-emerges from magma.
-  - Homeless man calls another homeless man broke.
-  - Elderly politician calls younger elderly politician "too old to run the UEC",
-    both get assassinated the same morning.
-  - Man takes a step in short grass, gets attacked by giant spider that popped out
-    of it.
-  - Woman takes a step in short grass, gets attacked by giant snake that popped out
-    of it.
-  - Child takes a step in short grass, gets attacked by giant lion that popped out
-    of it.
-  - Someone stepped on snek.
-  - Alarm off.
-  - hold on, let me put my cat on the mic
-  - Scientists start 17th attempt at resurrecting mammoths. "Alright people, let's
-    add less plastic explosives this time!", says Lead Mammoth De-Extinction Project
-    Scientist.
-  - Whatsshall we do with the drunkenn sailor, what shall we do wit' the drun*hic*
-  - Iss you an' me 'gainst the wurld babey. I love you. I LOVE YOU *hic*
-  - Hehehehe....
-  - Gravvity 'e pullin' kin'a 'arder ressently *hic*, aye 'm ssayin'.
-  - if anyone finds that drunkard on the panel today i'd be really happy if some1
-    of u told me || {Admin} ~01Burza~ // Hehehehe~
-  - <color=#789922>>be me >guy on the news panel >burza is a moron</color>
-  - <color=#789922>>be me >guy on the news panel >send a meme >refuse to elaborate
-    further >don't get fi</color>
-  - In Memoriam Galuppi. Never Forget.
-  - '"guess what", informs IBlowUpHorses37.'
   newsPanel: {fileID: 8482357198931286878, guid: 4cab6e0136d575d41bda0ca3682c693d, type: 3}
   contentTransform: {fileID: 2018390841}
   newsAmount: 4
@@ -40245,6 +40066,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &737470610
@@ -41068,6 +40890,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &743154493
@@ -44912,6 +44735,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &872860806
@@ -46949,6 +46773,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1629706892148663711}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &915180253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 915180254}
+  - component: {fileID: 915180255}
+  m_Layer: 0
+  m_Name: TutorialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &915180254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915180253}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1765954064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &915180255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915180253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9a257d17734c2479edeeae9ab7855b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mManager: {fileID: 1590529452}
+  tutChecks: 00
 --- !u!1 &916712476
 GameObject:
   m_ObjectHideFlags: 0
@@ -50339,6 +50209,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1
   idleAnimationTime: 0
   locked: 0
+  tutExc: -1
   buttonColors:
   - serializedVersion: 2
     rgba: 4284243036
@@ -51734,6 +51605,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: 7
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &1044566266
@@ -51835,18 +51707,6 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1697313466}
-          m_TargetAssemblyTypeName: PopupManager, Assembly-CSharp
-          m_MethodName: newPopup
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: tut7
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &1055316313
@@ -55810,6 +55670,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &1136311058
@@ -56374,6 +56235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f204b758ca471449067b5953adf707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mManager: {fileID: 0}
   iconScaleCurve:
     serializedVersion: 2
     m_Curve:
@@ -56430,6 +56292,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   thingToScale: {fileID: 0}
+  tutorialId: -1
 --- !u!1 &1149061296
 GameObject:
   m_ObjectHideFlags: 0
@@ -57029,6 +56892,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1
   idleAnimationTime: 0
   locked: 0
+  tutExc: -1
   buttonColors:
   - serializedVersion: 2
     rgba: 4284243036
@@ -57527,6 +57391,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: 9
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &1158673265
@@ -57687,6 +57552,7 @@ RectTransform:
   - {fileID: 1637721711}
   - {fileID: 2026039463}
   - {fileID: 1508987100}
+  - {fileID: 1446094944}
   - {fileID: 332238631}
   - {fileID: 220029320}
   m_Father: {fileID: 0}
@@ -74871,6 +74737,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &1391598385
@@ -75401,6 +75268,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &1399031044
@@ -77011,11 +76879,11 @@ RectTransform:
   m_Children:
   - {fileID: 209316844}
   - {fileID: 251224155}
-  m_Father: {fileID: 525063957}
+  m_Father: {fileID: 1160036782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -168, y: 219}
+  m_AnchoredPosition: {x: 264, y: 219}
   m_SizeDelta: {x: 112, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446094945
@@ -80394,6 +80262,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &1493583292
@@ -81213,6 +81082,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1
   idleAnimationTime: 0
   locked: 0
+  tutExc: -1
   buttonColors:
   - serializedVersion: 2
     rgba: 4284243036
@@ -82388,6 +82258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f204b758ca471449067b5953adf707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mManager: {fileID: 0}
   iconScaleCurve:
     serializedVersion: 2
     m_Curve:
@@ -82444,6 +82315,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   thingToScale: {fileID: 0}
+  tutorialId: -1
 --- !u!114 &1556720523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83617,6 +83489,7 @@ MonoBehaviour:
   newsManager: {fileID: 684199206}
   popupManager: {fileID: 1697313466}
   solManager: {fileID: 1839352057}
+  tutorialManager: {fileID: 915180255}
 --- !u!4 &1590529453
 Transform:
   m_ObjectHideFlags: 0
@@ -84702,6 +84575,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1630726472}
+          m_TargetAssemblyTypeName: mainScreenButtons, Assembly-CSharp
+          m_MethodName: tutorialThings
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1630726472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84714,6 +84599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f204b758ca471449067b5953adf707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mManager: {fileID: 1590529452}
   iconScaleCurve:
     serializedVersion: 2
     m_Curve:
@@ -84770,6 +84656,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   thingToScale: {fileID: 0}
+  tutorialId: 11
 --- !u!1 &1631726649
 GameObject:
   m_ObjectHideFlags: 0
@@ -87384,6 +87271,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: lalilulelo
     title: zsfukdyghv
     description: ausdtfvc
@@ -87398,6 +87286,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: extremismP
     title: Vox Populi
     description: United Earth Coalition becomes an Extremist Nation!
@@ -87412,6 +87301,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: extremismC
     title: Vox Coitionis
     description: United Earth Coalition becomes an Extremist Nation!
@@ -87426,6 +87316,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: turnP
     title: Vox Populi
     description: United Earth Coalition becomes a Vox Populi Nation!
@@ -87440,6 +87331,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: turnC
     title: Vox Coitionis
     description: United Earth Coalition becomes a Vox Coitionis Nation!
@@ -87454,6 +87346,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: warP
     title: War
     description: United Earth Coalition becomes a full Vox Populi nation. War has
@@ -87469,6 +87362,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: warC
     title: Vox Coitionis
     description: United Earth Coalition becomes a full Vox Coitionis nation. War
@@ -87484,6 +87378,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: solWarn25
     title: '<color=black>Sol Alert: 25%'
     description: Sun has lost 25% of its mass, there's only 3750 years left!
@@ -87498,6 +87393,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: solWarn50
     title: '<color=black>Sol Alert: 50%'
     description: Sun has lost 50% of its mass, we only have 2,500 years left!
@@ -87512,6 +87408,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: solWarn75
     title: '<color=black>Sol Alert: 75%'
     description: Sun has only 25% of its mass remaining, we must do something, there's
@@ -87527,6 +87424,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: solWarn95
     title: 'Sol Alert: 95%'
     description: Sun has lost over 95% of its total mass, it was an honor knowing
@@ -87542,6 +87440,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: solWarn99
     title: 'Sol Alert: 99%'
     description: ...
@@ -87556,6 +87455,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut0
     title: Tutorial
     description: 'Welcome, Commander.
@@ -87579,6 +87479,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut1
     title: Tutorial
     description: 'In 5040 years, the Sun will run out of fuel to burn through. When
@@ -87601,6 +87502,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut2
     title: Tutorial
     description: 'Why don''t we start with
@@ -87619,6 +87521,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 0, y: 0}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut3
     title: Tutorial
     description: 'Let''s go to the Research
@@ -87641,6 +87544,7 @@ MonoBehaviour:
     blockerPos: {x: -282, y: -230}
     objectsToEnable:
     - {fileID: 1146405174}
+    unobtrusive: 0
   - ownTag: tut4
     title: Tutorial
     description: 'This is the Research Tab. Here you can make
@@ -87658,6 +87562,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: -282, y: -230}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut5
     title: Tutorial
     description: Your personal remote-controlled spaceship, you use it to earn money.
@@ -87673,6 +87578,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: -282, y: -230}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut6
     title: Tutorial
     description: 110 mk has been deposited to your account. Now start by unlocking
@@ -87688,6 +87594,7 @@ MonoBehaviour:
     addBlocker: 1
     blockerPos: {x: 0, y: 208}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut7
     title: Tutorial
     description: Research takes too long? Change the game speed on the top-right
@@ -87698,12 +87605,13 @@ MonoBehaviour:
       rgba: 4294926336
     position: {x: 195.4, y: 103.8}
     size: {x: 240, y: 144}
-    onCloseOpen: tut8
+    onCloseOpen: 
     wasAlreadyOpened: 0
     addBlocker: 1
     blockerPos: {x: 273.5, y: 226.93}
     objectsToEnable:
     - {fileID: 251224154}
+    unobtrusive: 0
   - ownTag: tut8
     title: Tutorial
     description: 'You have 10mk left, just enough to buy GravShip PDA.
@@ -87720,6 +87628,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 273.5, y: 226.93}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut9
     title: Tutorial
     description: 'GravShip upgrades happen instantly, while Research
@@ -87737,11 +87646,12 @@ MonoBehaviour:
       rgba: 4294926336
     position: {x: -187.9, y: 48.1}
     size: {x: 246, y: 176}
-    onCloseOpen: 
+    onCloseOpen: tut10
     wasAlreadyOpened: 0
     addBlocker: 0
     blockerPos: {x: 273.5, y: 226.93}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut10
     title: Tutorial
     description: Return to main screen. You can do this by pressing the Research
@@ -87757,6 +87667,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 273.5, y: 226.93}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut11
     title: Tutorial
     description: This is your GravShip PDA, here you control a GravShip in the Asteroid
@@ -87767,11 +87678,12 @@ MonoBehaviour:
       rgba: 4294926336
     position: {x: -217.2, y: -128.9}
     size: {x: 198, y: 144}
-    onCloseOpen: 
+    onCloseOpen: tut12
     wasAlreadyOpened: 0
     addBlocker: 0
     blockerPos: {x: 273.5, y: 226.93}
     objectsToEnable: []
+    unobtrusive: 1
   - ownTag: tut12
     title: Tutorial
     description: 'Controls are simple,
@@ -87788,11 +87700,12 @@ MonoBehaviour:
       rgba: 4294926336
     position: {x: -217.2, y: -128.9}
     size: {x: 198, y: 144}
-    onCloseOpen: 
+    onCloseOpen: tut13
     wasAlreadyOpened: 0
     addBlocker: 0
     blockerPos: {x: 273.5, y: 226.93}
     objectsToEnable: []
+    unobtrusive: 1
   - ownTag: tut13
     title: Tutorial
     description: 'Any asteroid that gets caught in the ship''s GravBeam gets automatically
@@ -87811,6 +87724,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 273.5, y: 226.93}
     objectsToEnable: []
+    unobtrusive: 1
   - ownTag: tut14
     title: Tutorial
     description: 'Excellent.
@@ -87827,6 +87741,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 273.5, y: 226.93}
     objectsToEnable: []
+    unobtrusive: 1
   - ownTag: tut15
     title: Tutorial
     description: 'Every nation in history needed a strong and straightforward direction,
@@ -87845,6 +87760,7 @@ MonoBehaviour:
     blockerPos: {x: 284.5, y: -220.1}
     objectsToEnable:
     - {fileID: 675036272}
+    unobtrusive: 0
   - ownTag: tut16
     title: Tutorial
     description: 'Politics allow you to gain benefits based on two main political
@@ -87860,6 +87776,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 284.5, y: -220.1}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut17
     title: Tutorial
     description: "Vox Populi favors making everything cheaper, at cost of making
@@ -87878,6 +87795,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 284.5, y: -220.1}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut18
     title: Tutorial
     description: Both are a double-edged sword, so make sure to fluctuate and change
@@ -87893,6 +87811,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 284.5, y: -220.1}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut19
     title: Tutorial
     description: In order to save the Sun, we'll need to complete Missions. Here
@@ -87909,6 +87828,7 @@ MonoBehaviour:
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable:
     - {fileID: 1763136051}
+    unobtrusive: 0
   - ownTag: tut20
     title: Tutorial
     description: You don't have any missions yet. Head back to Research Tab and unlock
@@ -87924,6 +87844,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut21
     title: Tutorial
     description: First, choose a Mission Slot. More can be unlocked by researching
@@ -87939,6 +87860,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut22
     title: Tutorial
     description: Choose a Celestial Body type. For now you only have Minor Bodies.
@@ -87953,6 +87875,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut23
     title: Tutorial
     description: Pick Reflective Solar Sail, that's the Mission you're going to launch.
@@ -87967,13 +87890,14 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut24
     title: Tutorial
     description: 'All dwarf planets have been placed under one option for User convenience.
       Other planets aren''t that lucky.
 
-      Choose Dwarf Planets, and Launch
-      the Mission.'
+      Choose Dwarf Planets, and Launch the
+      Mission.'
     buttonName: Okay
     windowColor:
       serializedVersion: 2
@@ -87985,6 +87909,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut25
     title: Tutorial
     description: And now we wait... Make sure to speed up time if needed.
@@ -87999,6 +87924,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut26
     title: Tutorial
     description: There we go! Took you long enough, but you've prolonged the Sun's
@@ -88015,6 +87941,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut27
     title: Crisis Prevention Commander Statu...
     description: '<Life signal: Offline>'
@@ -88029,6 +87956,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut28
     title: Tutorial
     description: Another one bites the dust. Not first, and certainly not the last...
@@ -88043,15 +87971,15 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut29
     title: Tutorial
     description: '*Sigh* Why do I even bother training mortals? I''ll just start
       showing them a tutorial video when they arrive.
 
-      
 
-      *Ahem* Welcome,
-      Commander...'
+
+      *Ahem* Welcome, Commander...'
     buttonName: ...
     windowColor:
       serializedVersion: 2
@@ -88063,12 +87991,13 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable: []
+    unobtrusive: 0
   - ownTag: tut30
     title: <color=black>SOL-87,121</color>
     description: 'From now, you''re on your own.
 
-      You have 5,000 years to
-      keep the Sun alive.
+      You have 5,000 years to keep
+      the Sun alive.
 
       Humanity''s fate is on your hands.'
     buttonName: Let's do it.
@@ -88082,6 +88011,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable: []
+    unobtrusive: 0
   isActive: 0
   ownPopup: {fileID: 220029319}
   popupTexts:
@@ -88154,8 +88084,8 @@ MonoBehaviour:
     title: <color=black>SOL-87,121</color>
     description: 'From now, you''re on your own.
 
-      You have 5,000 years to
-      keep the Sun alive.
+      You have 5,000 years to keep
+      the Sun alive.
 
       Humanity''s fate is on your hands.'
     buttonName: Let's do it.
@@ -88169,6 +88099,7 @@ MonoBehaviour:
     addBlocker: 0
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable: []
+    unobtrusive: 0
 --- !u!1 &1697881333
 GameObject:
   m_ObjectHideFlags: 0
@@ -89472,6 +89403,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &1713022777
@@ -90603,6 +90535,7 @@ Transform:
   - {fileID: 560721030}
   - {fileID: 1839352056}
   - {fileID: 1697313465}
+  - {fileID: 915180254}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1773298973
@@ -91303,8 +91236,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'From now, you''re on your own.
 
-    You have 5,000 years to keep the
-    Sun alive.
+    You have 5,000 years to keep the Sun
+    alive.
 
     Humanity''s fate is on your hands.'
   m_isRightToLeft: 0
@@ -92246,6 +92179,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &1802624292
@@ -92851,6 +92785,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &1810971114
@@ -94732,6 +94667,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &1868216476
@@ -95415,6 +95351,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &1873909713
@@ -96812,6 +96749,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &1896607906
@@ -98294,7 +98232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mManager: {fileID: 1590529452}
-  isGSPDABought: 0
+  canSpawn: 0
+  isGSPDABought: 1
   gspdaPopUpCurve:
     serializedVersion: 2
     m_Curve:
@@ -107067,6 +107006,7 @@ MonoBehaviour:
   idleScaleSpeedMult: 1.234568
   idleAnimationTime: 3
   locked: 0
+  tutExc: -1
   buttonColors: []
   ownImage: {fileID: 0}
 --- !u!114 &2052695314
@@ -108501,7 +108441,7 @@ MonoBehaviour:
   totalPlaytime: 0
   playtimePercentage: 0
   canvasTransform: {fileID: 1160036782}
-  money: 110
+  money: 0
   cashText: {fileID: 1693538683}
   valTest: 0
   formatTest: 

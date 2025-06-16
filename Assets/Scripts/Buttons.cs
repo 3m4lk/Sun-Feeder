@@ -58,6 +58,8 @@ public class Buttons : MonoBehaviour
 
     public bool locked;
 
+    public int tutExc = -1;
+
     [Tooltip("0 - idle;\n1 - hover;\n2 - click")]
     public Color32[] buttonColors;
     public Image ownImage;
@@ -180,6 +182,13 @@ public class Buttons : MonoBehaviour
             isHovering = false;
             transform.GetChild(2).gameObject.SetActive(true);
             //mManager.researchManager.changeText();
+
+            if (tutExc > -1)
+            {
+                mManager.popupManager.newPopup("tut" + tutExc);
+                tutExc = -1;
+            }
+
             researchEnter();
         }
         else

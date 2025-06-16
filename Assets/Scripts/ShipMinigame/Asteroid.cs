@@ -155,6 +155,8 @@ public class Asteroid : MonoBehaviour
 
             ship.mManager.gameManager.addCash(cashReward);
 
+            ship.mManager.tutorialManager.checkTut(0); // for tutorial only
+
             Destroy(gameObject);
         }
     }

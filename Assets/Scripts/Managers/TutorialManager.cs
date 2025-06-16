@@ -4,12 +4,21 @@ public class TutorialManager : MonoBehaviour
 {
     public MainManager mManager;
 
-    private void Awake()
+    [Tooltip("0 - GravShip PDA;\n" +
+        "1 - ")]
+    public bool[] tutChecks;
+
+    public void checkTut(int index)
     {
-        
-    }
-    private void Update()
-    {
-        
+        if (!tutChecks[index])
+        {
+            switch (index)
+            {
+                case 0:
+                    mManager.popupManager.newPopup("tut14");
+                    break;
+            }
+            tutChecks[index] = true;
+        }
     }
 }

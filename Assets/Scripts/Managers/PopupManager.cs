@@ -25,6 +25,9 @@ public class pdt
     public Vector2 blockerPos;
 
     public GameObject[] objectsToEnable;
+
+    [Tooltip("doesn't disable windows (GravShip PDA)")]
+    public bool unobtrusive;
 }
 public class PopupManager : MonoBehaviour
 {
@@ -94,23 +97,30 @@ public class PopupManager : MonoBehaviour
     {
         spawnPopup(testPopup);
     }
-    void spawnPopup(int index)
+    void spawnPopup(int index) // internal only
     {
         switch (popups[index].ownTag)
         {
             case "tut6":
                 mManager.gameManager.money = 0;
-                //mManager.gameManager.addCash(110);
-                print("zsfgd vaav ");
+                mManager.gameManager.addCash(110);
+                //print("zsfgd vaav ");
+                break;
+            case "tut13":
+                mManager.minigameManager.asteroidCool = 0;
+                mManager.minigameManager.canSpawn = true;
                 break;
         }
 
-        wasMinigame = false;
-        if (mManager.minigameManager.windowDirection == 1f)
+        if (!popups[index].unobtrusive)
         {
-            mManager.closeAllWindows();
-            wasMinigame = true;
-        } // close minigame window to prevent exploiting
+            wasMinigame = false;
+            if (mManager.minigameManager.windowDirection == 1f)
+            {
+                mManager.closeAllWindows();
+                wasMinigame = true;
+            } // close minigame window to prevent exploiting, unless it's an unobtrusive window for tutorial
+        }
 
         popups[index].wasAlreadyOpened = true;
         lastSpeedMode = mManager.gameManager.getSpeedMode();

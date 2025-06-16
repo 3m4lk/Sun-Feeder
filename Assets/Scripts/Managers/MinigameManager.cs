@@ -22,6 +22,8 @@ public class MinigameManager : MonoBehaviour
 {
     public MainManager mManager;
 
+    public bool canSpawn;
+
     [Space]
     public bool isGSPDABought;
     public AnimationCurve gspdaPopUpCurve;
@@ -375,6 +377,8 @@ public class MinigameManager : MonoBehaviour
         {
             asteroidCool *= aCallerSpeedMult;
         } // asteroid frenzy
+
+        if (!canSpawn) return;
 
         // spawn asteroid
         GameObject currentBody = default;

@@ -183,6 +183,8 @@ public class GameManager : MonoBehaviour
     {
         if (amount == 0) return;
 
+        //print("adding cash: " + amount);
+
         cashAddProgress = Mathf.Sign(amount) * cashSmoothTime;
         cashScaleProgress = cashSmoothTime;
 

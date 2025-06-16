@@ -6,7 +6,7 @@ public class NewsManager : MonoBehaviour
 {
     public MainManager mManager;
 
-    public string[] newsRandom;
+    private string[] newsRandom;
     public GameObject newsPanel;
 
     public RectTransform contentTransform;
@@ -54,6 +54,8 @@ public class NewsManager : MonoBehaviour
 
     private void Start()
     {
+        newsRandom = Resources.Load<TextAsset>("News/newsRandom").text.ToString().Replace(((char)13).ToString(), "").Split("\n");
+
         if (Application.isPlaying)
         {
             //print("READY");

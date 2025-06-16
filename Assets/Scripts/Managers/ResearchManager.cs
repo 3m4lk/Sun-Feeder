@@ -207,6 +207,12 @@ public class ResearchManager : MonoBehaviour
                 mManager.minigameManager.advanceBeam();
                 break;
             case "missionOperative":
+                print(currentLevel + " MMLEVEL");
+
+                if (currentLevel == 1)
+                {
+                    mManager.popupManager.newPopup("tut8");
+                }
                 mManager.missionManager.addMissionSlot(currentLevel - 1);
                 break;
             case "asteroidHurling":

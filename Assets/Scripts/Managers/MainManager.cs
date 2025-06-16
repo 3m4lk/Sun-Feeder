@@ -17,6 +17,7 @@ public class MainManager : MonoBehaviour
     public NewsManager newsManager;
     public PopupManager popupManager;
     public SolManager solManager;
+    public TutorialManager tutorialManager;
 
     [ExecuteInEditMode]
     private void Awake()
