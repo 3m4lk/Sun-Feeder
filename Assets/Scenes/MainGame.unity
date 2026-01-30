@@ -37441,6 +37441,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 915180255}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: checkTut
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &675036278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38260,70 +38272,12 @@ MonoBehaviour:
   newsAmount: 4
   scrollSpeed: 0.45
   betrayalTimes: 0
-  pAddon: Glory to the UEC!
-  cAddon: Glory to the People!
-  pExtremist:
-  - Man tries to start a company. Execution by explosion occured 5 minutes ago.
-  - We control the Past.
-  - Funding cut for local public school.
-  - Funding increased for anti-homeless infrastructure.
-  - '"I knew UEC would hit THEM really hard!", exclaims Vox Populi supporter.'
-  - Vox Populi. Vox Dei.
-  - '"No, of course I like the new regime, I just didn''t think it would be Vox Populi",
-    says citizen on watchlist.'
-  cExtremist:
-  - Man tries to start a charity. Execution by explosion occured 5 minutes ago.
-  - We control the Future.
-  - Grants cut for elderly and sick citizens.
-  - Funding increased for military anti-riot equipment.
-  - '"I knew UEC would hit THEM really hard!", exclaims Vox Coitionis supporter.'
-  - Vox Coitionis. Vox Dei.
-  - '"No, of course I like the new regime, I just didn''t think it would be Vox Coitionis",
-    says citizen on watchlist.'
+  pAddon: Glory to the People!
+  cAddon: Glory to the UEC!
   betrayalNews: <color=red>UEC considers applying mental illness restrictions for
     future Crisis Prevention Commander applicants, internal sources reveal.</color>
   extremistNewsChance: 3
-  warNews:
-  - <color=red>WAR IS PEACE.</color>
-  - <color=red>FREEDOM IS SLAVERY.</color>
-  - <color=red>IGNORANCE IS STRENGTH.</color>
-  - <color=red>THIS IS THE ONLY WAY IT COULD HAVE ENDED.</color>
-  - <color=red>THIS IS THE ONLY WAY IT SHOULD HAVE ENDED.</color>
-  - <color=red>SQUASH THE ENEMY, MAKE YOUR MOTHER PROUD.</color>
-  - <color=red>SQUASH THE ENEMY, MAKE YOUR FATHER PROUD.</color>
-  - <color=red>SQUASH THE ENEMY, PROTECT YOUR CHILDREN.</color>
   warNewsChance: 3
-  coldNews:
-  - Man calls woman "hot as the Sun", gets slapped.
-  - Woman calls man "hot as the Sun", gets glared upon.
-  - Man 1 calls man 2 "hot as the Sun", fistfight ensues.
-  - Woman 1 calls woman 2 "hot as the Sun", gets hugged to stay warm.
-  - '"Gee, it sure is cold around here!", says local teen. "My boy, the heat is what
-    all true people are striving for!", says prime minister.'
-  - A Europan and Cerean walk into a bar on Earth. They laugh at bartender who caught
-    a cold.
-  - '"Ogo, da tut dazhe ne tak uzh i kholodno, chert voz''mi!", says Cerean girlfriend.
-    "Just give me the damn blanket, I don''t understand you!", says Martian boyfriend.'
-  - '"Mamo jaki tam znowu mroz. Patrz tylko, ledwo szczypie!", says woman before
-    her frozen arm falls off.'
-  - '"Mom what "cold outside" are you talking about? Look, it''s not even chilly!",
-    says woman before her frozen arm falls off.'
-  - '"MEIN BIER!!!!", cries owner of newly frozen 700 barrels of beer.'
-  - 'Now hiring: Professional Warm Huggers. Requirements: Be warm, be nice, be officially
-    licensed. Apply at nearest Employment Center!'
-  - ReplICE-Teeth CEO rejoices as demand for ice teeth replacements actually rises.
-    "Now I need that to happen to my Magma Toothpaste too!", he comments.
-  - Young boxer catches cold. Becomes a furious muscular giant.
-  - Achoo~<color=#606060> // </color>Bless you!
-  - Is this just me, or is this Sol looking kinda... Cold?
-  - Girl from local lake starts drawing "9"s with blue spray paint, keeps saying
-    to local passerbys "Have an-Ice day!" and "I'm the strongest!".
-  - Frozen body found in UEC headquarters break room, turns out it's just a sleeping
-    employee from Ceres.
-  - Sleeping person found in UEC headquarters break room, turns out the employee
-    froze to death.
-  - Europan sculptor wrongfully executed by explosion after her sculptures are mistaken
-    for frozen bodies.
   coldNewsChance: 3
   warDeclarationNews: <color=red>Effective immediately, United Earth Coalition declares
     Martial Law. Government funding halted for purposes not beneficial to war effort.</color>
@@ -46818,7 +46772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mManager: {fileID: 1590529452}
-  tutChecks: 00
+  tutChecks: 000100
 --- !u!1 &916712476
 GameObject:
   m_ObjectHideFlags: 0
@@ -56221,6 +56175,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: tut4
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 915180255}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: checkTut
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &1146405180
@@ -84587,6 +84553,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 915180255}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: checkTut
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1630726472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87625,8 +87603,8 @@ MonoBehaviour:
     size: {x: 192, y: 144}
     onCloseOpen: 
     wasAlreadyOpened: 0
-    addBlocker: 0
-    blockerPos: {x: 273.5, y: 226.93}
+    addBlocker: 1
+    blockerPos: {x: -255, y: 150}
     objectsToEnable: []
     unobtrusive: 0
   - ownTag: tut9
@@ -87648,8 +87626,8 @@ MonoBehaviour:
     size: {x: 246, y: 176}
     onCloseOpen: tut10
     wasAlreadyOpened: 0
-    addBlocker: 0
-    blockerPos: {x: 273.5, y: 226.93}
+    addBlocker: 1
+    blockerPos: {x: -255, y: 150}
     objectsToEnable: []
     unobtrusive: 0
   - ownTag: tut10
@@ -87661,7 +87639,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 4294926336
     position: {x: -73.8, y: -163.4}
-    size: {x: 246, y: 144}
+    size: {x: 254, y: 144}
     onCloseOpen: 
     wasAlreadyOpened: 0
     addBlocker: 0
@@ -87718,7 +87696,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 4294926336
     position: {x: -217.2, y: -82.4}
-    size: {x: 198, y: 238}
+    size: {x: 206, y: 238}
     onCloseOpen: 
     wasAlreadyOpened: 0
     addBlocker: 0
@@ -87771,7 +87749,7 @@ MonoBehaviour:
       rgba: 4294926336
     position: {x: -204, y: -22}
     size: {x: 230, y: 144}
-    onCloseOpen: 
+    onCloseOpen: tut17
     wasAlreadyOpened: 0
     addBlocker: 0
     blockerPos: {x: 284.5, y: -220.1}
@@ -87779,18 +87757,18 @@ MonoBehaviour:
     unobtrusive: 0
   - ownTag: tut17
     title: Tutorial
-    description: "Vox Populi favors making everything cheaper, at cost of making
-      Research and Missions \r\ntake longer.\r\nVox Coitionis favors making Research
-      and Missions take\nless time, while making both more expensive.\r\n\r\nThe
-      closer you inch to Extremism regardless of side, the stronger your benefits
-      become. Penalties become larger too, however..."
+    description: Vox Populi favors making everything cheaper, at cost of making\nResearch
+      and Missions take longer.\n\nVox Coitionis favors making Research and Missions
+      take\nless time, while making both more expensive.\n\nThe closer you inch to
+      Extremism regardless of side, the stronger\nyour benefits become. Penalties
+      become larger too, however...
     buttonName: Okay
     windowColor:
       serializedVersion: 2
       rgba: 4294926336
     position: {x: 0, y: 0}
     size: {x: 544, y: 208}
-    onCloseOpen: 
+    onCloseOpen: tut18
     wasAlreadyOpened: 0
     addBlocker: 0
     blockerPos: {x: 284.5, y: -220.1}
@@ -88053,6 +88031,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   popupAppearTime: 0.3
   testPopup: 0
+  wasMinigame: 0
   blockerCurve:
     serializedVersion: 2
     m_Curve:
@@ -88100,6 +88079,8 @@ MonoBehaviour:
     blockerPos: {x: 366.4, y: 1.5}
     objectsToEnable: []
     unobtrusive: 0
+  isPopup: 0
+  isBlocker: 0
 --- !u!1 &1697881333
 GameObject:
   m_ObjectHideFlags: 0
@@ -100735,6 +100716,7 @@ GameObject:
   - component: {fileID: 2018390841}
   - component: {fileID: 2018390843}
   - component: {fileID: 2018390842}
+  - component: {fileID: 2018390844}
   m_Layer: 5
   m_Name: newsContent
   m_TagString: Untagged
@@ -100759,7 +100741,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 1}
-  m_SizeDelta: {x: 608, y: 48}
+  m_SizeDelta: {x: 0, y: 48}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2018390842
 MonoBehaviour:
@@ -100795,6 +100777,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018390840}
   m_CullTransparentMesh: 1
+--- !u!114 &2018390844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018390840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 1
+  m_VerticalFit: 0
 --- !u!1 &2020213856
 GameObject:
   m_ObjectHideFlags: 0

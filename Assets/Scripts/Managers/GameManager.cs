@@ -120,8 +120,10 @@ public class GameManager : MonoBehaviour
 
         solAlerts();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !mManager.popupManager.isBlocker && !mManager.popupManager.isPopup)
         {
+            mManager.tutorialManager.checkTut(1);
+
             mManager.closeAllWindows();
 
             if (dTap > 0 && mManager.camManager.currentAnchor != mManager.camManager.Sol)

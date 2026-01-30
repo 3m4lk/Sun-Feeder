@@ -17,6 +17,14 @@ public class TutorialManager : MonoBehaviour
                 case 0:
                     mManager.popupManager.newPopup("tut14");
                     break;
+                case 1:
+                    mManager.popupManager.wasMinigame = false;
+                    mManager.closeAllWindows();
+                    mManager.popupManager.newPopup("tut15");
+                    break; // tutorial: invitation to politics
+                case 2:
+                    mManager.popupManager.newPopup("tut16");
+                    break; // tutorial: in politics
             }
             tutChecks[index] = true;
         }

@@ -1,0 +1,15 @@
+<color=red>WAR IS PEACE.</color>
+<color=red>FREEDOM IS SLAVERY.</color>
+<color=red>IGNORANCE IS STRENGTH.</color>
+<color=red>THIS IS THE ONLY WAY IT COULD HAVE ENDED.</color>
+<color=red>THIS IS THE ONLY WAY IT SHOULD HAVE ENDED.</color>
+<color=red>SQUASH THE ENEMY, MAKE YOUR MOTHER PROUD.</color>
+<color=red>SQUASH THE ENEMY, MAKE YOUR FATHER PROUD.</color>
+<color=red>SQUASH THE ENEMY, PROTECT YOUR CHILDREN.</color>
+<color=red>BLEED FOR YOUR COUNTRY.</color>
+<color=red>BLEED FOR THE CAUSE.</color>
+<color=red>MAKE THEM BLEED.</color>
+<color=red>MAKE THEM SUFFER.</color>
+<color=red>THEY TOOK EVERYTHING FROM YOU.</color>
+<color=red>THEY ARE SUBHUMAN.</color>
+<color=red>SLAUGHTER THE ENEMY.</color>

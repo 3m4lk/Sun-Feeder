@@ -7,6 +7,7 @@ public class pdt
 {
     public string ownTag;
     public string title;
+    [TextArea]
     public string description;
     public string buttonName;
 
@@ -50,7 +51,7 @@ public class PopupManager : MonoBehaviour
     private float popupDirection = -1f;
 
     public int testPopup;
-    private bool wasMinigame;
+    public bool wasMinigame;
 
     public AnimationCurve blockerCurve;
     public float blockerTime;
@@ -60,6 +61,9 @@ public class PopupManager : MonoBehaviour
 
     [Space]
     public pdt popupDev;
+
+    public bool isPopup;
+    public bool isBlocker;
 
     //public GameObject[] enableAll;
     private void Awake()
@@ -99,6 +103,8 @@ public class PopupManager : MonoBehaviour
     }
     void spawnPopup(int index) // internal only
     {
+        isBlocker = false;
+
         switch (popups[index].ownTag)
         {
             case "tut6":
@@ -109,6 +115,9 @@ public class PopupManager : MonoBehaviour
             case "tut13":
                 mManager.minigameManager.asteroidCool = 0;
                 mManager.minigameManager.canSpawn = true;
+                break;
+            case "tut14":
+                mManager.tutorialManager.tutChecks[1] = false;
                 break;
         }
 
@@ -154,7 +163,10 @@ public class PopupManager : MonoBehaviour
         {
             blocker.transform.localPosition = popups[index].blockerPos;
             blockerProgress = 0;
+            isBlocker = true;
         }
+
+        isPopup = true;
     }
     public void closePopup()
     {
@@ -179,7 +191,9 @@ public class PopupManager : MonoBehaviour
         if (popups[currentPopupIndex].onCloseOpen != "")
         {
             newPopup(popups[currentPopupIndex].onCloseOpen);
+            return;
         }
+        isPopup = false;
     }
     public void disableBlocker()
     {
