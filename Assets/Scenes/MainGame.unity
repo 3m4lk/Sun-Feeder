@@ -27578,6 +27578,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 915180255}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: checkTut
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 5
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &570128627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37453,6 +37465,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 915180255}
+          m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+          m_MethodName: checkTut
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &675036278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38270,7 +38294,7 @@ MonoBehaviour:
   newsPanel: {fileID: 8482357198931286878, guid: 4cab6e0136d575d41bda0ca3682c693d, type: 3}
   contentTransform: {fileID: 2018390841}
   newsAmount: 4
-  scrollSpeed: 0.45
+  scrollSpeed: 0.55
   betrayalTimes: 0
   pAddon: Glory to the People!
   cAddon: Glory to the UEC!
@@ -46772,7 +46796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mManager: {fileID: 1590529452}
-  tutChecks: 000100
+  tutChecks: 000100000000
 --- !u!1 &916712476
 GameObject:
   m_ObjectHideFlags: 0
@@ -87233,7 +87257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mManager: {fileID: 1590529452}
-  lastSpeedMode: 0
   popups:
   - ownTag: test
     title: Test Popup
@@ -87504,7 +87527,7 @@ MonoBehaviour:
     title: Tutorial
     description: 'Let''s go to the Research
 
-      Tab. it''s on the
+      Tab. It''s on the
 
       bottom-left
       corner of your screen, I''m sure

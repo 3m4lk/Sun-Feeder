@@ -25,6 +25,17 @@ public class TutorialManager : MonoBehaviour
                 case 2:
                     mManager.popupManager.newPopup("tut16");
                     break; // tutorial: in politics
+                // 3: switched to true when tut18 pops up
+                case 4:
+                    if (tutChecks[3])
+                    {
+                        mManager.popupManager.newPopup("tut19");
+                    }
+                    else return;
+                    break; // tutorial: exiting politics & invitation to missions
+                case 5:
+                    mManager.popupManager.newPopup("tut20");
+                    break;
             }
             tutChecks[index] = true;
         }

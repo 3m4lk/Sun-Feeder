@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,7 +34,6 @@ public class pdt
 public class PopupManager : MonoBehaviour
 {
     public MainManager mManager;
-    public int lastSpeedMode;
 
     public pdt[] popups;
     private int currentPopupIndex;
@@ -118,6 +118,20 @@ public class PopupManager : MonoBehaviour
                 break;
             case "tut14":
                 mManager.tutorialManager.tutChecks[1] = false;
+                mManager.minigameManager.canSpawn = false;
+                break;
+            case "tut18":
+                mManager.tutorialManager.tutChecks[3] = true;
+                break;
+            case "tut20":
+                if (mManager.gameManager.money < 150)
+                {
+                    mManager.gameManager.money = 0;
+                    mManager.gameManager.addCash(150);
+                }
+                break;
+            case "tut30":
+                mManager.minigameManager.canSpawn = true;
                 break;
         }
 
@@ -132,9 +146,9 @@ public class PopupManager : MonoBehaviour
         }
 
         popups[index].wasAlreadyOpened = true;
-        lastSpeedMode = mManager.gameManager.getSpeedMode();
         mManager.gameManager.lockSpeed(false); // precaution for minigame
         mManager.gameManager.changeSpeed(0);
+        if (popups[index].ownTag == "tut13") mManager.gameManager.changeSpeed(2);
         mManager.gameManager.lockSpeed(true);
 
         currentPopupIndex = index;
@@ -171,7 +185,7 @@ public class PopupManager : MonoBehaviour
     public void closePopup()
     {
         mManager.gameManager.lockSpeed(false);
-        mManager.gameManager.changeSpeed(lastSpeedMode);
+        //mManager.gameManager.changeSpeed(1);
 
         if (wasMinigame)
         {
@@ -185,6 +199,9 @@ public class PopupManager : MonoBehaviour
         switch (popups[currentPopupIndex].ownTag)
         {
             default:
+                break;
+            case "tut13":
+                mManager.gameManager.changeSpeed(2);
                 break;
         } // exclusive stuff from popups
 
