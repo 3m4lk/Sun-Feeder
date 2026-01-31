@@ -123,6 +123,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !mManager.popupManager.isBlocker && !mManager.popupManager.isPopup)
         {
             mManager.tutorialManager.checkTut(1);
+            mManager.tutorialManager.checkTut(4);
 
             mManager.closeAllWindows();
 

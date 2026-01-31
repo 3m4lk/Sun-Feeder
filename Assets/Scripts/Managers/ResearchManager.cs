@@ -235,6 +235,10 @@ public class ResearchManager : MonoBehaviour
                 break;
             case "reflectiveSolarSail":
                 mManager.missionManager.unlockOperation(3, 0);
+                if (currentLevel == 1)
+                {
+                    mManager.tutorialManager.checkTut(6);
+                }
                 break;
             case "hiredMiners":
                 mManager.missionManager.unlockOperation(3, 1);
@@ -360,5 +364,16 @@ public class ResearchManager : MonoBehaviour
         mManager.closeAllWindows();
         motionDirection = -ownDire;
         mManager.toggleCam(motionDirection);
+    }
+    public bool isResearch(string input)
+    {
+        for (int i = 0; i < research.Length; i++)
+        {
+            if (research[i].name == input)
+            {
+                if (research[i].isCompleted || research[i].currentLevel > 0) return true;
+            }
+        }
+        return false;
     }
 }

@@ -16,6 +16,13 @@ public class TutorialManager : MonoBehaviour
             {
                 case 0:
                     mManager.popupManager.newPopup("tut14");
+                    mManager.gameManager.money = 0;
+                    mManager.gameManager.addCash(150);
+                    GameObject[] allsteroids = GameObject.FindGameObjectsWithTag("asteroidChild");
+                    for (int i = 0; i < allsteroids.Length; i++)
+                    {
+                        Destroy(allsteroids[i].transform.parent.gameObject);
+                    }
                     break;
                 case 1:
                     mManager.popupManager.wasMinigame = false;
@@ -36,6 +43,15 @@ public class TutorialManager : MonoBehaviour
                 case 5:
                     mManager.popupManager.newPopup("tut20");
                     break;
+                case 6:
+                    if (!mManager.researchManager.isResearch("reflectiveSolarSail"))
+                    {
+                        print("no research / not in the window");
+                        return; // or if isn't in the window
+                    }
+
+                    mManager.popupManager.newPopup("tut21");
+                    break; // tutorial: after reflective solar sail finishes & mission tab is opened
             }
             tutChecks[index] = true;
         }

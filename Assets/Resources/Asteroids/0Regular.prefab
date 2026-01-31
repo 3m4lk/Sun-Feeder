@@ -5553,7 +5553,7 @@ GameObject:
   - component: {fileID: 8920444789795786932}
   m_Layer: 13
   m_Name: shipTractor
-  m_TagString: Untagged
+  m_TagString: asteroidChild
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
